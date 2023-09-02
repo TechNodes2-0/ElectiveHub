@@ -3,10 +3,130 @@
 import React, { useState } from "react";
 import "./TimelineLearningPath.css";
 const DataScienceTimeline = () => {
-  const [isHidden, setIsHidden] = useState(true);
+  const TimelineDataScience = [
+    {
+      title: "Coding Prerequisite",
+      category: "Programming",
+      description:
+        "Data Structure (Python / R), SQL Scripting, Conditional list/Dict comprehension, Object-Oriented Programming, Working with external libraries, Fundamental algorithms - searching, sorting",
+    },
+    {
+      title: "Preparation",
+      category: "Data Extraction and Wrangling",
+      description:
+        "Scripting - Extracting Data from API/DB/Website, Data Formatting (Type Conversion), Libraries Learning - Pandas, Numpy, Data Transforming - Joining, Slicing, Indexing, Handling Missing Values",
+    },
+    {
+      title: "Vizulation/ Dashboard",
+      category: "EDA, Business acumen and storytelling",
+      description:
+        "Business Focus Questions, Studying Data Distribution, Univariate and Multivariate Analysis, Data Visualization - Matplotlib, Seaborn, Plotly, Building Dashboards - Excel/Tableau, Jupyter, Writing Concise and Insightful Reports, Business Acumen",
+    },
+    {
+      title: "Data Engineering",
+      category: "Data Warehouse",
+      description:
+        "Strong Programming Skills, Working with CLI (Command Line Interface), Building ETL (Extract, Transform, Load) Pipelines, Using Various Tools - Spark, Kafka, Airflow, and more, Cloud Services - AWS, GCP, Azure, Algorithm - MapReduce, Yarn, Deploying ML Models in Production",
+    },
+    {
+      title: "Experimentation",
+      category: "Statistics and mathematics",
+      description:
+        "Descriptive Statistics - Mean, Median, Mode, STD, and More, Inferential Statistics - Hypothesis and A/B testing, Confidence Intervals, P-Value, Experimental Design, ANOVA, Chi-Square Test, Sampling, Data Distributions, t-test, Linear Algebra, Single and Multivariate Calculus",
+    },
+    {
+      title: "Modeling",
+      category: "Machine Learning",
+      description:
+        "Supervised - Classification, Regression, Unsupervised - Clustering, Dimensionality Reduction, Reinforcement - TF Agents, Optimizing Rewards, Performance Metrics - RMS, Accuracy, Confusion Matrix, AUC-ROC, and More, Statistical Machine Learning - KNN, Decision Trees, Bagging, Boosting",
+    },
+  ];
+  const TimelineCyberSecurity = [
+    {
+      title: "Foundations of Cybersecurity",
+      category: "Basics",
+      description:
+        "Introduction to Cybersecurity, Cybersecurity Terminology, Security Principles",
+    },
+    {
+      title: "Network Security",
+      category: "Networking",
+      description:
+        "Networking Fundamentals, TCP/IP and Protocols, Firewalls and IDS, Wireless Network Security",
+    },
+    {
+      title: "Cryptography",
+      category: "Data Protection",
+      description:
+        "Introduction to Cryptography, Encryption and Decryption, Public Key Infrastructure (PKI)",
+    },
+    {
+      title: "Web Security",
+      category: "Web Protection",
+      description:
+        "Web Application Security, Secure Coding Practices, OWASP Top Ten",
+    },
+    {
+      title: "Security Testing",
+      category: "Testing and Assessment",
+      description:
+        "Vulnerability Scanning, Penetration Testing, Security Auditing",
+    },
+    {
+      title: "Identity and Access Management",
+      category: "Access Control",
+      description: "Authentication and Authorization, Single Sign-On (SSO)",
+    },
+    {
+      title: "Incident Response",
+      category: "Response",
+      description: "Incident Handling Process, Digital Forensics",
+    },
+    {
+      title: "Compliance and Policies",
+      category: "Regulations",
+      description:
+        "Security Policies and Procedures, Regulatory Compliance (e.g., GDPR, HIPAA)",
+    },
+    {
+      title: "Cloud Security",
+      category: "Cloud Protection",
+      description:
+        "Cloud Service Models (IaaS, PaaS, SaaS), Cloud Security Best Practices, Cloud Identity and Access Management",
+    },
+    {
+      title: "Specializations",
+      category: "Focus Areas",
+      description:
+        "Network Security, Application Security, IoT Security, Malware Analysis",
+    },
+    {
+      title: "Advanced Topic",
+      category: "Advanced Concepts",
+      description: "Advanced Cryptography, Advanced Penetration Testing",
+    },
+    {
+      title: "Certifications",
+      category: "Certification Programs",
+      description:
+        "CompTIA Security+, Certified Information Systems Security Professional (CISSP)",
+    },
+  ];
 
-  const toggleListVisibility = () => {
-    setIsHidden(!isHidden);
+  // Example: Access the category of the first entry
+  const firstEntryCategory = TimelineCyberSecurity[0].category;
+  console.log(firstEntryCategory); // Output: "Basics"
+
+  const initialTimelineData = TimelineCyberSecurity;
+  const [timelineData, setTimelineData] = useState(initialTimelineData);
+  const [isHidden, setIsHidden] = useState(
+    Array(initialTimelineData.length).fill(true)
+  );
+
+  const toggleListVisibility = (index) => {
+    const updatedIsHidden = [...isHidden];
+    updatedIsHidden[index] = !updatedIsHidden[index];
+    setIsHidden(updatedIsHidden);
   };
   return (
     <>
@@ -52,6 +172,7 @@ const DataScienceTimeline = () => {
                       borderRadius: "1%",
                     }}
                   />
+<<<<<<< Updated upstream
                   <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                     <div className="order-1 w-5/12" />
                     <div className="order-1 w-5/12 px-1 py-4 text-right">
@@ -70,104 +191,55 @@ const DataScienceTimeline = () => {
                       <button
                         className="show-more-btn"
                         onClick={toggleListVisibility}
+=======
+                  {timelineData.map((step, index) => (
+                    <div
+                      key={index}
+                      className={`mb-8 flex justify-between ${
+                        index % 2 === 0 ? "flex-row-reverse" : "flex-row"
+                      } items-center w-full ${
+                        index % 2 === 0 ? "left-timeline" : "right-timeline"
+                      }`}
+                    >
+                      <div className="order-1 w-5/12" />
+                      <div
+                        className={`order-1 w-5/12 px-1 py-4 ${
+                          index % 2 === 0 ? "text-right" : "text-left"
+                        }`}
+>>>>>>> Stashed changes
                       >
-                        {isHidden ? "Show More" : "Show Less"}
-                      </button>
-                      <div className={` ${isHidden ? "hidden" : ""}`}>
-                        <div className="ml-8">
-                          <ol className="relative border-l border-gray-200 dark:border-gray-700">
-                            <li className=" ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Data Structure (Python / R)
-                              </p>
-                            </li>
-                            <li className=" ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                SQL Scripiting
-                              </p>
-                            </li>
-                            <li className="ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Conditional list/Dict compreshension
-                              </p>
-                            </li>
-                            <li className="ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Object Oriented Programming
-                              </p>
-                            </li>
-                            <li className="ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                {" "}
-                                Working with external libraries
-                              </p>
-                            </li>
-                            <li className="ml-4">
-                              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
-                              <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                                Fundamental algorithms- searching, sorting
-                              </p>
-                            </li>
-                          </ol>
+                        <div className="mb-3 text-base">Step {index + 1}:</div>
+                        <h4 className="text-blue-500 mb-3 font-bold text-lg md:text-2xl">
+                          {step.title}{" "}
+                          <span className="font-semibold text-md text-slate-600 ">
+                            {step.category}
+                          </span>
+                        </h4>
+                        <button
+                          className="show-more-btn"
+                          onClick={() => toggleListVisibility(index)}
+                        >
+                          {isHidden[index] ? "Show More" : "Show Less"}
+                        </button>
+                        <div className={` ${isHidden[index] ? "hidden" : ""}`}>
+                          <div className="ml-8">
+                            <ol className="relative border-l border-gray-200 dark:border-gray-700">
+                              {step.description
+                                .split(",")
+                                .map((item, itemIndex) => (
+                                  <li key={itemIndex} className="ml-4">
+                                    <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700" />
+                                    <p className="my-4 mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                                      {item.trim()}
+                                    </p>
+                                  </li>
+                                ))}
+                            </ol>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                    <div className="order-1 w-5/12" />
-                    <div className="order-1  w-5/12 px-1 py-4 text-left">
-                      <p className="mb-3 text-base text-blue-500">
-                        6-9 May, 2021
-                      </p>
-                      <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                        Participation
-                      </h4>
-                      <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                        Participate online. The links for your registered events
-                        will be sent to you via email and whatsapp groups. Use
-                        those links and show your talent.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                    <div className="order-1 w-5/12" />
-                    <div className="order-1 w-5/12 px-1 py-4 text-right">
-                      <p className="mb-3 text-base text-blue-500">
-                        {" "}
-                        10 May, 2021
-                      </p>
-                      <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                        Result Declaration
-                      </h4>
-                      <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                        The ultimate genius will be revealed by our judging
-                        panel on 10th May, 2021 and the resukts will be
-                        announced on the whatsapp groups and will be mailed to
-                        you.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                    <div className="order-1 w-5/12" />
-                    <div className="order-1  w-5/12 px-1 py-4">
-                      <p className="mb-3 text-base text-blue-500">
-                        12 May, 2021
-                      </p>
-                      <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
-                        Prize Distribution
-                      </h4>
-                      <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                        The winners will be contacted by our team for their
-                        addresses and the winning goodies will be sent at their
-                        addresses.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
                 <img
                   className="mx-auto -mt-36 md:-mt-36"
