@@ -39,7 +39,12 @@ const StudentsForSubject = () => {
           // },
         
       );
-const students = response.data.map((item) => item.student);
+      console.log(response.data);
+      const students = response.data
+      .map((item) => item.student)
+      .filter((student) => student !== null);
+    
+console.log(students);
 setStudentsForSubject(students);
     } catch (error) {
   console.error(error);
