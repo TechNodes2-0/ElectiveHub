@@ -1,17 +1,32 @@
 [
   {
     "id": 1,
-    "title":"Cyber Security",
+    "title": "Cyber Security",
     "studyMaterial": [
       {
         "unit": "Unit-1",
-        "presentation": "Presentation 1",
-        "link": "https://google.com"
+        "presentation": "Systems Vulnerability Scanning",
+        "link": "https://drive.google.com/file/d/1kICtBX5rF7kzCysLp8EuXhEIuC2q7eoH"
       },
       {
         "unit": "Unit-2",
-        "presentation": "Presentation 1",
-        "link": "https://google.com"
+        "presentation": " Network Defense tools",
+        "link": "https://drive.google.com/file/d/1Um1n0RmXC3ctqqh9lgU7tg_TADdVSaM-"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": " Web Application Tools",
+        "link": "https://drive.google.com/file/d/1v9WfaigCVUz9LU-rtyADOA7NcvAv8FAU"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": " Introduction to Cyber Crime and Law",
+        "link": "https://drive.google.com/file/d/1COZJ36dNZZIcATYuxJxF1utaAtd_HjBI"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": "Introduction to Cyber Crime Investigation",
+        "link": "https://drive.google.com/file/d/1U9aCaJ7jFy6qbI8zYedqsv_NINXGndW5"
       }
     ],
     "syllabusContent": {
@@ -39,8 +54,20 @@
           "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
         },
         {
-          "unit": "Unit-2: Systems Vulnerability Scanning",
-          "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+          "unit": "Unit-2: Network Defense tools",
+          "content": "Firewalls and Packet Filters: Firewall Basics, Packet Filter Vs Firewall, How a Firewall Protects a Network, Packet Characteristic to Filter, Stateless Vs Stateful Firewalls, Network Address Translation (NAT) and Port Forwarding, the basic of Virtual Private Networks, Linux Firewall, Windows Firewall, Snort: Introduction Detection System"
+        },
+        {
+          "unit": "Unit-3: Web Application Tools",
+          "content": "Scanning for web vulnerabilities tools: Nikto, W3af, HTTP utilities - Curl, OpenSSL and Stunnel, Application Inspection tools – Zed Attack Proxy, Sqlmap. DVWA, Webgoat, Password Cracking and Brute-Force Tools – John the Ripper, L0htcrack, Pwdump, HTC-Hydra"
+        },
+        {
+          "unit": "Unit-4:  Introduction to Cyber Crime and Law",
+          "content": "Cyber Crimes, Types of Cybercrime, Hacking, Attack vectors, Cyberspace and Criminal Behavior, Clarification of Terms, Traditional Problems Associated with Computer Crime, Introduction to Incident Response, Digital Forensics, Computer Language, Network Language, Realms of the Cyber world, A Brief History of the Internet, Recognizing and Defining Computer Crime, temporary Crimes, Computers as Targets, Contaminants and Destruction of Data, Indian IT ACT 2000."
+        },
+        {
+          "unit": "Unit-5:   Introduction to Cyber Crime Investigations",
+          "content": "Firewalls and Packet Filters, password Cracking, Keyloggers and Spyware, Virus and Warms, Trojan and backdoors, Steganography, DOS and DDOS attack, SQL injection, Buffer Overflow, Attack on wireless Networks"
         }
       ]
     },
@@ -51,6 +78,310 @@
         "author": "Mike Shema",
         "publication": "Publication Mc Graw Hill.",
         "amazonLink": "https://amazon.com/anti-hacker-tool-kit"
+      },
+      {
+        "sr": 2,
+        "title": "Cyber Security Understanding Cyber Crimes, Computer Forensics and Legal Perspectives",
+        "author": "Nina Godbole and Sunit Belpure ",
+        "publication": " Wiley",
+        "amazonLink": "https://www.amazon.in/Cyber-Security-Understanding-Forensics-Perspectives/dp/8126521791/ref=sr_1_fkmr0_1?s=books&ie=UTF8&qid=1451715478&sr=1-1-fkmr0&keywords=Cyber+Security+Understanding+Cyber+Crimes%2C+Computer+Forensics+and+Legal+Perspectives+by+Nin"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Python for Data Science",
+    "studyMaterial": [
+      {
+        "unit": "Unit-1",
+        "presentation": "Overview of Data stucuter with Python ",
+        "link": "https://drive.google.com/file/d/1dWpf1xFC1QbRLXXK09ZQvobUXfemnpLA"
+      },
+      {
+        "unit": "Unit-2",
+        "presentation": "Data Science and Python",
+        "link": "https://drive.google.com/file/d/1r5E8bNNdPAfZwikljkyObnZb_TgGBOd3"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": "Getting Your Hands Dirty With Data",
+        "link": "https://drive.google.com/file/d/1YY1auiiSz5zRE4Xd_7wJAxYhaYlcTHMX"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": "Data Visulization",
+        "link": "https://drive.google.com/file/d/1LJD_pt0cuHn7oxKpDtE-yxEqFxKrS2qX"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": "Data Wrangling",
+        "link": "https://drive.google.com/file/d/1_ehTOyAGcAldzbe8zWDjln1sMw2Vy_W8"
+      }
+    ],
+    "syllabusContent": {
+      "teachingScheme": [
+        {
+          "theory": 2,
+          "tutorial": 0,
+          "practical": 2,
+          "total": 3
+        }
+      ],
+      "examinationScheme": [
+        {
+          "theory": 70,
+          "eseTheory": 70,
+          "paPractical": 30,
+          "eseViva": 20,
+          "paI": 10,
+          "total": 150
+        }
+      ],
+      "syllabusContent": [
+        {
+          "unit": "Unit-1: Overview of Python and Data Structures",
+          "content": "Basics of Python including data types, variables, expressions, objects, and functions. Python data structures including String, Array, List, Tuple, Set, Dictionary, and operations on them."
+        },
+        {
+          "unit": "Unit-2: Data Science and Python",
+          "content": "Discovering the match between data science and python: Considering the emergence of data science, Outlining the core competencies of a data scientist, Linking data science, big data, and AI, Understanding the role of programming, Creating the Data Science Pipeline, Preparing the data, Performing exploratory data analysis, Learning from data, Visualizing, Obtaining insights and data products Understanding Python's Role in Data Science: Introducing Python's Capabilities and Wonders: Why Python?, Grasping Python's Core Philosophy, Contributing to data science, Discovering present and future development goals, Working with Python, Getting a taste of the language, Understanding the need for indentation, Working at the command line or in the IDE"
+        },
+        {
+          "unit": "Unit-3: Getting Your Hands Dirty With Data",
+          "content": "Using the Jupyter Console, Interacting with screen text, Changing the window appearance, Getting Python help, Getting IPython help, Using magic functions, Discovering objects, Using Jupyter Notebook, Working with styles, Restarting the kernel, Restoring a checkpoint, Performing Multimedia and Graphic Integration, Embedding plots and other images, Loading examples from online sites, Obtaining online graphics and multimedia."
+        },
+        {
+          "unit": "Unit-4: Data Visualization",
+          "content": "Visualizing Information: Starting with a Graph, Defining the plot, Drawing multiple lines and plots, Saving your work to disk, Setting the Axis, Ticks, Grids, Getting the axes, Formatting the axes, Adding grids, Defining the Line Appearance, Working with line style, Using colors, Adding markers, Using Labels, Annotations, and Legends, Adding labels, Annotating the chart, Creating a legend. Visualizing the Data: Choosing the Right Graph, Showing parts of a whole with pie charts, Creating comparisons with bar charts, Showing distributions using histograms, Depicting groups using boxplots, Seeing data patterns using scatterplots, Creating Advanced Scatterplots, Depicting groups, Showing correlations, Plotting Time Series, Representing time on axes, Plotting trends over time, Plotting Geographical Data, Using an environment in Notebook, Getting the Basemap toolkit, Dealing with deprecated library issues, Using Basemap to plot geographic data, Visualizing Graphs, Developing undirected graphs, Developing directed graphs."
+        },
+        {
+          "unit": "Unit-5: Data Wrangling",
+          "content": "Wrangling Data: Playing with Scikit-learn, Understanding classes in Scikit-learn, Defining applications for data science, Performing the Hashing Trick, Using hash functions, Demonstrating the hashing trick, Working with deterministic selection, Considering Timing and Performance, Benchmarking with timeit, Working with the memory profiler, Running in Parallel on Multiple Cores, Performing multicore parallelism, Demonstrating multiprocessing. Exploring Data Analysis: The EDA Approach, Defining Descriptive Statistics for Numeric Data, Measuring central tendency, Measuring variance and range, Working with percentiles, Defining measures of normality, Counting for Categorical Data, Understanding frequencies, Creating contingency tables, Creating Applied Visualization for EDA, Inspecting boxplots."
+        }
+      ]
+    },
+    "referenceBooks": [
+      {
+        "sr": 1,
+        "title": "Python for data science for dummies",
+        "author": "John Paul Mueller, Luca Massaron",
+        "publication": "Wiley",
+        "amazonLink": ""
+      },
+      {
+        "sr": 2,
+        "title": "Programming through Python",
+        "author": "M. T. Savaliya, R. K. Maurya, G. M. Magar",
+        "publication": "STAREDU Solutions",
+        "amazonLink": ""
+      },
+      {
+        "sr": 3,
+        "title": "Pandas for everyone: Python Data Analysis",
+        "author": "Daniel Y. Chen",
+        "publication": "Pearson",
+        "amazonLink": ""
+      },
+      {
+        "sr": 4,
+        "title": "Introducing Data Science: Big Data, Machine Learning, and More, Using Python Tools",
+        "author": "Davy Cielen, Arno D.B. Meysman, Mohamed Ali",
+        "publication": "",
+        "amazonLink": ""
+      },
+      {
+        "sr": 5,
+        "title": "Applied Data Science with Python and Jupyter",
+        "author": "Alex Galea",
+        "publication": "Packt",
+        "amazonLink": ""
+      },
+      {
+        "sr": 6,
+        "title": "Data Analytics",
+        "author": "Anil Maheshwari",
+        "publication": "McGrawHill",
+        "amazonLink": ""
+      },
+      {
+        "sr": 7,
+        "title": "Data Science From Scratch: First Principles with Python",
+        "author": "Joel Grus",
+        "publication": "O'REILLY",
+        "amazonLink": ""
+      },
+      {
+        "sr": 8,
+        "title": "Star Data Science Specialist",
+        "author": "STAR CERTIFICATION",
+        "publication": "",
+        "amazonLink": ""
+      }
+    ],
+    "courseOutcome": [
+      {
+        "sr": "CO-1",
+        "coStatement": "Apply various Python data structures to effectively manage various types of data.",
+        "marksWeightage": 20
+      },
+      {
+        "sr": "CO-2",
+        "coStatement": "Explore various steps of data science pipeline with the role of Python.",
+        "marksWeightage": 15
+      },
+      {
+        "sr": "CO-3",
+        "coStatement": "Design applications applying various operations for data cleansing and transformation.",
+        "marksWeightage": 30
+      },
+      {
+        "sr": "CO-4",
+        "coStatement": "Use various data visualization tools for effective interpretations and insights of data.",
+        "marksWeightage": 15
+      },
+      {
+        "sr": "CO-5",
+        "coStatement": "Perform data Wrangling with Scikit-learn applying exploratory data analysis.",
+        "marksWeightage": 20
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Computer Graphics",
+    "studyMaterial": [
+      {
+        "unit": "Unit-1",
+        "presentation": " Basic of Computer Graphics",
+        "link": "https://drive.google.com/file/d/1t4YChfaNg6PoqnzKCt8pW4UMkWPh5q15"
+      },
+      {
+        "unit": "Unit-2",
+        "presentation": ": Graphics Primitives",
+        "link": "https://drive.google.com/file/d/1X1TkPNQgpshYvvjMXTA3tzfDoxwftoBY"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": " 2D transformation and viewing",
+        "link": "https://drive.google.com/file/d/1GGUn3qgI26DGpq2tVxuO7HgrIRGVxyfi"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": " 3D concepts and object representation",
+        "link": "https://drive.google.com/file/d/1_VpNpPxTkdbZ-aJ8eiCpJn7D13aKV1Is"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": " 3D transformation and viewing",
+        "link": "https://drive.google.com/file/d/1j2FYmRjP-rVZ40_CW8smacwheNXtTriE"
+      },
+      {
+        "unit": "Unit-6",
+        "presentation": " Advance topics",
+        "link": "https://drive.google.com/file/d/1-Jhc9-Q9m-5rA6rImhc5dNvS84weDHuk"
+      }
+    ],
+    "syllabusContent": {
+      "teachingScheme": [
+        {
+          "theory": 3,
+          "tutorial": 0,
+          "practical": 2,
+          "total": 5
+        }
+      ],
+      "examinationScheme": [
+        {
+          "theory": 70,
+          "eseTheory": 70,
+          "paPractical": 30,
+          "eseViva": 20,
+          "paI": 10,
+          "total": 150
+        }
+      ],
+      "syllabusContent": [
+        {
+          "unit": "Unit-1: Basic of Computer Graphics",
+          "content": "Basic of Computer Graphics, Applications of computer graphics, Display devices, Random and Raster scan systems, Graphics input devices, Graphics software and standards"
+        },
+        {
+          "unit": "Unit-2: Graphics Primitives",
+          "content": "Points, lines, circles and ellipses as primitives, scan conversion algorithms for primitives, Fill area primitives including scan-line polygon filling, inside-outside test, boundary and flood-fill, character generation, line attributes, area-fill attributes, character attributes."
+        },
+        {
+          "unit": "Unit-3: 2D transformation and viewing",
+          "content": "Transformations (translation, rotation, scaling), matrix representation, homogeneous coordinates, composite transformations, reflection and shearing, viewing pipeline and coordinates system, window-to-viewport transformation, clipping including point clipping, line clipping (cohen-sutherland, liang- bersky, NLN), polygon clipping"
+        },
+        {
+          "unit": "Unit-4: 3D concepts and object representation",
+          "content": "3D display methods, polygon surfaces, tables, equations, meshes, curved lies and surfaces, quadric surfaces, spline representation, cubic spline interpolation methods, Bazier curves and surfaces, B-spline curves and surfaces"
+        },
+        {
+          "unit": "Unit-5: 3D transformation and viewing",
+          "content": "3D scaling, rotation and translation, composite transformation, viewing pipeline and coordinates, parallel and perspective transformation, view volume and general (parallel and perspective) projection transformations"
+        },
+        {
+          "unit": "Unit-6: Advance topics",
+          "content": "Visible surface detection concepts, back-face detection, depth buffer method, illumination, light sources, illumination methods (ambient, diffuse reflection, specular reflection), Color models: properties of light, XYZ, RGB, YIQ and CMY color models"
+        }
+      ]
+    },
+    "referenceBooks": [
+      {
+        "sr": 1,
+        "title": "Computer Graphics",
+        "author": "D.Hearn And P.Baker",
+        "publication": "Pearson Eduction",
+        "amazonLink": ""
+      },
+      {
+        "sr": 2,
+        "title": "Computer Graphics, with OpenGL",
+        "author": "Hearn and Baker",
+        "publication": "Pearson",
+        "amazonLink": ""
+      },
+      {
+        "sr": 3,
+        "title": "Computer Graphics",
+        "author": "Sinha & Udai",
+        "publication": "TMH",
+        "amazonLink": ""
+      },
+      {
+        "sr": 4,
+        "title": "Computer Graphics",
+        "author": "Foley and van Dam",
+        "publication": "Person Education",
+        "amazonLink": ""
+      }
+    ],
+    "courseOutcome": [
+      {
+        "sr": 1,
+        "coStatement": "To understand the basic computer graphics primitives as well as able to implement them.",
+        "marksWeightage": 15
+      },
+      {
+        "sr": 2,
+        "coStatement": "To learn, compare and apply various transformation techniques.",
+        "marksWeightage": 17
+      },
+      {
+        "sr": 3,
+        "coStatement": "To design basic animations using latest graphics package software.",
+        "marksWeightage": 25
+      },
+      {
+        "sr": 4,
+        "coStatement": "Students will be able to solve open design problems regarding surface and edge detection.",
+        "marksWeightage": 25
+      },
+      {
+        "sr": 5,
+        "coStatement": "Students will be able to apply the knowledge, techniques, skills and modern tools to become successful professionals in graphics industries.",
+        "marksWeightage": 18
       }
     ]
   }

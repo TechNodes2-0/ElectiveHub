@@ -86,8 +86,9 @@ const cancelDelete = () => {
 };
 
 return (
-  <div className="flex flex-col items-center bg-gray-900">
-    <h1 className="text-2xl font-bold mb-4 text-white">Elective Subjects</h1>
+  <div className="flex flex-col items-center bg-gray-900 min-h-screen">
+    <div className="py-10">
+    <h1 className="text-2xl font-bold mb-4 text-white text-center">Elective Subjects</h1>
     <div className="mb-4 ml-3">
       <div className="relative">
         <input
@@ -107,11 +108,13 @@ return (
       </div>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-5">
       {filteredSubjects.map((subject) => (
         <div
           key={subject.subjectCode}
-          className="border-2 border-white cursor-pointer p-4 rounded text-white mr-2 ml-2"
+          className="border-2 rounded-lg border-gray-500 cursor-pointer p-4 text-white mr-2 ml-2 transition duration-200 hover:scale-105"
         >
           <h2 className="text-lg font-bold mb-2">{subject.subjectName}</h2>
           <p className="text-gray-500 mb-4">{subject.subjectCode}</p>
@@ -119,18 +122,18 @@ return (
           <div className="mt-4">
             <Link
               to={`/editsubject/${subject.subjectCode}`}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-blue-500 text-white px-3 py-2 rounded mr-2"
             >
               Edit
             </Link>
             <Link
               to={`/add-student-to-subject/${subject._id}`}
-              className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-green-500 text-white px-3 py-2 rounded mr-2"
             >
               View Students
             </Link>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded"
+              className="bg-red-500 text-white px-3 py-2 rounded"
               onClick={() => handleDelete(subject)}
               data-modal-toggle="popup-modal"
             >

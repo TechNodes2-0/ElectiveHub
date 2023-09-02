@@ -79,8 +79,9 @@ const cancelDelete = () => {
 
 return (
   <>
-    <div className="flex flex-col items-center">
-      <h2 className="text-2xl font-bold mb-4 text-black text-center">
+    <div className="flex flex-col items-center bg-gray-900">
+      <div className="py-10">
+      <h2 className="text-2xl font-bold mb-4 text-white text-center">
         Student List
       </h2>
       <div className="mb-4 ml-3">
@@ -101,11 +102,13 @@ return (
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 px-2">
         {filteredStudents.map((student) => (
           <div
             key={student.id}
-            className="bg-gray-800 border-blue-500 border-2 border-solid rounded shadow p-4 flex flex-col justify-between text-white"
+            className="bg-gray-800 border-blue-500 border-2 border-solid rounded-lg tarnsition duration-200 hover:scale-105 shadow p-4 flex flex-col justify-between text-white"
           >
             <div>
               <h3 className="text-lg font-medium">{student.name}</h3>

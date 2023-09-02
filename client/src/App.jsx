@@ -113,6 +113,15 @@ function App() {
         />
         <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
+        <Route
+          path="/subject-video"
+          element={
+            <>
+              <Navbar />
+              <StudentVideo />
+            </>
+          }
+        />
       </Routes>
       <Footer />
     </>
