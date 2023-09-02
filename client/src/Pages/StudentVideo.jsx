@@ -5,9 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import Cookies from "universal-cookie";
-
-import SubjectNavbar from '../Components/SubjectNavbar';
-import SubjectList from '../Components/Subject/SubjectList'
 import VideoPage from '../Components/VideoPage';
 
 export default function StudentVideo() {
@@ -36,7 +33,6 @@ export default function StudentVideo() {
           const { status, user } = response.data;
 
           if (status && user) {
-            // alert(user.username);
             console.log(user.username);
             setUsername(user.username);
           } else {

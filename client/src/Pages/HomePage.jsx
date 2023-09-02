@@ -7,7 +7,7 @@ import FAQ from "../Components/FAQ";
 
 export default function Homepage() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar></Navbar>
       <section class="bg-white dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
