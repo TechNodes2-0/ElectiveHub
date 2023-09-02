@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import "./TimelineLearningPath.css";
 const DataScienceTimeline = () => {
@@ -10,10 +12,10 @@ const DataScienceTimeline = () => {
     <>
       {/* component */}
       <section>
-        <div className="bg-black text-white py-8">
+        <div className="bg-gray-900 text-white py-8">
           <div className="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
             <div className="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
-              <p className="ml-2 text-yellow-300 uppercase tracking-loose">
+              <p className="ml-2 text-blue-500 uppercase tracking-loose">
                 Learning Path 🔥🔥🔥
               </p>
               <p className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
@@ -26,7 +28,7 @@ const DataScienceTimeline = () => {
               </p>
               <a
                 href="#"
-                className="bg-transparent mr-auto hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
+                className="bg-transparent mr-auto hover:bg-blue-500 text-blue-500 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-blue-500 hover:border-transparent"
               >
                 Explore Now
               </a>
@@ -35,25 +37,25 @@ const DataScienceTimeline = () => {
               <div className="container mx-auto w-full h-full">
                 <div className="relative wrap overflow-hidden p-10 h-full">
                   <div
-                    className="border-2-2 border-yellow-555 absolute h-full border"
+                    className="border-2-2 border-blue-555 absolute h-full border"
                     style={{
                       right: "50%",
-                      border: "2px solid #FFC100",
+                      border: "2px solid #4299e1",
                       borderRadius: "1%",
                     }}
                   />
                   <div
-                    className="border-2-2 border-yellow-555 absolute h-full border"
+                    className="border-2-2 border-blue-555 absolute h-full border"
                     style={{
                       left: "50%",
-                      border: "2px solid #FFC100",
+                      border: "2px solid #4299e1",
                       borderRadius: "1%",
                     }}
                   />
                   <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                     <div className="order-1 w-5/12" />
                     <div className="order-1 w-5/12 px-1 py-4 text-right">
-                      <div className="mb-3 text-base text-yellow-300">
+                      <div className="mb-3 text-base text-blue-500">
                         Step 1:
                       </div>
                       <h4 className="mb-3 font-bold text-lg md:text-2xl">
@@ -62,7 +64,7 @@ const DataScienceTimeline = () => {
                           Programming{" "}
                         </span>
                       </h4>
-                      <div className="mb-3 font-bold text-lg md:text-2xl mt-4 text-yellow-300">
+                      <div className="mb-3 font-bold text-lg md:text-2xl mt-4 text-blue-500">
                         Programming Topics to Learn:
                       </div>
                       <button
@@ -119,7 +121,7 @@ const DataScienceTimeline = () => {
                   <div className="mb-8 flex justify-between items-center w-full right-timeline">
                     <div className="order-1 w-5/12" />
                     <div className="order-1  w-5/12 px-1 py-4 text-left">
-                      <p className="mb-3 text-base text-yellow-300">
+                      <p className="mb-3 text-base text-blue-500">
                         6-9 May, 2021
                       </p>
                       <h4 className="mb-3 font-bold text-lg md:text-2xl">
@@ -135,7 +137,7 @@ const DataScienceTimeline = () => {
                   <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                     <div className="order-1 w-5/12" />
                     <div className="order-1 w-5/12 px-1 py-4 text-right">
-                      <p className="mb-3 text-base text-yellow-300">
+                      <p className="mb-3 text-base text-blue-500">
                         {" "}
                         10 May, 2021
                       </p>
@@ -153,7 +155,7 @@ const DataScienceTimeline = () => {
                   <div className="mb-8 flex justify-between items-center w-full right-timeline">
                     <div className="order-1 w-5/12" />
                     <div className="order-1  w-5/12 px-1 py-4">
-                      <p className="mb-3 text-base text-yellow-300">
+                      <p className="mb-3 text-base text-blue-500">
                         12 May, 2021
                       </p>
                       <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
