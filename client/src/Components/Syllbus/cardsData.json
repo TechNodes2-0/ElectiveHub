@@ -1,22 +1,23 @@
 [
   {
-
-    "id":1,
+    "id": 1,
     "title": "Cyber Security",
     "content": "Sem-1",
     "linkText": "Link",
     "linkUrl": "#"
   },
   {
-    "title": "Card 2 Title",
-    "content": "Content for Card 2",
-    "linkText": "Card 2 Link",
+    "id": 2,
+    "title": "Python for Data Science",
+    "content": "sem-5",
+    "linkText": "Link",
     "linkUrl": "#"
   },
   {
-    "title": "Card 2 Title",
-    "content": "Content for Card 2",
-    "linkText": "Card 2 Link",
+    "id": 3,
+    "title": "Computer Graphics",
+    "content": "sem-5",
+    "linkText": "Link",
     "linkUrl": "#"
   }
 ]
