@@ -7,7 +7,6 @@ export default function SyllbusInfo() {
   return (
     <div>
       <Navbar />
-
       <Info />
     </div>
   );

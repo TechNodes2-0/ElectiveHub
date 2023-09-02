@@ -1,6 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
+import syllabusData from "./syllabusData.json"; // Import the JSON data
 
 export default function Info() {
   const [activeTab, setActiveTab] = useState("study-material");
@@ -11,8 +12,8 @@ export default function Info() {
 
   return (
     <div>
-      <div className="border shadow-sm ">
-        <div className="flex flex-col bg-white border shadow-sm  dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
+      <div className="border shadow-sm">
+        <div className="flex flex-col bg-white border shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:shadow-slate-700/[.7]">
           <div className="bg-gray-100 border-b rounded-t-xl pt-3 px-4 md:pt-4 md:px-5 dark:bg-slate-800 dark:border-gray-700">
             <nav className="flex space-x-2" aria-label="Tabs">
               <a
@@ -41,6 +42,7 @@ export default function Info() {
             </nav>
           </div>
           <div className="p-4 text-left md:py-7 md:px-5">
+            {/* Study Material section */}
             {activeTab === "study-material" && (
               <div>
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">
@@ -52,40 +54,19 @@ export default function Info() {
                   </h4>
                   <br />
                   <ul className="list-disc list-inside list-none">
-                    <li>
-                      <a
-                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 "
-                        href="google.com"
-                        title="Presentation 1 | Unit-1"
-                        target="_blank"
-                      >
-                        <b>Unit-1</b> | Presentation 1
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-4">
-                  <h4 className="text-md font-semibold text-gray-700 dark:text-gray-300">
-                    Presentations
-                  </h4>
-                  <div className="mt-4">
-                    <h4 className="text-md font-semibold text-gray-700 dark:text-gray-300">
-                      e-Notes
-                    </h4>
-                    <br />
-                    <ul className="list-disc list-inside list-none">
-                      <li>
+                    {syllabusData.studyMaterial.map((item, index) => (
+                      <li key={index} className="mb-6">
                         <a
-                          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 "
-                          href="google.com"
-                          title="Presentation 1 | Unit-1"
+                          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                          href={item.link}
+                          title={`Presentation 1 | ${item.unit}`}
                           target="_blank"
                         >
-                          <b>Unit-1</b> | Presentation 1
+                          <b>{item.unit}</b> | {item.presentation}
                         </a>
                       </li>
-                    </ul>
-                  </div>
+                    ))}
+                  </ul>
                 </div>
               </div>
             )}
@@ -144,7 +125,6 @@ export default function Info() {
                           80
                         </td>
                       </tr>
-                      {/* Add more rows for other subjects */}
                     </tbody>
                   </table>
                 </div>
@@ -216,7 +196,6 @@ export default function Info() {
                           285
                         </td>
                       </tr>
-                      {/* Add more rows for other subjects */}
                     </tbody>
                   </table>
                   <br />
@@ -227,19 +206,18 @@ export default function Info() {
                     </h2>
                     <br />
                     <div>
-                      <h5 className=" text-gray-800 dark:text-white  font-sans">
-                        Unit-1: Systems Vulnerability Scanning
-                      </h5>
-                      <p className="mt-2 text-gray-800 dark:text-gray-400">
-                        Overview of vulnerability scanning, Open Port / Service
-                        Identification, Banner / Version Check, Traffic Probe,
-                        Vulnerability Probe, Vulnerability Examples, OpenVAS,
-                        Metasploit. Networks Vulnerability Scanning - Netcat,
-                        Socat, understanding Port and Services tools - Datapipe,
-                        Fpipe, WinRelay, Network Reconnaissance – Nmap, THC-Amap
-                        and System tools. Network Sniffers and Injection tools –
-                        Tcpdump and Windump, Wireshark, Ettercap, Hping Kismet
-                      </p>
+                      {syllabusData.syllabusContent.syllabusContent.map(
+                        (content, index) => (
+                          <div key={index}>
+                            <h5 className="text-gray-800 dark:text-white font-sans">
+                              {content.unit}
+                            </h5>
+                            <p className="mt-2 text-gray-800 dark:text-gray-400">
+                              {content.content}
+                            </p>
+                          </div>
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -265,35 +243,31 @@ export default function Info() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td className="p-2 border border-gray-300">1</td>
-                        <td className="p-2 border border-gray-300">
-                          Anti-Hacker Tool Kit
-                        </td>
-                        <td className="p-2 border border-gray-300">
-                          Mike Shema
-                        </td>
-                        <td className="p-2 border border-gray-300">
-                          Publication Mc Graw Hill.
-                        </td>
-                        <td className="p-2 border border-gray-300">
-                          <a href="#">Amazon Link</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="p-2 border border-gray-300">2</td>
-                        <td className="p-2 border border-gray-300">
-                          Cyber Security Understanding Cyber Crimes, Computer
-                          Forensics and Legal Perspectives
-                        </td>
-                        <td className="p-2 border border-gray-300">
-                          Nina Godbole and Sunit Belpure
-                        </td>
-                        <td className="p-2 border border-gray-300">Wiley</td>
-                        <td className="p-2 border border-gray-300">
-                          <a href="#">Amazon Link</a>
-                        </td>
-                      </tr>
+                      {syllabusData.referenceBooks.map((book, index) => (
+                        <tr key={index}>
+                          <td className="p-2 border border-gray-300">
+                            {book.sr}
+                          </td>
+                          <td className="p-2 border border-gray-300">
+                            {book.title}
+                          </td>
+                          <td className="p-2 border border-gray-300">
+                            {book.author}
+                          </td>
+                          <td className="p-2 border border-gray-300">
+                            {book.publication}
+                          </td>
+                          <td className="p-2 border border-gray-300">
+                            <a
+                              href={book.amazonLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Amazon Link
+                            </a>
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
