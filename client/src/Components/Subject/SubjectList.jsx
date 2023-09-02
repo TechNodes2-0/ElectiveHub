@@ -58,7 +58,7 @@ const handleDelete = (subject) => {
 const confirmDelete = async () => {
   try {
     await axios.delete(
-      `${import.meta.env.VITE_API_URL}/deleteSubject/${selectedSubject.subjectCode}`,
+      `${import.meta.env.VITE_API_URL}/subject/deleteSubject/${selectedSubject.subjectCode}`,
       {
 
         headers: {

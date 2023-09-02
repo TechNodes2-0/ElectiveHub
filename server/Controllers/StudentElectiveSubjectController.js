@@ -1,6 +1,8 @@
-const StudentElectiveSubject =require('../Models/StudentElectiveSubjectModel')
-const ElectiveSubject = require('../Models/ElectiveSubjectModel');
-const Student = require("../Models/StudentModel");
+
+
+const StudentElectiveSubject =require('../Models/StudentElectiveSubjectModel');
+
+const{ Student,ElectiveSubject} = require("../Models/StudentModel");
 
 exports.addElectiveSubjectToStudent = async (req, res) => {
     try {
@@ -48,7 +50,7 @@ exports.addElectiveSubjectToStudent = async (req, res) => {
   // Get all elective subjects for a student
   exports.getElectiveSubjectsForStudent = async (req, res) => {
     try {
-        console.log("kgkhgukgbkgvjjkgj---------------->");
+        
       const { id } = req.params;
       
       const student = await Student.findOne({_id:id});

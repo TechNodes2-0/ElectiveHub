@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
-
 import axios from 'axios'
 import { useContext } from "react";
 import { AuthContext } from "./Auth/AuthContext";
-
-import axios from "axios";
-
-
 export default function Navbar() {
   const cookies = new Cookies();
   const { token,isLoggedIn,logout } = useContext(AuthContext);
@@ -26,9 +21,7 @@ export default function Navbar() {
 
         const { status, user } = response.data;
         if (user) {
-
           console.log(user);
-
           setUsername(user.username);
         }
       } catch (error) {
@@ -49,16 +42,16 @@ export default function Navbar() {
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center">
+          <a href="#" className="flex items-center">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
               className="h-8 mr-3"
               alt="subject Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              ElectiChoice
+              Elective Subject Selector and Manager
             </span>
-          </Link>
+          </a>
           <button
             data-collapse-toggle="navbar-dropdown"
             type="button"

@@ -1,13 +1,11 @@
-import React from "react";
-import { Outlet, useLocation, Link } from "react-router-dom";
-import Error from "../Components/Error";
-import Navbar from "../Components/Navbar";
-import Cookies from "universal-cookie";
+import React from 'react';
+import { Outlet, useLocation, Link } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 export default function PrivateRoutes() {
   try {
     const cookies = new Cookies();
-    const token = cookies.get("TOKEN");
+    const token = cookies.get('TOKEN');
     // alert("Checking");
     if (token) {
       // alert(token);
@@ -15,14 +13,16 @@ export default function PrivateRoutes() {
     } else {
       const location = useLocation();
       return (
-        <div className="h-full">
-          <Navbar />
-          <Error></Error>
+        <div>
+          <p>You need to log in to access this page.</p>
+          <Link to={{ pathname: '/login', state: { from: location } }}>
+            Go to Login
+          </Link>
         </div>
       );
     }
   } catch (error) {
-    console.error("Error in PrivateRoutes:", error);
+    console.error('Error in PrivateRoutes:', error);
     // Render fallback UI or error message
     return <p>Oops! Something went wrong.</p>;
   }
