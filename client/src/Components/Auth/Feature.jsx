@@ -16,7 +16,7 @@ export default function Feature() {
           <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300"></p>
 
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ export default function Feature() {
               </Link>
             </div>
 
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ export default function Feature() {
               </Link>
             </div>
 
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl  transition duration-200 hover:scale-105">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
