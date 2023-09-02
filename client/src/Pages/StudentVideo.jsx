@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import VideoPage from '../Components/VideoPage';
+import VideoPage from '../Components/SubjectVideo/VideoPage';
 
 export default function StudentVideo() {
   const cookies = new Cookies();

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import { AuthContext } from "./Auth/AuthContext";
+import { AuthContext } from "../Auth/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import VideoData from "./VideoData.json"
 
 const VideoPage = () => {
   const { token } = useContext(AuthContext);
@@ -63,7 +64,30 @@ const VideoPage = () => {
       </div>
 
       <div className="flex flex-col justify-start items-start w-full">
-        {filteredSubjects.map((subject) => (
+      {Object.keys(VideoData).map(subjectName => (
+        <div key={subjectName} className="border-0 border-white cursor-pointer p-4 rounded text-white mx-auto ">
+          <div className="my-2">
+            <h2 className="text-lg font-bold">{subjectName}</h2>
+            <p className="text-gray-500">{VideoData[subjectName]["Subject Code"]}</p>
+          </div>
+          <div className="bg-slate-700 border-0  rounded-xl flex flex-wrap">
+            {VideoData[subjectName]["links"].map((link, index) => (
+              <div className="m-4" key={index}>
+              <iframe
+                width="360"
+                height="215"
+                src={link.url}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            ))}
+          </div>
+        </div>
+      ))}
+        {/* {VideoData.map((subject) => (
           <div
             key={subject.subjectCode}
             className="border-0 border-white cursor-pointer p-4 rounded text-white mx-auto "
@@ -109,7 +133,7 @@ const VideoPage = () => {
                 </div>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

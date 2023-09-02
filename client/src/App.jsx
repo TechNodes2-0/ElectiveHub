@@ -87,15 +87,7 @@ function App() {
         ></Route>
 
         {/* Enter routes from here Yash Suthar */}
-        <Route
-          path="/subject-video"
-          element={
-            <>
-              <Navbar />
-              <StudentVideo />
-            </>
-          }
-        />
+        
         <Route
           path="/LearningPath"
           element={
@@ -110,6 +102,11 @@ function App() {
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
+        <Route path="/subject-video" element={
+            <>
+              <Navbar />
+              <StudentVideo />
+            </> } />
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
       </Routes>
       <Footer />

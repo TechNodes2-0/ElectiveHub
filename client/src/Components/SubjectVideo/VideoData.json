@@ -1,0 +1,26 @@
+{
+    "Data Mining": {
+      "Subject Code": "CS001004",
+      "links": [
+        { "url": "https://www.youtube.com/embed/xEmrFePGjEg?si=YgNxoS-cCTqHqVXx" },
+        { "url": "https://www.youtube.com/embed/YCBMSg9Ogx8?si=Jsmt8NSHHScU3ZnJ" },
+        { "url": "https://www.youtube.com/embed/NntemRFHvBg?si=BtH-SHAQ1jxq4PMk" }
+      ]
+    },
+    "Cyber Security": {
+      "Subject Code": "CS001006",
+      "links": [
+        { "url": "https://www.youtube.com/embed/hXSFdwIOfnE?si=wSzF_ptNCMPmWX47" },
+        { "url": "https://www.youtube.com/embed/wtF7O89RTTU?si=SsjJM-Je4bTI02Xk" },
+        { "url": "https://www.youtube.com/embed/bMHd4qS2o2w?si=WePY1Eull6CcoYaF" }
+      ]
+    },
+    "Advanced Python": {
+      "Subject Code": "CS001009",
+      "links": [
+        { "url": "https://www.youtube.com/embed/KSiRzuSx120?si=TJ13vyYOO95tINWv" },
+        { "url": "https://www.youtube.com/embed/FlmibgSC_PM?si=1Wk0zO6GQ_MfFX-e" },
+        { "url": "https://www.youtube.com/embed/7wnove7K-ZQ?si=pfE8vpiUTbpkNog7" }
+      ]
+    }
+  }
