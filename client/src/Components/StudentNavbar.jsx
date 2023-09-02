@@ -13,7 +13,7 @@ const StudentNavbar = () => {
               alt="Student Icon"
               className="h-6 w-6 mr-2"
             />
-            <Link to="/" className="text-white font-bold text-lg">
+            <Link to="/Student" className="text-white font-bold text-lg">
               Student App
             </Link>
           </div>
