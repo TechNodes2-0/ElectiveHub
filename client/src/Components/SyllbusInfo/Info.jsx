@@ -3,13 +3,20 @@
 import React, { useState } from "react";
 import syllabusData from "./syllabusData.json"; // Import the JSON data
 
-export default function Info() {
+export default function Info({id}) {
   const [activeTab, setActiveTab] = useState("study-material");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+  
+  const selectedCard = syllabusData.find((card) => card.id === parseInt(id));
 
+if (selectedCard) {
+  console.log(selectedCard);
+} else {
+  console.log("Card not found");
+}
   return (
     <div>
       <div className="border shadow-sm">
@@ -25,7 +32,7 @@ export default function Info() {
                 href="#"
                 onClick={() => handleTabClick("study-material")}
               >
-                Study Material
+                Study Material of   Study Material of   {selectedCard.title}
               </a>
 
               <a
@@ -37,7 +44,7 @@ export default function Info() {
                 href="#"
                 onClick={() => handleTabClick("syllabus")}
               >
-                Syllabus
+                Syllabus  of   {selectedCard.title}
               </a>
             </nav>
           </div>
@@ -46,7 +53,7 @@ export default function Info() {
             {activeTab === "study-material" && (
               <div>
                 <h3 className="text-lg font-bold text-gray-800 dark:text-white">
-                  Study Material
+                  Study Material 
                 </h3>
                 <div className="mt-4">
                   <h4 className="text-md font-semibold text-gray-700 dark:text-gray-300">
@@ -54,7 +61,7 @@ export default function Info() {
                   </h4>
                   <br />
                   <ul className="list-disc list-inside list-none">
-                    {syllabusData.studyMaterial.map((item, index) => (
+                    {selectedCard.studyMaterial.map((item, index) => (
                       <li key={index} className="mb-6">
                         <a
                           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2.5 py-1.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
@@ -206,7 +213,7 @@ export default function Info() {
                     </h2>
                     <br />
                     <div>
-                      {syllabusData.syllabusContent.syllabusContent.map(
+                      {selectedCard.syllabusContent.syllabusContent.map(
                         (content, index) => (
                           <div key={index}>
                             <h5 className="text-gray-800 dark:text-white font-sans">
@@ -243,7 +250,7 @@ export default function Info() {
                       </tr>
                     </thead>
                     <tbody>
-                      {syllabusData.referenceBooks.map((book, index) => (
+                      {selectedCard.referenceBooks.map((book, index) => (
                         <tr key={index}>
                           <td className="p-2 border border-gray-300">
                             {book.sr}

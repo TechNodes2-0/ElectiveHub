@@ -110,6 +110,7 @@ function App() {
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
+        <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
       </Routes>
       <Footer />

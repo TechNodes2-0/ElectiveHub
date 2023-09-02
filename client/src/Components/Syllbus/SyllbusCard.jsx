@@ -27,6 +27,7 @@ export default function SyllabusCard() {
               content={card.content}
               linkText={card.linkText}
               linkUrl={card.linkUrl}
+              id={card.id}
             />
           ))}
         </div>
