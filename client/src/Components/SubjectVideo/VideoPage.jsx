@@ -72,8 +72,9 @@ const VideoPage = () => {
           </div>
           <div className="bg-slate-700 border-0  rounded-xl flex flex-wrap">
             {VideoData[subjectName]["links"].map((link, index) => (
-              <div className="m-4" key={index}>
+              <div className="m-6" key={index}>
               <iframe
+              className="transition duration-200 hover:scale-105"
                 width="360"
                 height="215"
                 src={link.url}
