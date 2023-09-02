@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Card 1 Title",
+    "content": "Content for Card 1",
+    "linkText": "Card 1 Link",
+    "linkUrl": "#"
+  },
+  {
+    "title": "Card 2 Title",
+    "content": "Content for Card 2",
+    "linkText": "Card 2 Link",
+    "linkUrl": "#"
+  },
+  {
+    "title": "Card 2 Title",
+    "content": "Content for Card 2",
+    "linkText": "Card 2 Link",
+    "linkUrl": "#"
+  }
+]
