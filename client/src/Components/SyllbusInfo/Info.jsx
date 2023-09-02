@@ -32,7 +32,7 @@ if (selectedCard) {
                 href="#"
                 onClick={() => handleTabClick("study-material")}
               >
-                Study Material of   Study Material of   {selectedCard.title}
+                Study Material of   {selectedCard.title}
               </a>
 
               <a
