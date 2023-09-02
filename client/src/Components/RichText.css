@@ -1,0 +1,56 @@
+/**
+ * Home.css
+ *
+ * @format
+ */
+
+.github-readme {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+}
+
+.github-readme-content {
+  line-height: 1.6;
+  font-size: 16px;
+  color: #24292e;
+  user-select: text;
+}
+.github-readme-content:hover {
+  cursor: text;
+}
+.github-readme h1 {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.github-readme h2 {
+  font-size: 24px;
+}
+
+.github-readme h3 {
+  font-size: 20px;
+}
+
+.github-readme p {
+  margin-bottom: 16px;
+}
+
+/* Code block styling */
+.github-readme pre {
+  margin: 0;
+  padding: 16px;
+  overflow: auto;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.github-readme code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 14px;
+  color: #24292e;
+}

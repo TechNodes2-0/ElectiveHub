@@ -1,9 +1,9 @@
 [
   {
-    "title": "Card 1 Title",
-    "content": "Content for Card 1",
-    "linkText": "Card 1 Link",
-    "linkUrl": "#"
+    "title": "Cloud Computing",
+    "content": "Sem-1",
+    "linkText": "Link",
+    "linkUrl": "/SujectInfo"
   },
   {
     "title": "Card 2 Title",

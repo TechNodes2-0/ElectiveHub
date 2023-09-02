@@ -8,6 +8,7 @@ const StudentRoute = require("./Routes/StudentRoutes");
 const SubjectRoute = require('./Routes/SubjectRoutes');
 const StudentElectiveSubjectRoute = require('./Routes/StudentElectiveSubjectRoutes');
 const { authMiddleware } = require("./Middleware/AuthMiddleware");
+const axios =require('axios')
 
 require("dotenv").config();
 const { MONGO_URL, PORT } = process.env;
@@ -56,6 +57,34 @@ app.use("/subject", authMiddleware(["admin", "user"]), SubjectRoute);
 app.get("/yaae", authMiddleware(["admin", "user"]), (req, res) => {
   res.json({ status: true, user: req.user });
 });
+
+app.post("/subscribe-newsletter", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const publicationId = "64f31498352b1c82180c69aa"; // Your publication ID
+    console.log(email);
+    console.log(publicationId);
+    // Make the API call to subscribe to the newsletter
+    const response = await axios.post(
+      "https://electivehub.hashnode.dev/api/newsletter/subscribe",
+      {
+        email,
+        publicationId,
+      }
+    );
+console.log(response);
+    // Handle the response from the API call
+    if (response.status === 200) {
+      res.status(200).json({ message: "Subscribed to the newsletter successfully!" });
+    } else {
+      res.status(500).json({ error: "Error subscribing to the newsletter" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Error subscribing to the newsletter" });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
