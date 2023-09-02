@@ -30,6 +30,7 @@ import AdminRoutes from "./Pages/AdminRoutes";
 import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
 import StudentVideo from "./Pages/StudentVideo";
+import Disscussion from "./Pages/Disscussion";
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -102,6 +103,7 @@ function App() {
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
+        <Route path="/Disscussion" element={<Disscussion />}></Route>
         <Route
           path="/subject-video"
           element={
