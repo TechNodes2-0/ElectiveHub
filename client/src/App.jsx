@@ -29,6 +29,7 @@ import StudentsForSubject from "./Components/Subject/StudentsForSubject";
 import AdminRoutes from "./Pages/AdminRoutes";
 
 import AlanAIComponent from "./alan";
+import StudentVideo from "./Pages/StudentVideo";
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -84,6 +85,21 @@ function App() {
             </>
           }
         ></Route>
+
+          {/* Enter routes from here Yash Suthar */}
+      <Route
+          path="/subject-video"
+          element={
+            <>
+            <Navbar />
+            <StudentVideo />
+
+            </>
+          }
+       / >
+
+
+{/* This is end1 */}
         <Route path="/add-student" element={<StudentForm />}></Route>
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
