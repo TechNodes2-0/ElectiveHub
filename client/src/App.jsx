@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -8,6 +10,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
 import Signup from "./Components/Auth/Signup";
+import Syllbus from "./Components/Syllbus/Syllbus";
 import ProtectedRoutes from "./Pages/ProtectedRoutes";
 import PrivateRoutes from "./Pages/PrivateRoutes";
 import ErrorBoundary from "./Pages/ErrorBoundary";
@@ -26,17 +29,13 @@ import AdminRoutes from "./Pages/AdminRoutes";
 
 import AlanAIComponent from "./alan";
 function App() {
-  
-
   // const token = cookies.get("TOKEN");
   return (
     <>
-    <AlanAIComponent/>
-    {/* <h1>{import.meta.env.VITE_API_URL}</h1> */}
+      <AlanAIComponent />
+      {/* <h1>{import.meta.env.VITE_API_URL}</h1> */}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-
-
 
         <Route element={<PrivateRoutes />}>
           <Route
@@ -48,19 +47,24 @@ function App() {
               </>
             }
           ></Route>
-          <Route   element={<AdminRoutes/>}>
-      
-          <Route path="/add-subject" element={<SubjectForm />}></Route>
-        <Route path="/editsubject/:id" element={<EditSubject />}></Route>
-        <Route path="/edit-student-subject/:studentId/:electiveSubjectId" element={<EditStudentSubject />}></Route>
-        <Route path="/add-subject-to-student/:id" element={<StudentSubject/>}></Route>
-        <Route path="/add-student-to-subject/:id" element={<StudentsForSubject/>}></Route>
+          <Route element={<AdminRoutes />}>
+            <Route path="/add-subject" element={<SubjectForm />}></Route>
+            <Route path="/editsubject/:id" element={<EditSubject />}></Route>
+            <Route
+              path="/edit-student-subject/:studentId/:electiveSubjectId"
+              element={<EditStudentSubject />}
+            ></Route>
+            <Route
+              path="/add-subject-to-student/:id"
+              element={<StudentSubject />}
+            ></Route>
+            <Route
+              path="/add-student-to-subject/:id"
+              element={<StudentsForSubject />}
+            ></Route>
           </Route>
           <Route path="Student" element={<StudentHome />}></Route>
-          
         </Route>
-
-
 
         <Route
           path="/Login"
@@ -82,9 +86,7 @@ function App() {
         <Route path="/add-student" element={<StudentForm />}></Route>
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
-      
-  
-
+        <Route path="/Syllbus" element={<Syllbus />}></Route>
       </Routes>
       <Footer />
     </>
