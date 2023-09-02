@@ -29,6 +29,7 @@ import StudentsForSubject from "./Components/Subject/StudentsForSubject";
 import AdminRoutes from "./Pages/AdminRoutes";
 import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
+import Error from "./Components/Error";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Pages/Disscussion";
 function App() {
@@ -115,6 +116,7 @@ function App() {
         />
         <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
+        <Route path="/Error" element={<Error />}></Route>
         <Route
           path="/subject-video"
           element={
