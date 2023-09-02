@@ -66,7 +66,7 @@ export default function Homepage() {
           </div>
           <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/2436/2436636.png"
+              src="https://ouch-cdn2.icons8.com/8987DUcg4_c2_eEtQ9IlNptJGm-bDyiyS3NQSM3cbVs/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODU2/LzI0YmUwMTg1LWY5/MTQtNDc0OC1iMmE5/LWJiYjBjMzk4OTli/MC5wbmc.png"
               alt="mockup"
             />
           </div>
