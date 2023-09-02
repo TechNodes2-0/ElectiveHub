@@ -4,7 +4,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -32,6 +32,7 @@ import AlanAIComponent from "./alan";
 import Error from "./Components/Error";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Pages/Disscussion";
+
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -117,15 +118,9 @@ function App() {
         <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
         <Route path="/Error" element={<Error />}></Route>
-        <Route
-          path="/subject-video"
-          element={
-            <>
-              <Navbar />
-              <StudentVideo />
-            </>
-          }
-        />
+
+        {/* Redirect to the Error route for any unmatched routes */}
+        <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
       <Footer />
     </>
