@@ -2,6 +2,7 @@
 
 // Card.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Card(props) {
   const { title, content, linkText, linkUrl } = props;
@@ -14,9 +15,9 @@ export default function Card(props) {
             {title}
           </h3>
           <p className="mt-2 text-gray-800 dark:text-gray-400">{content}</p>
-          <a
+          <Link
             className="mt-3 inline-flex items-center gap-2 mt-5 text-sm font-medium text-blue-500 hover:text-blue-700"
-            href={linkUrl}
+            to={linkUrl}
           >
             {linkText}
             <svg
@@ -34,7 +35,7 @@ export default function Card(props) {
                 strokeLinecap="round"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
