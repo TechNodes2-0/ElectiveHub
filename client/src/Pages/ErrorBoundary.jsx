@@ -26,7 +26,7 @@ const ErrorBoundary = ({ children }) => {
   if (hasError) {
     // Render fallback UI or error message
     return (
-      <div>
+      <div className='min-h-screen'>
         <h2>Something went wrong.</h2>
         <p>{error && error.toString()}</p>
         <p>Component Stack Error Details: {errorInfo && errorInfo.componentStack}</p>

@@ -79,7 +79,7 @@ export default function StudentHome() {
 
   return (
 
-    <div>
+    <div className='min-h-screen'>
       <StudentNavbar />
       <StudentList token={token} />
 

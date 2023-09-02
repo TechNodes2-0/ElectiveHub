@@ -75,7 +75,7 @@ export default function SubjectHome() {
 
   return (
 
-    <div>
+    <div className='min-h-screen'>
       <SubjectNavbar />
       <SubjectList />
 

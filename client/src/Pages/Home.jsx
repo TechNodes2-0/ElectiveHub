@@ -120,7 +120,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-red-100">
+    <div className="flex justify-center items-center min-h-screen bg-red-100">
       {user && (
         <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Welcome, {user.username}</h2>
