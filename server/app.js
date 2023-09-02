@@ -23,6 +23,7 @@ const allowedOrigins = [
   "http://127.0.0.1:5173",
   "http://localhost:5173",
   "https://elective-subject-selector-pgtl.onrender.com",
+  "https://electivehub.onrender.com"
   // Add more URLs as needed
 ];
 app.use(cookieParser());

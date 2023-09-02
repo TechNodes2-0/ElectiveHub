@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -8,6 +10,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
 import Signup from "./Components/Auth/Signup";
+import Syllbus from "./Components/Syllbus/Syllbus";
 import ProtectedRoutes from "./Pages/ProtectedRoutes";
 import PrivateRoutes from "./Pages/PrivateRoutes";
 import ErrorBoundary from "./Pages/ErrorBoundary";
@@ -25,6 +28,7 @@ import StudentsForSubject from "./Components/Subject/StudentsForSubject";
 import AdminRoutes from "./Pages/AdminRoutes";
 import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
+import StudentVideo from "./Pages/StudentVideo";
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -80,6 +84,17 @@ function App() {
             </>
           }
         ></Route>
+
+        {/* Enter routes from here Yash Suthar */}
+        <Route
+          path="/subject-video"
+          element={
+            <>
+              <Navbar />
+              <StudentVideo />
+            </>
+          }
+        />
         <Route
           path="/LearningPath"
           element={
@@ -88,9 +103,12 @@ function App() {
             </>
           }
         />
+
+        {/* This is end1 */}
         <Route path="/add-student" element={<StudentForm />}></Route>
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
+        <Route path="/Syllbus" element={<Syllbus />}></Route>
       </Routes>
       <Footer />
     </>
