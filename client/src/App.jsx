@@ -27,7 +27,7 @@ import StudentSubject from "./Components/Student/StudentSubject";
 import EditStudentSubject from "./Components/Student/EditStudentSubject";
 import StudentsForSubject from "./Components/Subject/StudentsForSubject";
 import AdminRoutes from "./Pages/AdminRoutes";
-
+import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
 import StudentVideo from "./Pages/StudentVideo";
 function App() {
@@ -86,20 +86,26 @@ function App() {
           }
         ></Route>
 
-          {/* Enter routes from here Yash Suthar */}
-      <Route
+        {/* Enter routes from here Yash Suthar */}
+        <Route
           path="/subject-video"
           element={
             <>
-            <Navbar />
-            <StudentVideo />
-
+              <Navbar />
+              <StudentVideo />
             </>
           }
-       / >
+        />
+        <Route
+          path="/LearningPath"
+          element={
+            <>
+              <Navbar /> <LearningPath />
+            </>
+          }
+        />
 
-
-{/* This is end1 */}
+        {/* This is end1 */}
         <Route path="/add-student" element={<StudentForm />}></Route>
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
