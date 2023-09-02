@@ -72,7 +72,7 @@ export default function StudentVideo() {
 
   return (
 
-    <div>
+    <div className='min-h-screen'>
       <VideoPage />
 
     </div>
