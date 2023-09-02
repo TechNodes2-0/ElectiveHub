@@ -119,18 +119,18 @@ return (
           <div className="mt-4">
             <Link
               to={`/editsubject/${subject.subjectCode}`}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-blue-500 text-white px-3 py-2 rounded mr-2"
             >
               Edit
             </Link>
             <Link
               to={`/add-student-to-subject/${subject._id}`}
-              className="bg-green-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-green-500 text-white px-3 py-2 rounded mr-2"
             >
               View Students
             </Link>
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded"
+              className="bg-red-500 text-white px-3 py-2 rounded"
               onClick={() => handleDelete(subject)}
               data-modal-toggle="popup-modal"
             >
