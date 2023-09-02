@@ -5,13 +5,28 @@
     "studyMaterial": [
       {
         "unit": "Unit-1",
-        "presentation": "Presentation 1",
-        "link": "https://google.com"
+        "presentation": "Systems Vulnerability Scanning",
+        "link": "https://drive.google.com/file/d/1kICtBX5rF7kzCysLp8EuXhEIuC2q7eoH"
       },
       {
         "unit": "Unit-2",
-        "presentation": "Presentation 1",
-        "link": "https://google.com"
+        "presentation": " Network Defense tools",
+        "link": "https://drive.google.com/file/d/1Um1n0RmXC3ctqqh9lgU7tg_TADdVSaM-"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": " Web Application Tools",
+        "link": "https://drive.google.com/file/d/1v9WfaigCVUz9LU-rtyADOA7NcvAv8FAU"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": " Introduction to Cyber Crime and Law",
+        "link": "https://drive.google.com/file/d/1COZJ36dNZZIcATYuxJxF1utaAtd_HjBI"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": "Introduction to Cyber Crime Investigation",
+        "link": "https://drive.google.com/file/d/1U9aCaJ7jFy6qbI8zYedqsv_NINXGndW5"
       }
     ],
     "syllabusContent": {
@@ -39,8 +54,20 @@
           "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
         },
         {
-          "unit": "Unit-2: Systems Vulnerability Scanning",
-          "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+          "unit": "Unit-2: Network Defense tools",
+          "content": "Firewalls and Packet Filters: Firewall Basics, Packet Filter Vs Firewall, How a Firewall Protects a Network, Packet Characteristic to Filter, Stateless Vs Stateful Firewalls, Network Address Translation (NAT) and Port Forwarding, the basic of Virtual Private Networks, Linux Firewall, Windows Firewall, Snort: Introduction Detection System"
+        },
+        {
+          "unit": "Unit-3: Web Application Tools",
+          "content": "Scanning for web vulnerabilities tools: Nikto, W3af, HTTP utilities - Curl, OpenSSL and Stunnel, Application Inspection tools – Zed Attack Proxy, Sqlmap. DVWA, Webgoat, Password Cracking and Brute-Force Tools – John the Ripper, L0htcrack, Pwdump, HTC-Hydra"
+        },
+        {
+          "unit": "Unit-4:  Introduction to Cyber Crime and Law",
+          "content": "Cyber Crimes, Types of Cybercrime, Hacking, Attack vectors, Cyberspace and Criminal Behavior, Clarification of Terms, Traditional Problems Associated with Computer Crime, Introduction to Incident Response, Digital Forensics, Computer Language, Network Language, Realms of the Cyber world, A Brief History of the Internet, Recognizing and Defining Computer Crime, temporary Crimes, Computers as Targets, Contaminants and Destruction of Data, Indian IT ACT 2000."
+        },
+        {
+          "unit": "Unit-5:   Introduction to Cyber Crime Investigations",
+          "content": "Firewalls and Packet Filters, password Cracking, Keyloggers and Spyware, Virus and Warms, Trojan and backdoors, Steganography, DOS and DDOS attack, SQL injection, Buffer Overflow, Attack on wireless Networks"
         }
       ]
     },
@@ -51,6 +78,13 @@
         "author": "Mike Shema",
         "publication": "Publication Mc Graw Hill.",
         "amazonLink": "https://amazon.com/anti-hacker-tool-kit"
+      },
+      {
+        "sr": 2,
+        "title": "Cyber Security Understanding Cyber Crimes, Computer Forensics and Legal Perspectives",
+        "author": "Nina Godbole and Sunit Belpure ",
+        "publication": " Wiley",
+        "amazonLink": "https://www.amazon.in/Cyber-Security-Understanding-Forensics-Perspectives/dp/8126521791/ref=sr_1_fkmr0_1?s=books&ie=UTF8&qid=1451715478&sr=1-1-fkmr0&keywords=Cyber+Security+Understanding+Cyber+Crimes%2C+Computer+Forensics+and+Legal+Perspectives+by+Nin"
       }
     ]
   },
@@ -240,6 +274,11 @@
         "unit": "Unit-5",
         "presentation": " 3D transformation and viewing",
         "link": "https://drive.google.com/file/d/1j2FYmRjP-rVZ40_CW8smacwheNXtTriE"
+      },
+      {
+        "unit": "Unit-6",
+        "presentation": " Advance topics",
+        "link": "https://drive.google.com/file/d/1-Jhc9-Q9m-5rA6rImhc5dNvS84weDHuk"
       }
     ],
     "syllabusContent": {
