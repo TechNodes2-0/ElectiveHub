@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
 import Signup from "./Components/Auth/Signup";
 import Syllbus from "./Components/Syllbus/Syllbus";
+import SujectInfo from "./Components/SyllbusInfo/SyllbusInfo";
 import ProtectedRoutes from "./Pages/ProtectedRoutes";
 import PrivateRoutes from "./Pages/PrivateRoutes";
 import ErrorBoundary from "./Pages/ErrorBoundary";
@@ -109,6 +110,7 @@ function App() {
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
+        <Route path="/SujectInfo" element={<SujectInfo />}></Route>
       </Routes>
       <Footer />
     </>
