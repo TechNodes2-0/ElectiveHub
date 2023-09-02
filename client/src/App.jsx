@@ -107,6 +107,7 @@ function App() {
               <Navbar />
               <StudentVideo />
             </> } />
+        <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
       </Routes>
       <Footer />

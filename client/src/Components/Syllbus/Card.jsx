@@ -5,7 +5,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Card(props) {
-  const { title, content, linkText, linkUrl } = props;
+  const {id, title, content, linkText, linkUrl } = props;
 
   return (
     <div>
@@ -17,7 +17,7 @@ export default function Card(props) {
           <p className="mt-2 text-gray-800 dark:text-gray-400">{content}</p>
           <Link
             className="mt-3 inline-flex items-center gap-2 mt-5 text-sm font-medium text-blue-500 hover:text-blue-700"
-            to={linkUrl}
+            to={`/Syllbus/${id}`}
           >
             {linkText}
             <svg

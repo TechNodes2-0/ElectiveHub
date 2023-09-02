@@ -1,53 +1,57 @@
-{
-  "studyMaterial": [
-    {
-      "unit": "Unit-1",
-      "presentation": "Presentation 1",
-      "link": "https://google.com"
-    },
-    {
-      "unit": "Unit-2",
-      "presentation": "Presentation 1",
-      "link": "https://google.com"
-    }
-  ],
-  "syllabusContent": {
-    "teachingScheme": [
+[
+  {
+    "id": 1,
+    "title":"Cyber Security",
+    "studyMaterial": [
       {
-        "theory": 30,
-        "tutorial": 15,
-        "practical": 20,
-        "total": 65
-      }
-    ],
-    "examinationScheme": [
-      {
-        "theory": 100,
-        "eseTheory": 70,
-        "paPractical": 30,
-        "eseViva": 20,
-        "paI": 10,
-        "total": 230
-      }
-    ],
-    "syllabusContent": [
-      {
-        "unit": "Unit-1: Systems Vulnerability Scanning",
-        "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+        "unit": "Unit-1",
+        "presentation": "Presentation 1",
+        "link": "https://google.com"
       },
       {
-        "unit": "Unit-2: Systems Vulnerability Scanning",
-        "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+        "unit": "Unit-2",
+        "presentation": "Presentation 1",
+        "link": "https://google.com"
+      }
+    ],
+    "syllabusContent": {
+      "teachingScheme": [
+        {
+          "theory": 30,
+          "tutorial": 15,
+          "practical": 20,
+          "total": 65
+        }
+      ],
+      "examinationScheme": [
+        {
+          "theory": 100,
+          "eseTheory": 70,
+          "paPractical": 30,
+          "eseViva": 20,
+          "paI": 10,
+          "total": 230
+        }
+      ],
+      "syllabusContent": [
+        {
+          "unit": "Unit-1: Systems Vulnerability Scanning",
+          "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+        },
+        {
+          "unit": "Unit-2: Systems Vulnerability Scanning",
+          "content": "Overview of vulnerability scanning, Open Port / Service Identification, Banner / Version Check, Traffic Probe, Vulnerability Probe, Vulnerability Examples, OpenVAS, Metasploit..."
+        }
+      ]
+    },
+    "referenceBooks": [
+      {
+        "sr": 1,
+        "title": "Anti-Hacker Tool Kit by",
+        "author": "Mike Shema",
+        "publication": "Publication Mc Graw Hill.",
+        "amazonLink": "https://amazon.com/anti-hacker-tool-kit"
       }
     ]
-  },
-  "referenceBooks": [
-    {
-      "sr": 1,
-      "title": "Anti-Hacker Tool Kit by",
-      "author": "Mike Shema",
-      "publication": "Publication Mc Graw Hill.",
-      "amazonLink": "https://amazon.com/anti-hacker-tool-kit"
-    }
-  ]
-}
+  }
+]
