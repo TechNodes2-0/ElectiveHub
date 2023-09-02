@@ -60,7 +60,7 @@ const DataScienceTimeline = () => {
                       </div>
                       <h4 className="mb-3 font-bold text-lg md:text-2xl">
                         Coding Prerequisite{" "}
-                        <span class="font-semibold text-md text-slate-600 ">
+                        <span class="font-semibold text-md text-white">
                           Programming{" "}
                         </span>
                       </h4>

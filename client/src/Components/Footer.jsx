@@ -1,9 +1,11 @@
+/** @format */
+
 import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer class="bg-white  shadow dark:bg-gray-900 ">
+    <footer class="bg-white shadow dark:bg-gray-900 ">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
           <a
@@ -16,7 +18,7 @@ export default function Footer() {
               alt="Elective Subject Selector and Manager Logo"
             />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Elective Subject Selector and Manager
+              ElectiveHub
             </span>
           </a>
           <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
@@ -46,7 +48,7 @@ export default function Footer() {
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023{" "}
           <Link to="/" class="hover:underline">
-            Elective Subject Selector and Manager™
+            ElectiveHub™
           </Link>
           . All Rights Reserved.
         </span>
