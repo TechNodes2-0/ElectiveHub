@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-d3-tree": "^3.6.1",
     "react-hot-loader": "^4.13.1"
   }
 }
