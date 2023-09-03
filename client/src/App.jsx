@@ -31,7 +31,8 @@ import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
 import Error from "./Components/Error";
 import StudentVideo from "./Pages/StudentVideo";
-import Disscussion from "./Pages/Disscussion";
+import Disscussion from "./Components/Disscussion/Disscussion";
+import SubDisscussion from "./Components/Disscussion/SubDisscussion";
 
 function App() {
   // const token = cookies.get("TOKEN");
@@ -106,6 +107,7 @@ function App() {
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
         <Route path="/Disscussion" element={<Disscussion />}></Route>
+        <Route path="/SubDisscussion" element={<SubDisscussion />}></Route>
         <Route
           path="/subject-video"
           element={

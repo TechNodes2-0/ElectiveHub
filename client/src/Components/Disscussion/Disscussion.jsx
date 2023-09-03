@@ -1,6 +1,9 @@
+import {useState, useEffect } from "react";
 import React from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
+import ClockLoader from "react-spinners/ClockLoader";
+
 
 const ForumData = [
   {
@@ -17,10 +20,20 @@ const ForumData = [
   },
 ];
 
+
+
 function Disscussion() {
+    
+const [loadingInProgress, setLoading] = useState(false);
   return (
     <div className="bg-gray-900 min-h-screen">
       <Navbar />
+      {loadingInProgress ? (
+        <div className="loader-container">
+          <ClipLoader color={'#fff'} size={150} />
+        </div>
+      ) : (
+
       <div className="flex flex-col items-center bg-gray-900 px-10 ">
         <h1 className="text-2xl font-bold mb-4 text-white">Disscussion</h1>
         <div className="mb-4 ml-3">
@@ -71,9 +84,9 @@ function Disscussion() {
               className=" top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
               aria-label="Sidebar"
             >
-              <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+              <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 border-0 rounded-xl">
                 <div className="flex items-center pl-2.5 mb-5">
-                  <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                  <span className="self-center text-xl font-bold whitespace-nowrap dark:text-white">
                     Categories
                   </span>
                 </div>
@@ -139,7 +152,8 @@ function Disscussion() {
 
           <div className=" text-white bg-gray-800 p-10 border-0 rounded-xl">
             {ForumData.map((forum) => (
-              <div
+              <Link 
+                to="/SubDisscussion"
                 className="flex items-center border border-gray-600 hover:bg-slate-700 rounded-lg p-5 my-5"
                 key={forum.name}
               >
@@ -152,11 +166,12 @@ function Disscussion() {
                   <h2 className="font-semibold">{forum.name}</h2>
                   <p className="fon font-light text-sm">{forum.author}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }
