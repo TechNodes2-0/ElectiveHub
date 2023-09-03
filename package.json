@@ -6,6 +6,7 @@
     "react-content-loader": "^6.2.1",
     "react-d3-tree": "^3.6.1",
     "react-hot-loader": "^4.13.1",
+    "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.3"
   }
 }

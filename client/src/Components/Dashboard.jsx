@@ -17,7 +17,9 @@ const Dashboard = () => {
     useEffect(() => {
         if (token) {
             axios
-                .get(`http://localhost:4000/main/getStudentsForElectiveSubjectCount`, {
+                .get(`${
+                    import.meta.env.VITE_API_URL
+                  }/main/getStudentsForElectiveSubjectCount`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -38,7 +40,9 @@ const Dashboard = () => {
     useEffect(() => {
         if (token) {
             axios
-                .get(`http://localhost:4000/main/getStudentsForElectiveSubjectTree`, {
+                .get(`${
+                    import.meta.env.VITE_API_URL
+                  }/main/getStudentsForElectiveSubjectTree`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

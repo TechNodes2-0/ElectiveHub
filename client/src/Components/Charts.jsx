@@ -14,7 +14,9 @@ const PieChartHoverDemo = ({ width = 900, height = 400 }) => {
     if (token) {
       // Fetch the count of students per elective subject
       axios
-        .get(`http://localhost:4000/main/getStudentsForElectiveSubjectCount`, {
+        .get(`${
+            import.meta.env.VITE_API_URL
+          }/main/getStudentsForElectiveSubjectCount`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
