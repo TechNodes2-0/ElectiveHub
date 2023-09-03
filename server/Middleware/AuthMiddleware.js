@@ -21,6 +21,7 @@ return async (req, res, next) => {
         const user = await User.findById(decoded.id) ;
         if (user)  req.user=user;// Assuming the JWT payload contains the user information
         const { role } = user;
+        console.log(role);
         //         // console.log(role);
                 if (!hasRequiredRole(role, requiredRoles)) {
                   return res.status(403).json({ message: "Access denied. Insufficient role." });
