@@ -33,6 +33,9 @@ import Error from "./Components/Error";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Pages/Disscussion";
 
+// this is temporary import
+import StudentNavbar from "./Components/StudentNavbar";
+
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -95,7 +98,7 @@ function App() {
           path="/LearningPath"
           element={
             <>
-              <Navbar /> <LearningPath />
+              <StudentNavbar /> <LearningPath />
             </>
           }
         />
