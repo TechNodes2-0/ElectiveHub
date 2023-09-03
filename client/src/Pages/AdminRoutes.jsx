@@ -42,7 +42,7 @@ export default function AdminRoute() {
   if (isLoading) {
     return <div>  Loading...</div>; // Show a loading state while checking user role
   } else {
-    if (user && user.role === 'admin') {
+    if (user && user.role === 'admin'||"student") {
       return <Outlet />;
     } else {
       return <div>You are not authorized to access this page</div>; // Handle unauthorized access
