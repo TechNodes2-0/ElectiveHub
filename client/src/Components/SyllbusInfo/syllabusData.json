@@ -384,5 +384,187 @@
         "marksWeightage": 18
       }
     ]
+  },
+  {
+    "id": 4,
+    "title": "Data Mining",
+    "studyMaterial": [
+      {
+        "unit": "Unit-1",
+        "presentation": "Introduction to data mining (DM)",
+        "link": "https://drive.google.com/file/d/1kHyyBYR6ulC8WHGhhw0YMyMxgCh_VP6L"
+      },
+      {
+        "unit": "Unit-2",
+        "presentation": "Data Pre-processing",
+        "link": "https://drive.google.com/file/d/1a24k645PGUeppNv6sfRNyu33sZH4nrfO"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": "https://drive.google.com/file/d/16PzwoAC5kBJCWZggxFOMDSsPGXYaLokz",
+        "link": "https://drive.google.com/file/d/1kICtBX5rF7kzCysLp8EuXhEIuC2q7eoH"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": "Classification and Prediction",
+        "link": "https://drive.google.com/file/d/1kICtBX5rF7kzCysLp8EuXhEIuC2q7eoH"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": "Cluster Analysis",
+        "link": "https://drive.google.com/file/d/1bSs25h8hT8c_8EKTsNgvdz2WUbGv3flw"
+      },
+      {
+        "unit": "Unit-6",
+        "presentation": "Web mining and other data mining",
+        "link": "https://drive.google.com/file/d/1MaCbafsTrGJ12h5XK3lG7AYJbS-d62pm"
+      }
+    ],
+    "syllabusContent": {
+      "teachingScheme": [
+        {
+          "theory": 30,
+          "tutorial": 15,
+          "practical": 20,
+          "total": 65
+        }
+      ],
+      "examinationScheme": [
+        {
+          "theory": 100,
+          "eseTheory": 70,
+          "paPractical": 30,
+          "eseViva": 20,
+          "paI": 10,
+          "total": 230
+        }
+      ],
+      "syllabusContent": [
+        {
+          "unit": "Unit-1:  Introduction to data mining (DM)"
+        },
+        {
+          "unit": "Unit-2: Web mining and other data mining"
+        },
+        {
+          "unit": "Unit-3: Data Pre-processing"
+        },
+        {
+          "unit": "Unit-4:  Concept Description, Mining Frequent Patterns, Associations and Correlations"
+        },
+        {
+          "unit": "Unit-5:    Cluster Analysis"
+        },
+        {
+          "unit": "Unit-6:    Web mining and other data mining"
+        }
+      ]
+    },
+    "referenceBooks": [
+      {
+        "sr": 1,
+        "title": "Data Mining: Concepts and Techniques",
+        "author": "Jiawei Han, Micheline Kamber, and Jian Pei",
+        "publication": "Morgan Kaufmann",
+        "amazonLink": "https://www.amazon.com/Data-Mining-Concepts-Techniques-Management/dp/0123814790"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Theory of Computation",
+    "studyMaterial": [
+      {
+        "unit": "Unit-1",
+        "presentation": "Review of Mathematical Theory",
+        "link": "https://drive.google.com/file/d/18Cy29MLoLkOllI9xaMf3rI2eLGv37gP8"
+      },
+      {
+        "unit": "Unit-2",
+        "presentation": "Regular Languages and Finite Automata",
+        "link": "https://drive.google.com/file/d/1DOpTC18VrnlCVhDFUxB7YxzC4D60WmZV"
+      },
+      {
+        "unit": "Unit-3",
+        "presentation": "Context free grammar (CFG)",
+        "link": "https://drive.google.com/file/d/1b-PfJ4Czg5ZwdS-nP4GDdK8n4rcbDimP"
+      },
+      {
+        "unit": "Unit-4",
+        "presentation": "Pushdown Automata, CFL And NCFL",
+        "link": "https://drive.google.com/file/d/18VUbuc8MF1oJ7c14_Jc7kCeNyqPqgSUw"
+      },
+      {
+        "unit": "Unit-5",
+        "presentation": "Turing Machine (TM)",
+        "link": "https://drive.google.com/file/d/18VUbuc8MF1oJ7c14_Jc7kCeNyqPqgSUw"
+      },
+      {
+        "unit": "Unit-6",
+        "presentation": "Computable Functions",
+        "link": "https://drive.google.com/file/d/1r3HpcZB8qrMUkQ_3WdXqCocLpQriJA0x"
+      },
+      {
+        "unit": "Unit-7",
+        "presentation": "Undecidability",
+        "link": "https://drive.google.com/file/d/1qqPEIqnNFYkal5-UdJT4c9bjQpmIUbto"
+      }
+    ],
+    "syllabusContent": {
+      "teachingScheme": [
+        {
+          "theory": 30,
+          "tutorial": 15,
+          "practical": 20,
+          "total": 65
+        }
+      ],
+      "examinationScheme": [
+        {
+          "theory": 100,
+          "eseTheory": 70,
+          "paPractical": 30,
+          "eseViva": 20,
+          "paI": 10,
+          "total": 230
+        }
+      ],
+      "syllabusContent": [
+        {
+          "unit": "Unit-1:  Review of Mathematical Theory"
+        },
+        {
+          "unit": "Unit-2: Regular Languages and Finite Automata"
+        },
+        {
+          "unit": "Unit-3: Context free grammar (CFG)"
+        },
+        {
+          "unit": "Unit-4:  Pushdown Automata, CFL And NCFL"
+        },
+        {
+          "unit": "Unit-5: Turing Machine (TM)"
+        },
+        {
+          "unit": "Unit-6: Undecidability"
+        }
+      ]
+    },
+    "referenceBooks": [
+      {
+        "sr": 1,
+        "title": "Introduction to the Theory of Computation",
+        "author": "Michael Sipser",
+        "publication": "Cengage Learning",
+        "amazonLink": "https://www.amazon.com/Introduction-Theory-Computation-Michael-Sipser/dp/113318779X"
+      },
+      {
+        "sr": 2,
+        "title": "Automata and Computability",
+        "author": "Dexter C. Kozen",
+        "publication": "Springer",
+        "amazonLink": "https://www.amazon.com/Automata-Computability-Undergraduate-Texts-Computer/dp/0387949070"
+      }
+    ]
   }
 ]

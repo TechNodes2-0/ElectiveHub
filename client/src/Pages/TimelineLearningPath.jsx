@@ -1,128 +1,12 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TimelineLearningPath.css";
-const DataScienceTimeline = () => {
-  const TimelineDataScience = [
-    {
-      title: "Coding Prerequisite",
-      category: "Programming",
-      description:
-        "Data Structure (Python / R), SQL Scripting, Conditional list/Dict comprehension, Object-Oriented Programming, Working with external libraries, Fundamental algorithms - searching, sorting",
-    },
-    {
-      title: "Preparation",
-      category: "Data Extraction and Wrangling",
-      description:
-        "Scripting - Extracting Data from API/DB/Website, Data Formatting (Type Conversion), Libraries Learning - Pandas, Numpy, Data Transforming - Joining, Slicing, Indexing, Handling Missing Values",
-    },
-    {
-      title: "Vizulation/ Dashboard",
-      category: "EDA, Business acumen and storytelling",
-      description:
-        "Business Focus Questions, Studying Data Distribution, Univariate and Multivariate Analysis, Data Visualization - Matplotlib, Seaborn, Plotly, Building Dashboards - Excel/Tableau, Jupyter, Writing Concise and Insightful Reports, Business Acumen",
-    },
-    {
-      title: "Data Engineering",
-      category: "Data Warehouse",
-      description:
-        "Strong Programming Skills, Working with CLI (Command Line Interface), Building ETL (Extract, Transform, Load) Pipelines, Using Various Tools - Spark, Kafka, Airflow, and more, Cloud Services - AWS, GCP, Azure, Algorithm - MapReduce, Yarn, Deploying ML Models in Production",
-    },
-    {
-      title: "Experimentation",
-      category: "Statistics and mathematics",
-      description:
-        "Descriptive Statistics - Mean, Median, Mode, STD, and More, Inferential Statistics - Hypothesis and A/B testing, Confidence Intervals, P-Value, Experimental Design, ANOVA, Chi-Square Test, Sampling, Data Distributions, t-test, Linear Algebra, Single and Multivariate Calculus",
-    },
-    {
-      title: "Modeling",
-      category: "Machine Learning",
-      description:
-        "Supervised - Classification, Regression, Unsupervised - Clustering, Dimensionality Reduction, Reinforcement - TF Agents, Optimizing Rewards, Performance Metrics - RMS, Accuracy, Confusion Matrix, AUC-ROC, and More, Statistical Machine Learning - KNN, Decision Trees, Bagging, Boosting",
-    },
-  ];
-  const TimelineCyberSecurity = [
-    {
-      title: "Foundations of Cybersecurity",
-      category: "Basics",
-      description:
-        "Introduction to Cybersecurity, Cybersecurity Terminology, Security Principles",
-    },
-    {
-      title: "Network Security",
-      category: "Networking",
-      description:
-        "Networking Fundamentals, TCP/IP and Protocols, Firewalls and IDS, Wireless Network Security",
-    },
-    {
-      title: "Cryptography",
-      category: "Data Protection",
-      description:
-        "Introduction to Cryptography, Encryption and Decryption, Public Key Infrastructure (PKI)",
-    },
-    {
-      title: "Web Security",
-      category: "Web Protection",
-      description:
-        "Web Application Security, Secure Coding Practices, OWASP Top Ten",
-    },
-    {
-      title: "Security Testing",
-      category: "Testing and Assessment",
-      description:
-        "Vulnerability Scanning, Penetration Testing, Security Auditing",
-    },
-    {
-      title: "Identity and Access Management",
-      category: "Access Control",
-      description: "Authentication and Authorization, Single Sign-On (SSO)",
-    },
-    {
-      title: "Incident Response",
-      category: "Response",
-      description: "Incident Handling Process, Digital Forensics",
-    },
-    {
-      title: "Compliance and Policies",
-      category: "Regulations",
-      description:
-        "Security Policies and Procedures, Regulatory Compliance (e.g., GDPR, HIPAA)",
-    },
-    {
-      title: "Cloud Security",
-      category: "Cloud Protection",
-      description:
-        "Cloud Service Models (IaaS, PaaS, SaaS), Cloud Security Best Practices, Cloud Identity and Access Management",
-    },
-    {
-      title: "Specializations",
-      category: "Focus Areas",
-      description:
-        "Network Security, Application Security, IoT Security, Malware Analysis",
-    },
-    {
-      title: "Advanced Topic",
-      category: "Advanced Concepts",
-      description: "Advanced Cryptography, Advanced Penetration Testing",
-    },
-    {
-      title: "Certifications",
-      category: "Certification Programs",
-      description:
-        "CompTIA Security+, Certified Information Systems Security Professional (CISSP)",
-    },
-    {
-      title: "Much Moree...",
-      category: "Keep Learning",
-      description: "",
-    },
-  ];
+const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
+  useEffect(() => {
+    setTimelineData(initialTimelineData);
+  }, [initialTimelineData]);
 
-  // Example: Access the category of the first entry
-  const firstEntryCategory = TimelineCyberSecurity[0].category;
-  console.log(firstEntryCategory); // Output: "Basics"
-
-  const initialTimelineData = TimelineCyberSecurity;
   const [timelineData, setTimelineData] = useState(initialTimelineData);
   const [isHidden, setIsHidden] = useState(
     Array(initialTimelineData.length).fill(true)
@@ -144,12 +28,12 @@ const DataScienceTimeline = () => {
                 Learning Path 🔥🔥🔥
               </p>
               <p className="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">
-                Learning Timeline for DataScience
+                Learning Timeline for {subjectName}
               </p>
               <p className="text-sm md:text-base text-gray-50 mb-4">
-                Here’s your guide to the Learning DataScience 2023. Go through
+                Here’s your guide to the Learning {subjectName} 2023. Go through
                 all the steps to know the exact process of the Learning
-                DataScience.
+                {subjectName}.
               </p>
               <a
                 href="#"

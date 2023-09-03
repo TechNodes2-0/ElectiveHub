@@ -19,5 +19,19 @@
     "content": "sem-5",
     "linkText": "Link",
     "linkUrl": "#"
+  },
+  {
+    "id": 4,
+    "title": "Data Mining",
+    "content": "sem-5",
+    "linkText": "Link",
+    "linkUrl": "#"
+  },
+  {
+    "id": 5,
+    "title": "Theory of Computation",
+    "content": "sem-5",
+    "linkText": "Link",
+    "linkUrl": "#"
   }
 ]

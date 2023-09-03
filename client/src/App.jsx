@@ -34,6 +34,9 @@ import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
 
+// this is temporary import
+import StudentNavbar from "./Components/StudentNavbar";
+
 function App() {
   // const token = cookies.get("TOKEN");
   return (
@@ -96,7 +99,7 @@ function App() {
           path="/LearningPath"
           element={
             <>
-              <Navbar /> <LearningPath />
+              <StudentNavbar /> <LearningPath />
             </>
           }
         />

@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import LearningPathData from "../assets/scripts/LearningPathData";
 import TreeLearningPath from "./TreeLearningPath";
 import TimelineLearningPath from "./TimelineLearningPath";
-// Create separate components for the Timeline and Tree content
 
 const TabComponent = () => {
-  const [activeTab, setActiveTab] = useState("timeline");
+  const [activeSubject, setActiveSubject] = useState(LearningPathData[0]);
+  const [activeTab, setActiveTab] = useState("Timeline");
+  const [selectedSubjectData, setSelectedSubjectData] = useState(
+    LearningPathData[0]
+  );
+
+  // Update selectedSubjectData when activeSubject changes
+  useEffect(() => {
+    const newSelectedSubjectData = LearningPathData.find(
+      (subject) => subject.subjectName === activeSubject?.subjectName
+    );
+    setSelectedSubjectData(newSelectedSubjectData);
+    setActiveTab("Timeline"); // Reset the active tab when switching subjects
+  }, [activeSubject]);
+
+  const handleSubjectTabClick = (subject) => {
+    setActiveSubject(subject);
+  };
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -14,65 +31,65 @@ const TabComponent = () => {
     <div>
       <div className="border-b bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+          {LearningPathData?.map((subject) => (
+            <li key={subject.name} className="mr-2">
+              <a
+                href="#"
+                onClick={() => handleSubjectTabClick(subject)}
+                className={`inline-flex items-center justify-center p-4 border-b-2 ${
+                  activeSubject?.subjectName === subject.subjectName
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
+                } rounded-t-lg`}
+              >
+                {subject.subjectName}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="border-b bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
+        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
           <li className="mr-2">
             <a
               href="#"
-              onClick={() => handleTabClick("timeline")}
+              onClick={() => handleTabClick("Timeline")}
               className={`inline-flex items-center justify-center p-4 border-b-2 ${
-                activeTab === "timeline"
+                activeTab === "Timeline"
                   ? "border-blue-600 text-blue-600"
                   : "border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
               } rounded-t-lg`}
             >
-              <svg
-                className={`w-4 h-4 mr-2 ${
-                  activeTab === "timeline"
-                    ? "text-blue-600"
-                    : "text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
-                }`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                {/* Add your timeline icon here */}
-              </svg>
               Timeline
             </a>
           </li>
           <li className="mr-2">
             <a
               href="#"
-              onClick={() => handleTabClick("tree")}
+              onClick={() => handleTabClick("Tree")}
               className={`inline-flex items-center justify-center p-4 border-b-2 ${
-                activeTab === "tree"
+                activeTab === "Tree"
                   ? "border-blue-600 text-blue-600"
                   : "border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
               } rounded-t-lg`}
-              aria-current={activeTab === "tree" ? "page" : undefined}
             >
-              <svg
-                className={`w-4 h-4 mr-2 ${
-                  activeTab === "tree"
-                    ? "text-blue-600"
-                    : "text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300"
-                }`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 18 18"
-              >
-                {/* Add your tree icon here */}
-              </svg>
               Tree
             </a>
           </li>
         </ul>
       </div>
+      {/* Conditional rendering based on the active tab and subject */}
+      {activeTab === "Timeline" && activeSubject?.timelineData && (
+        <TimelineLearningPath
+          initialTimelineData={activeSubject?.timelineData}
+          subjectName={activeSubject?.subjectName}
+        />
+      )}
+      {activeTab === "Tree" && activeSubject?.treeData && (
+        <TreeLearningPath data={activeSubject?.treeData} />
+      )}
 
-      {/* Conditional rendering based on the active tab */}
-      {activeTab === "timeline" && <TimelineLearningPath />}
-      {activeTab === "tree" && <TreeLearningPath />}
+      {/* Repeat the conditional rendering for other subjects */}
     </div>
   );
 };
