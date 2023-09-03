@@ -43,10 +43,22 @@ const StudentNavbar = () => {
               Learning Path
             </Link>
             <Link
+              to="/syllbus"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Syllabus
+            </Link>
+            <Link
+              to="/disscussion"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            >
+              Disscussion
+            </Link>
+            <Link
               to="/subject-video"
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
             >
-              Videos
+              Video
             </Link>
           </div>
         </div>
