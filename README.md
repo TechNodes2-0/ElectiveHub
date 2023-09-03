@@ -1,6 +1,6 @@
-Certainly! Here's a concise GitHub-like readme for your project:
 
-**Project Name:** ElectiveHub
+
+### **Project Name:** ElectiveHub
 
 **Project Description:**
 ElectiveHub is an Education Management System designed to simplify and enhance the management of student information and elective subject selection in educational institutions. It offers a suite of applications for students, teachers, and administrators, providing a user-friendly platform to manage academic processes efficiently.
