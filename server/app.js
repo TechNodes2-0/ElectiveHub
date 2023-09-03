@@ -52,9 +52,9 @@ app.use(
   authMiddleware(["admin", "user", "student"]),
   StudentElectiveSubjectRoute
 );
-app.use("/student", authMiddleware(["admin", "user"]), StudentRoute);
-app.use("/subject", authMiddleware(["admin", "user"]), SubjectRoute);
-app.get("/yaae", authMiddleware(["admin", "user"]), (req, res) => {
+app.use("/student", authMiddleware(["admin", "user","student"]), StudentRoute);
+app.use("/subject", authMiddleware(["admin", "user","student"]), SubjectRoute);
+app.get("/yaae", authMiddleware(["admin", "user","student"]), (req, res) => {
   res.json({ status: true, user: req.user });
 });
 
