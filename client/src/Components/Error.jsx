@@ -2,11 +2,9 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import Nabar from "../Components/Navbar";
 export default function Error() {
   return (
     <div>
-      <Nabar />
       <section class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div class="mx-auto max-w-screen-sm text-center">
