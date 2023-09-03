@@ -2,9 +2,12 @@
 
 import { React, useState } from "react";
 import SubjectHome from "../../Pages/SubjectHome";
+import StudentHome from "../StudentHome";
+import Home from "../Home";
+import Navbar from "../../Components/Navbar";
 
 export default function Admin() {
-  const [activeTab, setActiveTab] = useState("Subject");
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -111,6 +114,7 @@ export default function Admin() {
                 <a
                   class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
                   href="javascript:;"
+                  onClick={handleTabClick.bind(this, "Student")}
                 >
                   Student
                 </a>
@@ -122,7 +126,7 @@ export default function Admin() {
         <div class="w-full h-screen pt-10 px-4 sm:px-6 md:px-8 lg:pl-72 ">
           {activeTab === "dashboard" && (
             <h1 class="block text-2xl font-bold text-gray-800 sm:text-3xl dark:text-white">
-              Application Layout: Sidebar using Tailwind CSS
+              It is Admin Dashboard
             </h1>
           )}
 
@@ -134,7 +138,7 @@ export default function Admin() {
 
           {activeTab === "Student" && (
             <div>
-              <SubjectHome />
+              <StudentHome />
             </div>
           )}
         </div>

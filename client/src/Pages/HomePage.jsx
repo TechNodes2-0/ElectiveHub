@@ -5,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import Feature from "../Components/Auth/Feature";
 import StudyPic from "../assets/Study.png";
 import { Link } from "react-router-dom";
+import Stats from "../Components/Stats";
 import axios from "axios";
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
@@ -79,6 +80,8 @@ export default function Homepage() {
         </div>
       </section>
       <Feature></Feature>
+      <Stats />
+      <hr className="border-t border-gray-500" />
       <section className="text-center lg:text-left bg-gray-500 p-12">
         <div className="flex flex-wrap justify-center">
           <div className="w-full shrink-0 grow-0 basis-auto px-3 md:w-10/12 lg:w-11/12 xl:w-10/12">

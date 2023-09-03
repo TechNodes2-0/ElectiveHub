@@ -188,9 +188,9 @@ const StudentSubject = () => {
   return (
     <>
       <StudentNavbar />
-      <div className="mb-8 m-4 ">
+      <div className="pb-8 p-4 bg-slate-900 text-white">
         {student && (
-          <div className="shadow rounded p-4 mb-4 mt-4 mx-auto max-w-sm border border-blue-500 m-3 text-black">
+          <div className="shadow rounded p-4 mb-4 mt-4 mx-auto max-w-sm border border-blue-500 m-3 text-white bg-gray-800">
             <h3 className="text-lg font-medium">{student.name}</h3>
             <p className="">ID: {student.idNumber}</p>
             <p className="">iD: {student._id}</p>
@@ -200,7 +200,7 @@ const StudentSubject = () => {
         )}
 
         <div className="mb-8">
-          <h3 className="text-2xl text-black dark:text-center font-bold mb-5">
+          <h3 className="text-2xl text-white dark:text-center font-bold mb-5">
         Select Elective Subjects
           </h3>
           {assignedSubjects.length > 0 ? (
@@ -241,17 +241,17 @@ const StudentSubject = () => {
               <div
                 key={subject._id}
                 className={`border border-blue-600 p-4 rounded cursor-pointer ${
-                  selectedSubject?._id === subject._id ? "bg-blue-100" : ""
+                  selectedSubject?._id === subject._id ? "bg-gray-700" : ""
                 }`}
                 onClick={() => handleSubjectClick(subject)}
               >
-                <h2 className="text-lg font-medium text-black dark:">
+                <h2 className="text-lg font-medium text-white dark:">
                   {subject.subjectName}
                 </h2>
-                <p className="tracking-tighter md:text-lg text-black">
+                <p className="tracking-tighter md:text-lg text-white">
                   {subject.subjectCode}
                 </p>
-                <p className="mb-3 text-black">{subject.subjectDescription}</p>
+                <p className="mb-3 text-white">{subject.subjectDescription}</p>
               </div>
             ))}
           </div>
@@ -287,7 +287,7 @@ const StudentSubject = () => {
             <div className="relative bg-white rounded-lg shadow max-w-md">
               <button
                 type="button"
-                className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-black rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
+                className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-white rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
                 onClick={cancelDelete}
                 data-modal-toggle="popup-modal"
               >
@@ -338,7 +338,7 @@ const StudentSubject = () => {
                 <button
                   data-modal-hide="popup-modal"
                   type="button"
-                  className="bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-black focus:z-10"
+                  className="bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-white focus:z-10"
                   onClick={cancelDelete}
                 >
                   No, cancel

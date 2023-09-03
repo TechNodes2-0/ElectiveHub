@@ -5,6 +5,7 @@ const User = require("../Models/UserModel");
 module.exports.authMiddleware = (requiredRoles) => {
 return async (req, res, next) => {
     try {
+      console.log(requiredRoles)
         console.log("Headers",req.headers.authorization);
       var token =req.headers.authorization;
 
@@ -21,10 +22,14 @@ return async (req, res, next) => {
         const user = await User.findById(decoded.id) ;
         if (user)  req.user=user;// Assuming the JWT payload contains the user information
         const { role } = user;
+        console.log(role);
         //         // console.log(role);
                 if (!hasRequiredRole(role, requiredRoles)) {
+                  console.log("error",requiredRoles);
+                
                   return res.status(403).json({ message: "Access denied. Insufficient role." });
                 }
+                
 
         next();
       });

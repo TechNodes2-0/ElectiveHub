@@ -155,7 +155,7 @@ const StudentsForSubject = () => {
     setShowModal(false);
   };
   return (
-    <div className="bg-gray-900 text-white h-fullscreen">
+    <div className="bg-gray-900 text-white min-h-screen">
       <ToastContainer position="top-right" autoClose={3000} />
       <SubjectNavbar />
 
