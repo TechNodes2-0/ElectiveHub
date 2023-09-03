@@ -64,6 +64,65 @@ exports.addElectiveSubjectToStudent = async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   };
+  exports.getStudentsCountPerElectiveSubject = async (req, res) => {
+    try {
+      const electiveSubjects = await ElectiveSubject.find();
+  
+      const studentsCountPerSubject = [];
+  
+      for (const subject of electiveSubjects) {
+        const studentElectiveSubjects = await StudentElectiveSubject.find({
+          electiveSubject: subject._id
+        });
+  
+        studentsCountPerSubject.push({
+          subjectName: subject.subjectName,
+          studentCount: studentElectiveSubjects.length
+        });
+      }
+  
+      res.json(studentsCountPerSubject);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  exports.generateTreeData = async (req, res) => {
+    try {
+      const allElectiveSubjects = await ElectiveSubject.find();
+  
+      const treeData = {
+        type: "node",
+        name: "boss",
+        value: 0,
+        children: [],
+      };
+  
+      for (const electiveSubject of allElectiveSubjects) {
+        const studentElectiveSubjects = await StudentElectiveSubject.find({
+          electiveSubject: electiveSubject._id,
+        }).populate('student', ['name']);
+  console.log(studentElectiveSubjects)
+        if (studentElectiveSubjects.length > 0) {
+          const subjectNode = {
+            type: "node",
+            name: electiveSubject.subjectName,
+            value: Math.floor(Math.random() * (90 - 40 + 1)) + 40,
+            children: studentElectiveSubjects.map((studentElectiveSubject) => ({
+              type: "leaf",
+              name: studentElectiveSubject.student.name,
+              value: Math.floor(Math.random() * (90 - 40 + 1)) + 40,
+            })),
+          };
+          treeData.children.push(subjectNode);
+        }
+      }
+  
+      res.json(treeData);
+    } catch (error) {
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
   
   // Get all students for an elective subject
   exports.getStudentsForElectiveSubject = async (req, res) => {
