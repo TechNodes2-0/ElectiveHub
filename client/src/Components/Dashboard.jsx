@@ -87,25 +87,25 @@ const Dashboard = () => {
                     {/* Add more cards as needed */}
 
                     {/* Charts */}
-                    <div   >
+                    <div className="col-span-3"  >
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
-                            <div className="bg-white  rounded-lg shadow-md" style={{ width: "100%" }}>
+                        <div className="bg-white rounded-lg shadow-md flex items-center justify-center">
                             
                                 <PieChart data={pieChartData} width={900} height={400} />
                             </div>
                         </div>
                     </div>
-                    <div  >
+                    <div className="col-span-3">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+    <div className="bg-white rounded-lg shadow-md flex items-center justify-center">
+      <Barplot data={pieChartData} width={700} height={400} />
+    </div>
+  </div>
+</div>
+
+                    <div  className="col-span-3" >
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4" >
-                            <div className="bg-white  rounded-lg shadow-md" >
-                               
-                                <Barplot data={pieChartData} width={700} height={400} />
-                            </div>
-                        </div>
-                    </div>
-                    <div  >
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4" >
-                            <div className="bg-white  rounded-lg shadow-md" >
+                        <div className="bg-white rounded-lg shadow-md flex items-center justify-center">
                                
                                 <CircularPacking data={data} width={700} height={900} />
                             </div>
