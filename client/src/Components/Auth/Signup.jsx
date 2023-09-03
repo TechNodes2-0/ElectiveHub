@@ -136,8 +136,8 @@ const Signup = () => {
           >
             Submit
           </button>
-          <span className="mt-4 text-white">
-            Already have an account?{" "}
+          <span className="mt-4 text-white ml-8">
+                  Already have an account?{" "}
             <Link to="/login" className="text-blue-500">
               Login
             </Link>

@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 module.exports.Signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt,role } = req.body;
+    
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.json({ message: "User already exists" });

@@ -16,6 +16,7 @@ export default function StudentHome() {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
+  const[User,Setuser]=useState(null);
   const token = cookies.get("TOKEN");
   useEffect(() => {
     const verifyCookie = async () => {
@@ -45,6 +46,7 @@ export default function StudentHome() {
             // alert(user.username);
             console.log(user.username);
             setUsername(user.username);
+            Setuser(user);
           } else {
             console.log("2");
             cookies.remove("TOKEN", { path: "/login" });
@@ -82,7 +84,7 @@ export default function StudentHome() {
   return (
     <div className="">
       <StudentNavbar />
-      <StudentList token={token} />
+      <StudentList token={token} user={User} />
     </div>
   );
 }
