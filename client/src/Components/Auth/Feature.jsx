@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -152,7 +154,7 @@ export default function Feature() {
               </p>
 
               <Link
-                to="add-subject"
+                to="/subject"
                 class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline  hover:bg-blue-700"
               >
                 <svg

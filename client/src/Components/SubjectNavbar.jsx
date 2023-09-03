@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +12,7 @@ export default function SubjectNavbar() {
             Elective Subject App
           </div>
           <div className="flex space-x-4">
-            <Link to="/Subject" className="text-white hover:text-gray-200">
+            <Link to="/HomePage" className="text-white hover:text-gray-200">
               Home
             </Link>
             <a href="/add-subject" className="text-white hover:text-gray-200">
