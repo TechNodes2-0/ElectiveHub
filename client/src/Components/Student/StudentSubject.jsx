@@ -9,6 +9,7 @@ import StudentNavbar from "../StudentNavbar";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const StudentSubject = () => {
   const { token } = useContext(AuthContext);
   console.log("localtoken ------------------>", token);
@@ -101,7 +102,7 @@ const StudentSubject = () => {
           // },
         }
       );
-      const subjects = response.data.map((item) => item.electiveSubject);
+      const subjects = response.data.map((item) => item.electiveSubject) .filter((item) => item !== null);;
       console.log(subjects);
 
       setAssignedSubjects(subjects);
@@ -200,7 +201,7 @@ const StudentSubject = () => {
 
         <div className="mb-8">
           <h3 className="text-2xl text-black dark:text-center font-bold mb-5">
-            Assigned Elective Subjects
+        Select Elective Subjects
           </h3>
           {assignedSubjects.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -227,12 +228,12 @@ const StudentSubject = () => {
               ))}
             </div>
           ) : (
-            <p>No elective subjects assigned.</p>
+            <p>No elective subjects Selected.</p>
           )}
         </div>
 
         <h3 className="text-center text-2xl mb-3 font-bold">
-          Assign Elective Subject
+        Select Elective Subject
         </h3>
         <div className="flex flex-col">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -273,7 +274,7 @@ const StudentSubject = () => {
             disabled={!selectedSubject}
             className="bg-blue-500 text-white px-4 py-2 rounded self-center mt-4"
           >
-            Assign Subject
+            Select Subject
           </button>
         </div>
 
