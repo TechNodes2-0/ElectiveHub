@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Feature from "../Components/Auth/Feature";
+import StudyPic from "../assets/Study.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 export default function Homepage() {
@@ -37,11 +38,11 @@ export default function Homepage() {
       <section class="bg-white dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            <h1 class="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Subject Selection tool for elective subject
             </h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              The "Subject Selection Tool for Elective Subject" streamlines and
+              The Subject Selection Tool for Elective Subject streamlines and
               simplifies the process of choosing elective subjects, helping
               students make informed decisions based on their interests and
               academic goals. It provides comprehensive information to optimize
@@ -69,8 +70,10 @@ export default function Homepage() {
           </div>
           <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img
-              src="https://ouch-cdn2.icons8.com/8987DUcg4_c2_eEtQ9IlNptJGm-bDyiyS3NQSM3cbVs/rs:fit:368:368/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODU2/LzI0YmUwMTg1LWY5/MTQtNDc0OC1iMmE5/LWJiYjBjMzk4OTli/MC5wbmc.png"
+              src={StudyPic}
               alt="mockup"
+              width={400}
+              class="ml-20 animate-bounce-slow"
             />
           </div>
         </div>
