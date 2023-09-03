@@ -47,16 +47,16 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
 
         <Route element={<PrivateRoutes />}>
-          <Route
-            path="Home"
-            element={
-              <>
-                <Navbar />
-                <Home />
-              </>
-            }
-          ></Route>
           <Route element={<AdminRoutes />}>
+            <Route
+              path="Home"
+              element={
+                <>
+                  <Navbar />
+                  <Home />
+                </>
+              }
+            ></Route>
             <Route path="/add-subject" element={<SubjectForm />}></Route>
             <Route path="/editsubject/:id" element={<EditSubject />}></Route>
             <Route
