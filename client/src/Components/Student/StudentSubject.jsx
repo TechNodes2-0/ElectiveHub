@@ -187,10 +187,10 @@ const StudentSubject = () => {
   return (
     <>
       <StudentNavbar />
-      <div className="mb-8 ">
+      <div className="mb-8 m-4 ">
         {student && (
-          <div className=" shadow rounded p-4 mb-4 mt-4  mx-auto max-w-sm border border-blue-500 m-3 text-black">
-            <h3 className=" text-lg font-medium">{student.name}</h3>
+          <div className="shadow rounded p-4 mb-4 mt-4 mx-auto max-w-sm border border-blue-500 m-3 text-black">
+            <h3 className="text-lg font-medium">{student.name}</h3>
             <p className="">ID: {student.idNumber}</p>
             <p className="">iD: {student._id}</p>
             <p className="">Email: {student.email}</p>
@@ -199,7 +199,7 @@ const StudentSubject = () => {
         )}
 
         <div className="mb-8">
-          <h3 className="text-2xl text-black  dark: text-center font-bold mb-5">
+          <h3 className="text-2xl text-black dark:text-center font-bold mb-5">
             Assigned Elective Subjects
           </h3>
           {assignedSubjects.length > 0 ? (
@@ -212,7 +212,7 @@ const StudentSubject = () => {
                   <h2 className="text-lg font-bold mb-2 ">
                     {subject.subjectName}
                   </h2>
-                  <p className=" mb-4">{subject.subjectCode}</p>
+                  <p className="mb-4">{subject.subjectCode}</p>
                   <p className="">{subject.subjectDescription}</p>
                   <div className="mt-4">
                     <button
@@ -231,7 +231,7 @@ const StudentSubject = () => {
           )}
         </div>
 
-        <h3 className=" text-center text-2xl mb-3 font-bold">
+        <h3 className="text-center text-2xl mb-3 font-bold">
           Assign Elective Subject
         </h3>
         <div className="flex flex-col">
@@ -247,10 +247,10 @@ const StudentSubject = () => {
                 <h2 className="text-lg font-medium text-black dark:">
                   {subject.subjectName}
                 </h2>
-                <p className="tracking-tighter  md:text-lg text-black">
+                <p className="tracking-tighter md:text-lg text-black">
                   {subject.subjectCode}
                 </p>
-                <p className="mb-3  text-black">{subject.subjectDescription}</p>
+                <p className="mb-3 text-black">{subject.subjectDescription}</p>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ const StudentSubject = () => {
               <h3 className="text-center text-2xl font-bold">
                 Selected Elective Subject
               </h3>
-              <div className="border border-gray-300 p-4 rounded w-64 mx-auto">
+              <div className="border border-gray-300 p-4 rounded md:w-64 mx-auto">
                 <h2 className="text-lg font-bold mb-2">
                   {selectedSubject.subjectName}
                 </h2>
@@ -271,7 +271,7 @@ const StudentSubject = () => {
           <button
             onClick={assignSubject}
             disabled={!selectedSubject}
-            className="bg-blue-500  text-white px-4 py-2 rounded self-center mt-4"
+            className="bg-blue-500 text-white px-4 py-2 rounded self-center mt-4"
           >
             Assign Subject
           </button>
@@ -329,7 +329,7 @@ const StudentSubject = () => {
                 <button
                   data-modal-hide="popup-modal"
                   type="button"
-                  className=" bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+                  className="bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
                   onClick={confirmDelete}
                 >
                   Yes, I'm sure
@@ -337,7 +337,7 @@ const StudentSubject = () => {
                 <button
                   data-modal-hide="popup-modal"
                   type="button"
-                  className=" bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-black focus:z-10"
+                  className="bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-black focus:z-10"
                   onClick={cancelDelete}
                 >
                   No, cancel
