@@ -2,12 +2,13 @@
 
 import React from "react";
 import SyllbusCard from "./SyllbusCard";
-import Navbar from "../Navbar";
+import StudentNavbar from "../StudentNavbar";
 
 export default function Syllbus() {
   return (
     <div className="">
-      <Navbar />
+      
+      <StudentNavbar />
       <SyllbusCard />
     </div>
   );

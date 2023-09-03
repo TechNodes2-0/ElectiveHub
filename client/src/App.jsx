@@ -123,7 +123,7 @@ function App() {
           path="/subject-video"
           element={
             <>
-              <Navbar />
+              <StudentNavbar />
               <StudentVideo />
             </>
           }
