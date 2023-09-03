@@ -30,6 +30,8 @@ import AdminRoutes from "./Pages/AdminRoutes";
 import LearningPath from "./Pages/LearningPath";
 import AlanAIComponent from "./alan";
 import Error from "./Components/Error";
+import Charts from "./Components/Charts"
+import Dashboard from "./Components/Dashboard"
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
@@ -47,6 +49,8 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
 
         <Route element={<PrivateRoutes />}>
+         
+          <Route element={<AdminRoutes />}>
           <Route
             path="Home"
             element={
@@ -56,7 +60,6 @@ function App() {
               </>
             }
           ></Route>
-          <Route element={<AdminRoutes />}>
             <Route path="/add-subject" element={<SubjectForm />}></Route>
             <Route path="/editsubject/:id" element={<EditSubject />}></Route>
             <Route
@@ -111,6 +114,8 @@ function App() {
         <Route path="/Syllbus" element={<Syllbus />}></Route>
         <Route path="/Disscussion" element={<Disscussion />}></Route>
         <Route path="/SubDisscussion" element={<SubDisscussion />}></Route>
+        <Route path="/Chart" element={<Charts />}></Route>
+        <Route path="/Dashboard" element={<Dashboard />}></Route>
         <Route
           path="/subject-video"
           element={
