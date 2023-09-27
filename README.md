@@ -40,4 +40,6 @@ We welcome contributions to improve ElectiveHub. Please fork the repository, mak
 This project is licensed under the MIT License.
 
 
-Feel free to customize this template with specific details about your project.
+
+
+
