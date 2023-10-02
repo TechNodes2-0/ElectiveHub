@@ -5,6 +5,10 @@
 **Project Description:**
 ElectiveHub is an Education Management System designed to simplify and enhance the management of student information and elective subject selection in educational institutions. It offers a suite of applications for students, teachers, and administrators, providing a user-friendly platform to manage academic processes efficiently.
 
+![image](https://github.com/TechNodes2-0/ElectiveHub/assets/85815172/defd21ec-936a-425c-883c-6f9ee18318e8)
+
+
+
 **Features:**
 - **Student Information Management:** Add, update, and delete student details, including Student Name, Student ID Number, Email, and Phone Number.
 
