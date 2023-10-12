@@ -98,7 +98,7 @@ const Home = () => {
     };
 
     verifyCookie();
-  }, [cookies, navigate, token]);
+  }, [navigate, token]);
 
   const handleLogout = () => {
     console.log('4');
