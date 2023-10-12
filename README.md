@@ -31,6 +31,30 @@ ElectiveHub is an Education Management System designed to simplify and enhance t
 - **Elective Subject Selection:** Students can choose elective subjects, while teachers can assign them to students.
 - **Admin Dashboard:** Visualize data with charts and analytics to make informed decisions about curriculum and student engagement.
 
+# Creating .env file for client
+
+A file named .env is required in the client directory of ELECTIVEHUB for storing environment variables used at runtime. It is not a part of the repo and you will have to create it.
+
+Add the endpoint for accessing electivehub-api service to the variable named "VITE_API_URL" in the .env file.
+
+VITE_API_URL="http://your-server.com"
+
+If you are a developer working on your local system, then the URL would be:
+
+VITE_API_URL="http://localhost:4000"
+
+
+# Creating .env file in server
+
+A file named .env is required in the server directory of ELECTIVEHUB for storing environment variables used at runtime. It is not a part of the repo and you will have to create it.
+
+Create the following variables in the .env file and assign there values.
+
+MONGO_URL
+PORT
+TOKEN_KEY
+
+
 # Installation
 
 To get started with ElectiveHub, follow these installation steps:
