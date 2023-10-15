@@ -47,7 +47,6 @@ const Login = () => {
 
       if (response) {
         console.log(response.data.token);
-        localStorage.setItem("authToken",response.data.token);
         login(response.data.token);
 
         cookies.set("TOKEN", response.data.token, {
@@ -59,19 +58,13 @@ const Login = () => {
       const { success, message } = response.data;
 
       if (success) {
-        setTimeout(() => {
           navigate("/Home");
-        }, 1000);
       } else {
         console.log(message);
       }
     } catch (error) {
       console.log(error);
     }
-    setInputValue({
-      email: "",
-      password: "",
-    });
   };
 
   return (

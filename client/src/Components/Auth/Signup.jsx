@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { AuthContext } from "./AuthContext";
 
 const Signup = () => {
   const cookies = new Cookies();
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -52,21 +54,17 @@ const Signup = () => {
 
       const { success, message } = response.data;
       if (success) {
-        setTimeout(() => {
-          navigate("/Home");
-        }, 1000);
+        login(response.data.token);
+        cookies.set("TOKEN", response.data.token, {
+          path: "/",
+        });
+        navigate("/Home");
       } else {
         console.log(message);
       }
     } catch (error) {
       console.log(error);
     }
-    setInputValue({
-      ...inputValue,
-      email: "",
-      password: "",
-      username: "",
-    });
   };
 
   return (
