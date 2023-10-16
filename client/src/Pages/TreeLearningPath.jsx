@@ -3,6 +3,7 @@ import axios from "axios";
 import Tree from "react-d3-tree";
 import RichText from "../Components/RichText";
 import LargeModal from "../Components/LargeModal";
+import {Triangle} from "react-loader-spinner"
 
 export default function LearningPath({ data }) {
   console.log(data);
@@ -14,7 +15,7 @@ export default function LearningPath({ data }) {
 
   if (!treeData) {
     // Show loading or some other UI while fetching the data
-    return <div>Loading...</div>;
+    return <div className='w-full h-screen flex flex-row justify-center items-center'><Triangle height={'100'} width={'100'} color='#132043'/> </div>;
   }
 
   return (

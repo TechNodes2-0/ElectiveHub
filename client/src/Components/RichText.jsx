@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import "./RichText.css"; // Import the CSS file for styling
 import axios from "axios";
+import {Triangle} from "react-loader-spinner"
 
 const Home = ({ articleId }) => {
   const [article, setArticle] = useState();
@@ -48,7 +49,7 @@ const Home = ({ articleId }) => {
   }, [article]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='w-full h-screen flex flex-row justify-center items-center'><Triangle height={'100'} width={'100'} color='#132043'/> </div>
   }
 
   return (
