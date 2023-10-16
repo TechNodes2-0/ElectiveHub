@@ -27,6 +27,19 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,12})/;
+
+    if (!emailRegex.test(email)) {
+      alert("Invalid email format. Please enter a valid email address.");
+      return;
+    }
+
+    if (!passwordRegex.test(password)) {
+      alert("Invalid password! Please enter a valid password.");
+      return;
+    }
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/auth/signup`,
@@ -36,11 +49,6 @@ const Signup = () => {
         },
         {
           withCredentials: true,
-        
-
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
         }
       );
 
@@ -105,6 +113,7 @@ const Signup = () => {
             >
               Password
             </label>
+            <p className="p-4 w-full text-sm text-gray-300">*(Password must be 8-12 characters long and contain 1 capital letter and 1 special character.)</p>
             <input
               type="password"
               name="password"
@@ -130,12 +139,12 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-700"
+            className="bg-blue-500 text-white rounded px-4 py-2 hover-bg-blue-700"
           >
             Submit
           </button>
           <span className="mt-4 text-white ml-8">
-                  Already have an account?{" "}
+            Already have an account?{" "}
             <Link to="/login" className="text-blue-500">
               Login
             </Link>
