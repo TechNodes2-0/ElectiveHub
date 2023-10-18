@@ -16,6 +16,7 @@
     "d3": "^7.8.5",
     "flowbite": "^1.7.0",
     "flowbite-react": "^0.4.10",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-cookie": "^4.1.1",
