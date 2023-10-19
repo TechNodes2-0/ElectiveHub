@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 const ElectiveSubjectPage = () => {
 
@@ -112,9 +113,14 @@ return (
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-5">
       {filteredSubjects.map((subject) => (
-        <div
+        <motion.div
           key={subject.subjectCode}
-          className="border-2 rounded-lg border-gray-500 cursor-pointer p-4 text-white mr-2 ml-2 transition duration-200 hover:scale-105"
+          className="border-2 rounded-lg border-gray-500 cursor-pointer p-4 text-white mr-2 ml-2 hover:scale-105"
+          layout
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{duration: 0.5 }}
         >
           <h2 className="text-lg font-bold mb-2">{subject.subjectName}</h2>
           <p className="text-gray-500 mb-4">{subject.subjectCode}</p>
@@ -140,7 +146,7 @@ return (
               Delete
             </button>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
 

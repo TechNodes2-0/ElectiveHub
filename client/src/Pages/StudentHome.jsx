@@ -11,6 +11,8 @@ import Cookies from "universal-cookie";
 import StudentNavbar from "../Components/StudentNavbar";
 import StudentList from "../Components/Student/StudentList";
 
+import { AnimatePresence } from "framer-motion";
+
 export default function StudentHome() {
   const cookies = new Cookies();
   const navigate = useNavigate();
@@ -64,7 +66,7 @@ export default function StudentHome() {
     };
 
     verifyCookie();
-  }, [cookies, navigate]);
+  }, []);
 
   const handleLogout = () => {
     console.log("4");
@@ -84,7 +86,9 @@ export default function StudentHome() {
   return (
     <div className="">
       <StudentNavbar />
-      <StudentList token={token} user={User} />
+      <AnimatePresence>
+        <StudentList token={token} user={User} />
+      </AnimatePresence>
     </div>
   );
 }

@@ -9,6 +9,8 @@ import Cookies from "universal-cookie";
 import SubjectNavbar from '../Components/SubjectNavbar';
 import SubjectList from '../Components/Subject/SubjectList'
 
+import { AnimatePresence } from "framer-motion";
+
 export default function SubjectHome() {
   const cookies = new Cookies();
   const navigate = useNavigate();
@@ -55,7 +57,7 @@ export default function SubjectHome() {
     };
 
     verifyCookie();
-  }, [cookies, navigate]);
+  }, []);
 
   const handleLogout = () => {
     console.log("4");
@@ -77,8 +79,9 @@ export default function SubjectHome() {
 
     <div className='min-h-screen'>
       <SubjectNavbar />
-      <SubjectList />
-
+      <AnimatePresence>
+        <SubjectList />
+      </AnimatePresence>
     </div>
   )
 }
