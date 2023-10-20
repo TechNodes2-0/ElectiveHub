@@ -114,7 +114,7 @@ const Login = () => {
           </button>
         </form>
         <span className="mt-4 text-white">
-          Already have an account?{" "}
+          New to the Platform?{" "}
           <Link
             to={"/signup"}
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
