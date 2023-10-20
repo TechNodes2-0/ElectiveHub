@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
+import BackToTopButton from "./BackToTopButton";
 
 export default function Error() {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -48,6 +49,7 @@ export default function Error() {
           </div>
         </div>
       </section>
+      <BackToTopButton />
     </div>
   );
 }

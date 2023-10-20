@@ -6,8 +6,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
+import BackToTopButton from "../BackToTopButton";
 
-const StudentList = ({ token ,user}) => {
+const StudentList = ({ token, user }) => {
   const [students, setStudents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -111,7 +112,7 @@ const StudentList = ({ token ,user}) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{duration: 0.5 }}
+              transition={{ duration: 0.5 }}
             >
               <div>
                 <h3 className="text-lg font-medium">{student.name}</h3>
@@ -211,6 +212,7 @@ const StudentList = ({ token ,user}) => {
             </div>
           </div>
         )}
+        <BackToTopButton />
       </div>
     </>
   );

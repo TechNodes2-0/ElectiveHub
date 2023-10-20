@@ -4,13 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
-
-
+import BackToTopButton from "../BackToTopButton";
 
 const Login = () => {
   const cookies = new Cookies();
   const { login } = useContext(AuthContext);
-  
 
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
@@ -37,7 +35,6 @@ const Login = () => {
         },
         {
           withCredentials: true,
-          
 
           // headers: {
           //   Authorization: `Bearer ${token}`,
@@ -58,7 +55,7 @@ const Login = () => {
       const { success, message } = response.data;
 
       if (success) {
-          navigate("/Home");
+        navigate("/Home");
       } else {
         console.log(message);
       }
@@ -123,6 +120,7 @@ const Login = () => {
           </Link>
         </span>
       </div>
+      <BackToTopButton />
     </div>
   );
 };

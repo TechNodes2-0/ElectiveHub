@@ -5,10 +5,11 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../Auth/AuthContext";
+import BackToTopButton from "../BackToTopButton";
 const EditStudentSubject = () => {
   const { token } = useContext(AuthContext);
-  console.log("localtoken ------------------>",token)
-  console.log("GLOBAL TSOKRN",token);
+  console.log("localtoken ------------------>", token);
+  console.log("GLOBAL TSOKRN", token);
   const [subjectName, setSubjectName] = useState("");
   const [subjectDescription, setSubjectDescription] = useState("");
   const [subjectCode, setSubjectCode] = useState("");
@@ -30,7 +31,9 @@ const EditStudentSubject = () => {
     try {
       if (studentId && electiveSubjectId) {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/main/getElectiveSubjectsForStudent/${studentId}`,
+          `${
+            import.meta.env.VITE_API_URL
+          }/main/getElectiveSubjectsForStudent/${studentId}`,
           {
             withCredentials: true,
             headers: {
@@ -72,54 +75,53 @@ const EditStudentSubject = () => {
           subjectCode,
         },
         {
-
           headers: {
             Authorization: `Bearer ${token}`,
-          }
+          },
         }
 
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
-        
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        // },
       );
-toast.success("Subject updated successfully!");
-fetchSubjectDetails(studentId);
+      toast.success("Subject updated successfully!");
+      fetchSubjectDetails(studentId);
     } catch (error) {
-  console.error(error);
-  toast.error("Failed to update subject.");
-}
+      console.error(error);
+      toast.error("Failed to update subject.");
+    }
   };
 
-return (
-  <div>
-    <h3>Edit Subject</h3>
+  return (
     <div>
-      <label>Subject Name:</label>
-      <input
-        type="text"
-        value={subjectName}
-        onChange={(e) => setSubjectName(e.target.value)}
-      />
+      <h3>Edit Subject</h3>
+      <div>
+        <label>Subject Name:</label>
+        <input
+          type="text"
+          value={subjectName}
+          onChange={(e) => setSubjectName(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Subject Description:</label>
+        <textarea
+          value={subjectDescription}
+          onChange={(e) => setSubjectDescription(e.target.value)}
+        ></textarea>
+      </div>
+      <div>
+        <label>Subject Code:</label>
+        <input
+          type="text"
+          value={subjectCode}
+          onChange={(e) => setSubjectCode(e.target.value)}
+        />
+      </div>
+      <button onClick={handleSave}>Save</button>
+      <BackToTopButton />
     </div>
-    <div>
-      <label>Subject Description:</label>
-      <textarea
-        value={subjectDescription}
-        onChange={(e) => setSubjectDescription(e.target.value)}
-      ></textarea>
-    </div>
-    <div>
-      <label>Subject Code:</label>
-      <input
-        type="text"
-        value={subjectCode}
-        onChange={(e) => setSubjectCode(e.target.value)}
-      />
-    </div>
-    <button onClick={handleSave}>Save</button>
-  </div>
-);
+  );
 };
 
 export default EditStudentSubject;

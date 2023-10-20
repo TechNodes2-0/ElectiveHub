@@ -8,7 +8,7 @@ import { AuthContext } from "../Auth/AuthContext";
 import StudentNavbar from "../StudentNavbar";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import BackToTopButton from "../BackToTopButton";
 
 const StudentSubject = () => {
   const { token } = useContext(AuthContext);
@@ -102,7 +102,9 @@ const StudentSubject = () => {
           // },
         }
       );
-      const subjects = response.data.map((item) => item.electiveSubject) .filter((item) => item !== null);;
+      const subjects = response.data
+        .map((item) => item.electiveSubject)
+        .filter((item) => item !== null);
       console.log(subjects);
 
       setAssignedSubjects(subjects);
@@ -201,7 +203,7 @@ const StudentSubject = () => {
 
         <div className="mb-8">
           <h3 className="text-2xl text-white dark:text-center font-bold mb-5">
-        Select Elective Subjects
+            Select Elective Subjects
           </h3>
           {assignedSubjects.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -233,7 +235,7 @@ const StudentSubject = () => {
         </div>
 
         <h3 className="text-center text-2xl mb-3 font-bold">
-        Select Elective Subject
+          Select Elective Subject
         </h3>
         <div className="flex flex-col">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -347,6 +349,7 @@ const StudentSubject = () => {
             </div>
           </div>
         )}
+        <BackToTopButton />
       </div>
     </>
   );

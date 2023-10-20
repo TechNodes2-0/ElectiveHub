@@ -6,6 +6,7 @@ import Navbar from "../Components/Navbar";
 import Barplot from "./Barplot";
 import { CircularPacking } from "./CircularPacking";
 import { data } from "./data";
+import BackToTopButton from "./BackToTopButton";
 
 const Dashboard = () => {
   const { token } = useContext(AuthContext);
@@ -114,6 +115,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+        <BackToTopButton />
       </div>
     </>
   );

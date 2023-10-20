@@ -1,5 +1,4 @@
 /** @format */
-
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Feature from "../Components/Auth/Feature";
@@ -7,6 +6,8 @@ import StudyPic from "../assets/Study.png";
 import { Link } from "react-router-dom";
 import Stats from "../Components/Stats";
 import axios from "axios";
+import BackToTopButton from "../Components/BackToTopButton";
+
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
@@ -133,6 +134,7 @@ export default function Homepage() {
           </div>
         </div>
       </section>
+      <BackToTopButton />
     </div>
   );
 }

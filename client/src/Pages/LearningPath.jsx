@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LearningPathData from "../assets/scripts/LearningPathData";
 import TreeLearningPath from "./TreeLearningPath";
 import TimelineLearningPath from "./TimelineLearningPath";
+import BackToTopButton from "../Components/BackToTopButton";
 
 const TabComponent = () => {
   const [activeSubject, setActiveSubject] = useState(LearningPathData[0]);
@@ -90,6 +91,7 @@ const TabComponent = () => {
       )}
 
       {/* Repeat the conditional rendering for other subjects */}
+      <BackToTopButton />
     </div>
   );
 };

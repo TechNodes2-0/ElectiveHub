@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import BackToTopButton from "../Components/BackToTopButton";
 
 const ErrorBoundary = ({ children }) => {
   const [hasError, setHasError] = useState(false);
@@ -13,23 +14,26 @@ const ErrorBoundary = ({ children }) => {
     };
 
     // Register the error handler
-    window.addEventListener('error', errorHandler);
-    window.addEventListener('unhandledrejection', errorHandler);
+    window.addEventListener("error", errorHandler);
+    window.addEventListener("unhandledrejection", errorHandler);
 
     // Cleanup the event listeners
     return () => {
-      window.removeEventListener('error', errorHandler);
-      window.removeEventListener('unhandledrejection', errorHandler);
+      window.removeEventListener("error", errorHandler);
+      window.removeEventListener("unhandledrejection", errorHandler);
     };
   }, []);
 
   if (hasError) {
     // Render fallback UI or error message
     return (
-      <div className='min-h-screen'>
+      <div className="min-h-screen">
         <h2>Something went wrong.</h2>
         <p>{error && error.toString()}</p>
-        <p>Component Stack Error Details: {errorInfo && errorInfo.componentStack}</p>
+        <p>
+          Component Stack Error Details: {errorInfo && errorInfo.componentStack}
+        </p>
+        <BackToTopButton />
       </div>
     );
   }
