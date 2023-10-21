@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import BackToTopButton from "../BackToTopButton";
 
 export default function Feature() {
   return (
@@ -176,6 +177,7 @@ export default function Feature() {
           </div>
         </div>
       </section>
+      <BackToTopButton />
     </div>
   );
 }

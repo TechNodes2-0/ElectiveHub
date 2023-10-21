@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useContext } from "react";
 import { AuthContext } from "../Components/Auth/AuthContext";
 import Cookies from 'universal-cookie';
+import BackToTopButton from '../Components/BackToTopButton';
 
 const StudentDetailsFunctionality = () => {
   return (
@@ -164,6 +165,7 @@ const Home = () => {
           </button>
         </div>
       )}
+      <BackToTopButton />
     </div>
   );
 };

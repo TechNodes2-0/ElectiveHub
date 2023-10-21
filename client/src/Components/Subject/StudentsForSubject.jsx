@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Auth/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BackToTopButton from "../BackToTopButton";
 
 const StudentsForSubject = () => {
   const { token } = useContext(AuthContext);
@@ -291,6 +292,7 @@ const StudentsForSubject = () => {
           </div>
         </div>
       )}
+      <BackToTopButton />
     </div>
   );
 };

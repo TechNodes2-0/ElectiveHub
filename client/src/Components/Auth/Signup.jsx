@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
+import BackToTopButton from "../BackToTopButton";
 
 const Signup = () => {
   const cookies = new Cookies();
@@ -113,7 +114,10 @@ const Signup = () => {
             >
               Password
             </label>
-            <p className="p-4 w-full text-sm text-gray-300">*(Password must be 8-12 characters long and contain 1 capital letter and 1 special character.)</p>
+            <p className="p-4 w-full text-sm text-gray-300">
+              *(Password must be 8-12 characters long and contain 1 capital
+              letter and 1 special character.)
+            </p>
             <input
               type="password"
               name="password"
@@ -151,6 +155,7 @@ const Signup = () => {
           </span>
         </form>
       </div>
+      <BackToTopButton />
     </div>
   );
 };

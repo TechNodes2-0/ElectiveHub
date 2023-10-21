@@ -18,7 +18,7 @@ export default function StudentHome() {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
-  const[User,Setuser]=useState(null);
+  const [User, Setuser] = useState(null);
   const token = cookies.get("TOKEN");
   useEffect(() => {
     const verifyCookie = async () => {

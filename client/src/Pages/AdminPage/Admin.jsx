@@ -5,6 +5,7 @@ import SubjectHome from "../../Pages/SubjectHome";
 import StudentHome from "../StudentHome";
 import Home from "../Home";
 import Navbar from "../../Components/Navbar";
+import BackToTopButton from "../../Components/BackToTopButton";
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -143,6 +144,7 @@ export default function Admin() {
           )}
         </div>
       </div>
+      <BackToTopButton />
     </div>
   );
 }

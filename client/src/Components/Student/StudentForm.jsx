@@ -5,6 +5,7 @@ import StudentNavbar from "../StudentNavbar";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../Auth/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import BackToTopButton from "../BackToTopButton";
 
 const StudentForm = () => {
   const { token } = useContext(AuthContext);
@@ -48,12 +49,9 @@ const StudentForm = () => {
       // Make API call to backend to create/update student record
       axios
         .post(`${import.meta.env.VITE_API_URL}/student/addstudent`, formData, {
-          
-
-            headers: {
-              Authorization: `Bearer ${token}`,
-            }
-          
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         })
         .then((response) => {
           // Handle success response
@@ -98,8 +96,9 @@ const StudentForm = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.name ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full border ${
+                  errors.name ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -118,8 +117,9 @@ const StudentForm = () => {
                 name="idNumber"
                 value={formData.idNumber}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.idNumber ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full border ${
+                  errors.idNumber ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.idNumber && (
                 <p className="text-red-500 text-sm mt-1">{errors.idNumber}</p>
@@ -138,8 +138,9 @@ const StudentForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.email ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -158,8 +159,9 @@ const StudentForm = () => {
                 name="phoneNumber"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.phoneNumber ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                className={`w-full border ${
+                  errors.phoneNumber ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500`}
               />
               {errors.phoneNumber && (
                 <p className="text-red-500 text-sm mt-1">
@@ -175,6 +177,7 @@ const StudentForm = () => {
             </button>
           </form>
         </div>
+        <BackToTopButton />
       </div>
       <ToastContainer />
     </>

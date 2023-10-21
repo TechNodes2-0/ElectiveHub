@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../Auth/AuthContext";
 import StudentNavbar from "../StudentNavbar";
+import BackToTopButton from "../BackToTopButton";
 const EditStudent = () => {
   const { id } = useParams();
   const studentId = id;
@@ -138,6 +139,7 @@ const EditStudent = () => {
             </button>
           </div>
         </form>
+        <BackToTopButton />
       </div>
     </>
   );
