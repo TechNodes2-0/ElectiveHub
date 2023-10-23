@@ -80,7 +80,7 @@ To get started with ElectiveHub, follow these installation steps:
 4. Start the backend server:
 
    ```
-   npm run dev
+   npm start
    ```
 
 5. For the frontend, navigate to the client directory:
