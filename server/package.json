@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "test":"jest",
     "start": "nodemon app.js"
   },
   "keywords": [],
@@ -22,6 +23,9 @@
     "mongoose": "^7.3.4"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "est": "^0.2.1-alpha",
+    "nodemon": "^3.0.1",
+    "superagent": "^8.1.2",
+    "supertest": "^6.3.3"
   }
 }
