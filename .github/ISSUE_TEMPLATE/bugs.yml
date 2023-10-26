@@ -47,9 +47,6 @@ body:
         - label: "I want to work on this issue. (optional)"
           required: false
 
-        - label: "I am a GSSoC'23 contributor"
-          required: false
-
   - type: markdown
     attributes:
       value: |
