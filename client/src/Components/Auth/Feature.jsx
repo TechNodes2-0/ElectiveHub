@@ -56,7 +56,7 @@ export default function Feature() {
               </p>
 
               <Link
-                to="Student"
+                to="/Login"
                 class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:bg-blue-700 "
               >
                 <svg
@@ -105,7 +105,7 @@ export default function Feature() {
               </p>
 
               <Link
-                to="subject"
+                to="/Login"
                 class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline  hover:bg-blue-700 "
               >
                 <svg
@@ -155,7 +155,7 @@ export default function Feature() {
               </p>
 
               <Link
-                to="/subject"
+                to="/Login"
                 class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:underline  hover:bg-blue-700"
               >
                 <svg
