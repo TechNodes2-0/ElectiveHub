@@ -84,7 +84,7 @@ const PieChart = ({ width, height, data }) => {
           x2={inflexionPoint[0]}
           y2={inflexionPoint[1]}
           stroke={"black"}
-          fill={"black"}
+          fill={"white"}
         />
         <line
           x1={inflexionPoint[0]}
@@ -92,7 +92,7 @@ const PieChart = ({ width, height, data }) => {
           x2={labelPosX}
           y2={inflexionPoint[1]}
           stroke={"black"}
-          fill={"black"}
+          fill={"white"}
         />
         <text
           x={labelPosX + (isRightLabel ? 2 : -2)}
