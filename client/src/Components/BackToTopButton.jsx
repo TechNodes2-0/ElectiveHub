@@ -35,7 +35,7 @@ const BackToTopButton = () => {
       className={`
         fixed
         bottom-8
-        right-8
+        right-11
         bg-gray-700
         text-gray-200
         rounded-2xl
@@ -48,8 +48,8 @@ const BackToTopButton = () => {
       `}
       title="Go to top"
       style={{
-        width: "51px", // Set the width to create a square
-        height: "53px", // Set the height to create a square
+        width: "64px", // Set the width to create a square
+        height: "64px", // Set the height to create a square
       }}
     >
       ▲
