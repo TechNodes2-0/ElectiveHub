@@ -4,6 +4,7 @@
 import React from "react";
 import Card from "./Card"; // Import your Card component
 import cardsData from "./cardsData.json"; // Import the JSON data
+import BackToTopButton from "../BackToTopButton";
 
 export default function SyllabusCard() {
   return (
@@ -32,6 +33,7 @@ export default function SyllabusCard() {
           ))}
         </div>
       </div>
+      <BackToTopButton />
     </div>
   );
 }

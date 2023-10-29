@@ -1,5 +1,4 @@
 /** @format */
-
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Feature from "../Components/Auth/Feature";
@@ -8,6 +7,8 @@ import { Link } from "react-router-dom";
 import Stats from "../Components/Stats";
 import axios from "axios";
 import {AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare} from "react-icons/ai"
+import BackToTopButton from "../Components/BackToTopButton";
+
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
@@ -52,7 +53,7 @@ export default function Homepage() {
               their aspirations.
             </p>
             <Link
-              to="/Home"
+              to="/Login"
               class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
               Get started
@@ -136,6 +137,7 @@ export default function Homepage() {
   </div>
 </section>
 
+      <BackToTopButton />
     </div>
   );
 }

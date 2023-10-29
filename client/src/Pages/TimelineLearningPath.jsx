@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./TimelineLearningPath.css";
+import BackToTopButton from "../Components/BackToTopButton";
 const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
   useEffect(() => {
     setTimelineData(initialTimelineData);
@@ -123,6 +124,7 @@ const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
             </div>
           </div>
         </div>
+        <BackToTopButton />
       </section>
     </>
   );

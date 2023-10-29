@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
+import BackToTopButton from "../BackToTopButton";
+import userImg from "../../assets/images/user.webp";
 
 const Signup = () => {
   const cookies = new Cookies();
@@ -76,12 +78,16 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900">
-      <div className="max-w-md w-full px-6 py-8 border-2 border-gray-300 shadow-lg rounded-md bg-gray-800">
+    <div className="flex items-center flex-wrap justify-center gap-5 bg-gray-900">
+      <img src={userImg} alt="user" />
+      <div className="max-w-md w-full px-6 py-8 rounded-md">
         <h2 className="text-2xl font-bold mb-4 text-white">Signup Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="text-lg font-medium text-white">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-white"
+            >
               Email
             </label>
             <input
@@ -90,11 +96,14 @@ const Signup = () => {
               value={email}
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="w-full p-2 border rounded text-black"
+              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div>
-            <label htmlFor="email" className="text-lg font-medium text-white">
+            <label
+              htmlFor="email"
+              className="block mb-2 text-sm font-medium text-white"
+            >
               Username
             </label>
             <input
@@ -103,54 +112,66 @@ const Signup = () => {
               value={username}
               placeholder="Enter your username"
               onChange={handleOnChange}
-              className="w-full p-2 border rounded text-black"
+              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="text-lg font-medium text-white"
+              className="block text-sm font-medium text-white"
             >
               Password
             </label>
-            <p className="p-4 w-full text-sm text-gray-300">*(Password must be 8-12 characters long and contain 1 capital letter and 1 special character.)</p>
+            <i className="w-full text-sm text-gray-300">
+              *(Password must be 8-12 characters long and contain 1 capital
+              letter and 1 special character.)
+            </i>
             <input
               type="password"
               name="password"
               value={password}
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="w-full p-2 border rounded text-black"
+              className="mt-2 w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div>
-            <label htmlFor="role" className="text-lg font-medium text-white">
+            <label
+              htmlFor="role"
+              className="block mb-2 text-sm font-medium text-white"
+            >
               Role
             </label>
             <select
               name="role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full p-2 border rounded text-black"
+              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             >
               <option value="student">Student</option>
               <option value="admin">College Admin</option>
             </select>
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white rounded px-4 py-2 hover-bg-blue-700"
-          >
-            Submit
-          </button>
-          <span className="mt-4 text-white ml-8">
-            Already have an account?{" "}
-            <Link to="/login" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-              Login
-            </Link>
-          </span>
+          <div className="flex justify-between items-center flex-wrap">
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-2"
+            >
+              Submit
+            </button>
+            <p className="mt-4 text-white">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                Login
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
+      <BackToTopButton />
     </div>
   );
 };

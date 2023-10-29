@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
+import BackToTopButton from "../BackToTopButton";
 
-const StudentList = ({ token ,user}) => {
+const StudentList = ({ token, user }) => {
   const [students, setStudents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -103,9 +105,14 @@ const StudentList = ({ token ,user}) => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 px-2">
           {filteredStudents.map((student) => (
-            <div
-              key={student.id}
-              className="bg-gray-800 border-blue-500 border-2 border-solid rounded-lg tarnsition duration-200 hover:scale-105 shadow p-4 flex flex-col justify-between text-white"
+            <motion.div
+              key={student.idNumber}
+              className="bg-gray-800 border-blue-500 border-2 border-solid rounded-lg hover:scale-105 shadow p-4 flex flex-col justify-between text-white"
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
             >
               <div>
                 <h3 className="text-lg font-medium">{student.name}</h3>
@@ -137,7 +144,7 @@ const StudentList = ({ token ,user}) => {
                   Delete
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -205,6 +212,7 @@ const StudentList = ({ token ,user}) => {
             </div>
           </div>
         )}
+        <BackToTopButton />
       </div>
     </>
   );

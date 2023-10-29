@@ -4,13 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
-
-
+import BackToTopButton from "../BackToTopButton";
+import userImg from "../../assets/images/user.webp";
 
 const Login = () => {
   const cookies = new Cookies();
   const { login } = useContext(AuthContext);
-  
 
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
@@ -37,7 +36,6 @@ const Login = () => {
         },
         {
           withCredentials: true,
-          
 
           // headers: {
           //   Authorization: `Bearer ${token}`,
@@ -58,7 +56,7 @@ const Login = () => {
       const { success, message } = response.data;
 
       if (success) {
-          navigate("/Home");
+        navigate("/Home");
       } else {
         console.log(message);
       }
@@ -68,8 +66,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-900">
-      <div className="max-w-md w-full px-6 py-8  border-2 border-gray-300 shadow-lg rounded-md bg-gray-800">
+    <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900">
+      <img src={userImg} alt="user" />
+      <div className="max-w-md w-full px-6 py-8 rounded-md">
         <h2 className="text-3xl font-bold text-center mb-6 text-white">
           Login Account
         </h2>
@@ -81,13 +80,14 @@ const Login = () => {
             >
               Email
             </label>
+
             <input
               type="email"
               name="email"
               value={email}
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div className="mb-6">
@@ -103,26 +103,30 @@ const Login = () => {
               value={password}
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="bg-white border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
-          <button
-            type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-2"
-          >
-            Submit
-          </button>
+          <div className="flex justify-between items-center flex-wrap">
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-2"
+            >
+              Submit
+            </button>
+            <p className="mt-4 text-white">
+              New to the Platform?
+              <Link
+                to={"/signup"}
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >
+                {" "}
+                Signup
+              </Link>
+            </p>
+          </div>
         </form>
-        <span className="mt-4 text-white">
-          New to the Platform?{" "}
-          <Link
-            to={"/signup"}
-            className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          >
-            Signup
-          </Link>
-        </span>
       </div>
+      <BackToTopButton />
     </div>
   );
 };

@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../Auth/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
+import BackToTopButton from "../BackToTopButton";
 
 const SubjectForm = () => {
   const { token } = useContext(AuthContext);
-  console.log("GLobal token",token);
+  console.log("GLobal token", token);
   const [formData, setFormData] = useState({
     subjectName: "",
     subjectCode: "",
@@ -44,12 +45,9 @@ const SubjectForm = () => {
     if (validateForm()) {
       axios
         .post(`${import.meta.env.VITE_API_URL}/subject/addsubject`, formData, {
-          
-
-            headers: {
-              Authorization: `Bearer ${token}`,
-            }
-          
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         })
         .then((response) => {
           console.log(response.data);
@@ -89,8 +87,9 @@ const SubjectForm = () => {
                 name="subjectName"
                 value={formData.subjectName}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.subjectName ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
+                className={`w-full border ${
+                  errors.subjectName ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
               />
               {errors.subjectName && (
                 <p className="text-red-500 text-sm mt-1">
@@ -111,8 +110,9 @@ const SubjectForm = () => {
                 name="subjectCode"
                 value={formData.subjectCode}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.subjectCode ? "border-red-500" : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
+                className={`w-full border ${
+                  errors.subjectCode ? "border-red-500" : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
               />
               {errors.subjectCode && (
                 <p className="text-red-500 text-sm mt-1">
@@ -132,10 +132,11 @@ const SubjectForm = () => {
                 name="subjectDescription"
                 value={formData.subjectDescription}
                 onChange={handleInputChange}
-                className={`w-full border ${errors.subjectDescription
-                  ? "border-red-500"
-                  : "border-gray-300"
-                  } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
+                className={`w-full border ${
+                  errors.subjectDescription
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900`}
               />
               {errors.subjectDescription && (
                 <p className="text-red-500 text-sm mt-1">
@@ -151,6 +152,7 @@ const SubjectForm = () => {
             </button>
           </form>
         </div>
+        <BackToTopButton />
       </div>
     </>
   );

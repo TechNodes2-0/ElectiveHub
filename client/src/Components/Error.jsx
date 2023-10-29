@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Confetti from "react-confetti";
+import BackToTopButton from "./BackToTopButton";
 
 export default function Error() {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -37,7 +38,7 @@ export default function Error() {
               Sorry, we can't access that page without Login.
             </p>
             <Link
-              to="/login"
+              to="/"
               className="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
             >
               Go to Homepage
@@ -48,6 +49,7 @@ export default function Error() {
           </div>
         </div>
       </section>
+      <BackToTopButton />
     </div>
   );
 }

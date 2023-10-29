@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,8 +6,11 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-import SubjectNavbar from '../Components/SubjectNavbar';
-import SubjectList from '../Components/Subject/SubjectList'
+import SubjectNavbar from "../Components/SubjectNavbar";
+import SubjectList from "../Components/Subject/SubjectList";
+
+import { AnimatePresence } from "framer-motion";
+import BackToTopButton from "../Components/BackToTopButton";
 
 export default function SubjectHome() {
   const cookies = new Cookies();
@@ -17,20 +20,21 @@ export default function SubjectHome() {
   const token = cookies.get("TOKEN");
   useEffect(() => {
     const verifyCookie = async () => {
-
-
       console.log(token);
       if (!token) {
         console.log("1");
         navigate("/login");
       } else {
         try {
-          const response = await axios.get(`${import.meta.env.VITE_API_URL}/yaae`, {
-            withCredentials: true,
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+          const response = await axios.get(
+            `${import.meta.env.VITE_API_URL}/yaae`,
+            {
+              withCredentials: true,
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           const { status, user } = response.data;
 
@@ -55,7 +59,7 @@ export default function SubjectHome() {
     };
 
     verifyCookie();
-  }, [cookies, navigate]);
+  }, []);
 
   const handleLogout = () => {
     console.log("4");
@@ -65,8 +69,7 @@ export default function SubjectHome() {
     if (token) {
       console.log("cookie is here");
       console.log(cookies.cookies.TOKEN);
-    }
-    else {
+    } else {
       console.log("cookie is not here");
     }
 
@@ -74,11 +77,12 @@ export default function SubjectHome() {
   };
 
   return (
-
-    <div className='min-h-screen'>
+    <div className="min-h-screen">
       <SubjectNavbar />
-      <SubjectList />
-
+      <AnimatePresence>
+        <SubjectList />
+      </AnimatePresence>
+      <BackToTopButton />
     </div>
-  )
+  );
 }
