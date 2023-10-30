@@ -62,7 +62,7 @@ export default function Stats() {
   }, [currentValues]);
 
   return (
-    <div className="bg-gray-900">
+    <div style={{backgroundImage:'linear-gradient(to top, #6b7280, #535a68, #3c4251, #262c3c, #111827)'}}>
       <h1 className="text-3xl text-center text-white">Stats</h1>
       <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto ">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
