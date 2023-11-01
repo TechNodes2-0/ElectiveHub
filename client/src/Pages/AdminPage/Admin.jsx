@@ -1,10 +1,7 @@
 /** @format */
-
-import { React, useState } from "react";
+import React, { useState } from "react";
 import SubjectHome from "../../Pages/SubjectHome";
 import StudentHome from "../StudentHome";
-import Home from "../Home";
-import Navbar from "../../Components/Navbar";
 import BackToTopButton from "../../Components/BackToTopButton";
 
 export default function Admin() {
@@ -94,7 +91,10 @@ export default function Admin() {
             <ul class="space-y-1.5">
               <li>
                 <a
-                  class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white"
+                  class={
+                    (activeTab === "dashboard" ? "bg-gray-900 " : "") +
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                  }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "dashboard")}
                 >
@@ -104,7 +104,10 @@ export default function Admin() {
 
               <li>
                 <a
-                  class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
+                  class={
+                    (activeTab === "Subject" ? "bg-gray-900 " : "") +
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                  }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "Subject")}
                 >
@@ -113,7 +116,10 @@ export default function Admin() {
               </li>
               <li>
                 <a
-                  class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
+                  class={
+                    (activeTab === "Student" ? "bg-gray-900 " : "") +
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                  }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "Student")}
                 >
