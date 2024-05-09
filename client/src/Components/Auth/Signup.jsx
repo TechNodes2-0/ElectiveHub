@@ -5,6 +5,7 @@ import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
 import userImg from "../../assets/images/user.webp";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const cookies = new Cookies();
@@ -33,12 +34,12 @@ const Signup = () => {
     const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,12})/;
 
     if (!emailRegex.test(email)) {
-      alert("Invalid email format. Please enter a valid email address.");
+      toast.error("Invalid email format"); 
       return;
     }
 
     if (!passwordRegex.test(password)) {
-      alert("Invalid password! Please enter a valid password.");
+      toast.error("Invalid password"); 
       return;
     }
 
@@ -73,6 +74,7 @@ const Signup = () => {
         console.log(message);
       }
     } catch (error) {
+      toast.error("Signup Failed, Please try again");
       console.log(error);
     }
   };
