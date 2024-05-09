@@ -60,7 +60,7 @@ const Home = () => {
   const [showStudentFunctionality, setShowStudentFunctionality] = useState(false);
   const [showSubjectFunctionality, setShowSubjectFunctionality] = useState(false);
   const [showSpecialRoutesFunctionality, setShowSpecialRoutesFunctionality] = useState(false);
-  const { token,logout } = useContext(AuthContext);
+  const { token, logout } = useContext(AuthContext);
   console.log(token);
 
   useEffect(() => {
@@ -103,7 +103,7 @@ const Home = () => {
 
   const handleLogout = () => {
     console.log('4');
-   logout();
+    logout();
 
     navigate('/');
   };
