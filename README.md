@@ -31,6 +31,18 @@ ElectiveHub is an Education Management System designed to simplify and enhance t
 - **Elective Subject Selection:** Students can choose elective subjects, while teachers can assign them to students.
 - **Admin Dashboard:** Visualize data with charts and analytics to make informed decisions about curriculum and student engagement.
 
+# Maintainers
+
+<table style="border: none;">
+<tr>
+<td align="center" width="200"><pre><a href="https://github.com/Yash636261"><img src="https://avatars.githubusercontent.com/u/98970491?v=4" width="200" alt="Profile" /><br><sub>@Yash636261</sub></a></pre></td>
+<td align="center" width="200"><pre><a href="https://github.com/Nishitbaria"><img src="https://avatars.githubusercontent.com/u/85815172?v=4" width="200" alt="Profile" /><br><sub>@Nishitbaria</sub></a></pre></td>
+<td align="center" width="200"><pre><a href="https://github.com/VinayakVispute"><img src="https://avatars.githubusercontent.com/u/93467074?v=4" width="200" alt="Profile" /><br><sub>@VinayakVispute</sub></a>
+<td align="center" width="200"><pre><a href="https://github.com/JayeshYadav99"><img src="https://avatars.githubusercontent.com/u/107855172?v=4" width="200" alt="Profile" /><br><sub>@JayeshYadav99</sub></a></pre></td>
+</tr>
+</table>
+
+
 # Creating .env file for client
 
 A file named .env is required in the client directory of ELECTIVEHUB for storing environment variables used at runtime. It is not a part of the repo and you will have to create it.
