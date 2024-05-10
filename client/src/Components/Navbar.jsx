@@ -146,13 +146,7 @@ export default function Navbar() {
                     >
                       Admin
                     </Link>
-                  </li>
-                  <li>
-                    <span className="block py-1
-                     pl-3 pr-4 rounded bg-gray-800 text-white">
-                      Welcome, {username}
-                    </span>
-                  </li>
+                  </li> 
                 </>
               ) : null}
               {!isLoggedIn && (
