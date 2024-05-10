@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/TechNodes2-0/TechNode-Community-Website.svg)](https://github.com/TechNodes2-0/TechNode-Community-Website/issues)
 [![GitHub forks](https://img.shields.io/github/forks/TechNodes2-0/TechNode-Community-Website.svg)](https://github.com/TechNodes2-0/TechNode-Community-Website/network)
-[![GitHub stars](https://img.shields.io/github/stars/TechNodes2-0/TechNode-Community-Website.svg)](https://github.com/TechNodes2-0/TechNode-Community-Website/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/TechNodes2-0/TechNode-Community-Website.svg)](https://github.com/TechNodes2-0/ElectiveHub/stargazers)
 [![Netlify Badge](https://img.shields.io/badge/Netlify-Deployed-brightgreen)](https://electivehub.onrender.com)
 
 
