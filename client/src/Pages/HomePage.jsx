@@ -86,7 +86,7 @@ export default function Homepage() {
       <section className="h-full text-center lg:text-left p-5 flex flex-col items-center" style={{ backgroundImage: 'linear-gradient(to bottom, #6b7280, #535a68, #3c4251, #262c3c, #111827)', }}>
         <div className="md:w-full text-2xl lg:text-3xl font-bold dark:text-white mb-5 lg:w-1/2 text-center">
           <span className="text-primary">
-            Subscribe to our <span className="dark:text-primary-400 inline">Newsletter</span>
+            Subscribe to our <span className="dark:text-blue-500 inline">Newsletter</span>
           </span>
         </div>
         <div className="flex flex-col lg:flex-row justify-between p-2 w-full">
