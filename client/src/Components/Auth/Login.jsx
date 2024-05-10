@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
 import userImg from "../../assets/images/user.webp";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const cookies = new Cookies();
@@ -58,9 +59,11 @@ const Login = () => {
       if (success) {
         navigate("/Home");
       } else {
+        alert(message.message);
         console.log(message);
       }
     } catch (error) {
+      toast.error("Incorrect credentials. Check and try again or sign up.");
       console.log(error);
     }
   };

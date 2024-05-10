@@ -6,7 +6,7 @@ import StudyPic from "../assets/Study.png";
 import { Link } from "react-router-dom";
 import Stats from "../Components/Stats";
 import axios from "axios";
-import {AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare} from "react-icons/ai"
+import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
 import BackToTopButton from "../Components/BackToTopButton";
 
 export default function Homepage() {
@@ -83,59 +83,59 @@ export default function Homepage() {
       </section>
       <Feature></Feature>
       <Stats />
-      <section className="h-full text-center lg:text-left p-5 flex flex-col items-center" style={{backgroundImage:'linear-gradient(to bottom, #6b7280, #535a68, #3c4251, #262c3c, #111827)',}}>
-  <div className="md:w-full text-2xl lg:text-3xl font-bold dark:text-white mb-5 w-1/2 text-center">
-    <span className="text-primary ">
-      Subscribe to our <span className="dark:text-primary-400">Newsletter</span>
-    </span>
-  </div>
-  <div className="flex flex-col lg:flex-row justify-between p-2 w-full">
-    <div className="w-full lg:w-1/2 mb-5 lg:mb-0">
-      <p className="text-xl lg:text-2xl font-bold text-primary-400">Get the Latest from our platform</p>
-      <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium">Get information regarding new Updates Features, Statistical Analysis, and Monthly Review from our team.</p>
-    </div>
-
-    <div className="w-full lg:w-1/2">
-      <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0" data-te-input-wrapper-init>
-        <input
-          type="text"
-          className="peer block min-h-[auto] w-full rounded border-2 mr-2 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-          id="emailInput"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label
-          htmlFor="emailInput"
-          className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[2.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[2.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-        >
-          Enter your email
-        </label>
-        <button
-          type="button"
-          onClick={handleSubscribe}
-          className="lg:mt-0 mt-2 inline-block rounded bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-          data-te-ripple-init
-          data-te-ripple-color="light"
-          disabled={subscribed}
-        >
-          {subscribed ? "Subscribed" : "Subscribe"}
-        </button>
-      </div>
-
-      <div className="mt-5">
-        <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">Follow Us On:</h1>
-        <div className="flex flex-row w-full lg:w-1/5 justify-between text-2xl lg:text-3xl text-slate-500">
-          <AiFillTwitterSquare />
-          <AiFillInstagram />
-          <AiFillFacebook />
-          <AiFillLinkedin />
+      <section className="h-full text-center lg:text-left p-5 flex flex-col items-center" style={{ backgroundImage: 'linear-gradient(to bottom, #6b7280, #535a68, #3c4251, #262c3c, #111827)', }}>
+        <div className="md:w-full text-2xl lg:text-3xl font-bold dark:text-white mb-5 lg:w-1/2 text-center">
+          <span className="text-primary">
+            Subscribe to our <span className="dark:text-primary-400 inline">Newsletter</span>
+          </span>
         </div>
-      </div>
-    </div>
-    {error && <p className="text-red-500">{error}</p>}
-  </div>
-</section>
+        <div className="flex flex-col lg:flex-row justify-between p-2 w-full">
+          <div className="w-full lg:w-1/2 mb-5 lg:mb-0">
+            <p className="text-xl lg:text-2xl font-bold text-primary-400">Get the Latest from our platform</p>
+            <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium">Get information regarding new Updates Features, Statistical Analysis, and Monthly Review from our team.</p>
+          </div>
+
+          <div className="w-full lg:w-1/2">
+            <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0" data-te-input-wrapper-init>
+              <input
+                type="text"
+                className="peer block min-h-[auto] w-full rounded border-2 mr-2 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="emailInput"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label
+                htmlFor="emailInput"
+                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-slate-200 transition-all duration-200 ease-out peer-focus:-translate-y-[2.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[2.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+              >
+                Enter your email
+              </label>
+              <button
+                type="button"
+                onClick={handleSubscribe}
+                className="lg:mt-0 mt-2 inline-block rounded bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                data-te-ripple-init
+                data-te-ripple-color="light"
+                disabled={subscribed}
+              >
+                {subscribed ? "Subscribed" : "Subscribe"}
+              </button>
+            </div>
+
+            <div className="mt-5">
+              <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">Follow Us On</h1>
+              <div className="flex flex-row w-full lg:w-1/5 justify-between text-2xl lg:text-3xl text-slate-500">
+                <AiFillTwitterSquare />
+                <AiFillInstagram />
+                <AiFillFacebook />
+                <AiFillLinkedin />
+              </div>
+            </div>
+          </div>
+          {error && <p className="text-red-500">{error}</p>}
+        </div>
+      </section>
 
       <BackToTopButton />
     </div>
