@@ -45,7 +45,7 @@ const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
             </div>
             <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
               <div className="container mx-auto w-full h-full">
-                <div className="relative wrap overflow-hidden p-10 h-full">
+                <div className="relative wrap overflow-hidden p-5 h-full">
                   <div
                     className="border-2-2 border-blue-555 absolute h-full border"
                     style={{
@@ -80,7 +80,7 @@ const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
                         <div className="mb-3 text-base">Step {index + 1}:</div>
                         <h4 className="text-blue-500 mb-3 font-bold text-lg md:text-2xl">
                           {step.title}{" "}
-                          <span className="font-semibold text-md text-slate-600 ">
+                          <span className="font-semibold text-md text-slate-600 block">
                             {step.category}
                           </span>
                         </h4>
@@ -117,7 +117,7 @@ const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
                   ))}
                 </div>
                 <img
-                  className="mx-auto -mt-36 md:-mt-36"
+                  className="mx-auto -mt-36 md:mt-20"
                   src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
                 />
               </div>
