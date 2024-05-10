@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import "./TimelineLearningPath.css";
+import "../styles/TimelineLearningPath.css";
 import BackToTopButton from "../Components/BackToTopButton";
 const DataScienceTimeline = ({ initialTimelineData, subjectName }) => {
   useEffect(() => {

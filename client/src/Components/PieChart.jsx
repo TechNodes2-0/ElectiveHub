@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from "react";
 import * as d3 from "d3";
-import styles from "./pie-chart.module.css";
+import styles from "../styles/pie-chart.module.css";
 
 const MARGIN_X = 150;
 const MARGIN_Y = 70;

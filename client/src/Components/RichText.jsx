@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import "./RichText.css"; // Import the CSS file for styling
+import "../styles/RichText.css"; // Import the CSS file for styling
 import axios from "axios";
 import {Triangle} from "react-loader-spinner"
 
