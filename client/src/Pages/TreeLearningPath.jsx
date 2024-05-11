@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Tree from "react-d3-tree";
 import RichText from "../Components/RichText";
 import LargeModal from "../Components/LargeModal";
-import {Triangle} from "react-loader-spinner"
+import { Triangle } from "react-loader-spinner"
 
 export default function LearningPath({ data }) {
-  console.log(data);
   useEffect(() => {
     setTreeData(data);
   }, [data]);
@@ -15,11 +13,11 @@ export default function LearningPath({ data }) {
 
   if (!treeData) {
     // Show loading or some other UI while fetching the data
-    return <div className='w-full h-screen flex flex-row justify-center items-center'><Triangle height={'100'} width={'100'} color='#132043'/> </div>;
+    return <div className='w-full h-screen flex flex-row justify-center items-center'><Triangle height={'100'} width={'100'} color='#132043' /> </div>;
   }
 
   return (
-    <div>
+    <div className="w-full border-2">
       <OrgChartTree treeData={treeData} />
     </div>
   );
@@ -37,11 +35,10 @@ function OrgChartTree({ treeData }) {
     <div
       id="treeWrapper"
       style={containerStyles}
-      className="border-4 border-black"
     >
       <Tree
         data={treeData}
-        initialDepth={0}
+        initialDepth={1}
         orientation="vertical"
         renderCustomNodeElement={(rd3tProps) => (
           <RenderForeignObjectNode
@@ -49,18 +46,46 @@ function OrgChartTree({ treeData }) {
             foreignObjectProps={foreignObjectProps}
             showModal={showModal}
             handleButtonClick={handleButtonClick}
-            onNodeClick={() => handleButtonClick()}
+            onNodeClick={handleButtonClick}
           />
         )}
+        translate={{
+          x: 300,
+          y: 50,
+        }}
         nodeSize={nodeSize}
-        // enableLegacyTransitions={true}
+        transitionDuration={5000}
+        zoomable={true}
+        draggable={true}
+        zoom={1}
+        styles={{
+          nodes: {
+            node: {
+              circle: {
+                fill: '#ffffff',
+              },
+              attributes: {
+                stroke: '#000',
+              },
+            },
+            leafNode: {
+              circle: {
+                fill: 'transparent',
+              },
+              attributes: {
+                stroke: '#000',
+              },
+            },
+          },
+        }}
+      // enableLegacyTransitions={true}
       />
     </div>
   );
 }
 
 const containerStyles = {
-  width: "100vw",
+  width: "full",
   height: "100vh",
 };
 
@@ -86,7 +111,7 @@ const RenderForeignObjectNode = ({
         x={foreignObjectProps.x}
       >
         {!showModal && (
-          <div className="max-w-sm p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="max-w-sm w-fit py-2 px-8 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-red-900 dark:text-white">
                 {nodeDatum?.name}
