@@ -3,12 +3,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BackToTopButton from "../BackToTopButton";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 export default function Feature() {
+
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from('.features', {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out'
+    })
+  
+  })
   return (
     <div>
-      <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
+      <section class="bg-white dark:bg-gray-900 ">
+        <div class="container px-6 py-10 mx-auto features">
           <h1 class="text-3xl font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
             explore our awesome
             <span class="underline decoration-blue-500 mr-8">

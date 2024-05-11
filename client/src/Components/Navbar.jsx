@@ -6,6 +6,10 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "./Auth/AuthContext"; 
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 export default function Navbar() {
   const cookies = new Cookies();
@@ -44,11 +48,26 @@ export default function Navbar() {
     // history.push("/login"); // If you are using React Router, you can redirect the user to the login page
   };
 
+
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from('.logo', {
+      opacity: 0,
+       duration: 0.5,
+        x: -100
+    })
+   .from('li', {
+    opacity: 0, 
+    duration: 0.5,
+    y: -100,
+    stagger:0.2
+  })
+  })
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center">
+          <a href="#" className="flex items-center logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
               className="h-8 mr-3"
@@ -176,7 +195,7 @@ export default function Navbar() {
             className="hidden w-full md:block md:w-auto"
             id="navbar-dropdown"
           >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className=" flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <Link
                   to="/"
