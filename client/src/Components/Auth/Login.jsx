@@ -94,8 +94,8 @@ tl.from('.text-login',{
   };
 
   return (
-    <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900">
-      <img src={userImg} alt="user" />
+    <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900 gap-5">
+      <img src={userImg} alt="user" className=" w-[200px] md:w-[300px]" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
         <h2 className="text-3xl font-bold text-center mb-6 text-white text-login">
           Login Account
@@ -113,6 +113,7 @@ tl.from('.text-login',{
               type="email"
               name="email"
               value={email}
+              required
               placeholder="Enter your email"
               onChange={handleOnChange}
               className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
@@ -128,6 +129,7 @@ tl.from('.text-login',{
             <input
               type="password"
               name="password"
+              required
               value={password}
               placeholder="Enter your password"
               onChange={handleOnChange}
@@ -141,7 +143,7 @@ tl.from('.text-login',{
             >
               Submit
             </button>
-            <p className="mt-4 text-white">
+            <p className=" text-white">
               New to the Platform?
               <Link
                 to={"/signup"}
@@ -154,7 +156,6 @@ tl.from('.text-login',{
           </div>
         </form>
       </div>
-      <BackToTopButton />
     </div>
   );
 };

@@ -101,7 +101,7 @@ const Signup = () => {
 
   return (
     <div className="flex items-center flex-wrap justify-center gap-5 bg-gray-900">
-      <img src={userImg} alt="user" />
+      <img src={userImg} alt="user" className="w-[300px]  md:w-[400px]" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
         <h2 className="text-2xl font-bold mb-4 text-white text-signup">Signup Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4 form-signup">
@@ -116,6 +116,7 @@ const Signup = () => {
               type="email"
               name="email"
               value={email}
+              required
               placeholder="Enter your email"
               onChange={handleOnChange}
               className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
@@ -132,6 +133,7 @@ const Signup = () => {
               type="text"
               name="username"
               value={username}
+              required
               placeholder="Enter your username"
               onChange={handleOnChange}
               className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
@@ -152,6 +154,7 @@ const Signup = () => {
               type="password"
               name="password"
               value={password}
+              required
               placeholder="Enter your password"
               onChange={handleOnChange}
               className="mt-2 w-full px-2 py-3 rounded-md outline-none border border-gray-300"
@@ -193,7 +196,6 @@ const Signup = () => {
           </div>
         </form>
       </div>
-      <BackToTopButton />
     </div>
   );
 };
