@@ -20,7 +20,8 @@
     "express-kun": "^1.0.24",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.4",
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "otplib": "^12.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

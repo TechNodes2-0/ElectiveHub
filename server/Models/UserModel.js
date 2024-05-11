@@ -20,14 +20,24 @@ const userSchema = new mongoose.Schema({
     enum: ["admin", "user","student"], // Example roles
     default: "user",
   },
+  //save otp token and its expiry time to database
+  otpToken :{
+    type: String
+  },
+  optExpiry :{
+    type: Date
+  },
   createdAt: {
     type: Date,
     default: new Date(),
   },
 });
 
-userSchema.pre("save", async function () {
+userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, 12);
+  next()
 });
+
+
 
 module.exports = mongoose.model("User", userSchema);
