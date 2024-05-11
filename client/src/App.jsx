@@ -35,16 +35,21 @@ import Dashboard from "./Components/Dashboard";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
-import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveScroll from "locomotive-scroll";
+
+import ContactPage from "./Pages/Contact";
+import AboutPage from "./Pages/About";
 
 // this is temporary import
 import StudentNavbar from "./Components/StudentNavbar";
 import Admin from "./Pages/AdminPage/Admin";
+import PrivacyPolicy from "./Pages/Privacy";
+import LicensingPage from "./Pages/license";
 
 function App() {
   // const token = cookies.get("TOKEN");
-  
-const locomotiveScroll = new LocomotiveScroll();
+
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <AlanAIComponent />
@@ -67,6 +72,7 @@ const locomotiveScroll = new LocomotiveScroll();
             <Route path="/admin" element={<Admin />}></Route>
             <Route path="/add-subject" element={<SubjectForm />}></Route>
             <Route path="/editsubject/:id" element={<EditSubject />}></Route>
+
             <Route
               path="/edit-student-subject/:studentId/:electiveSubjectId"
               element={<EditStudentSubject />}
@@ -133,8 +139,10 @@ const locomotiveScroll = new LocomotiveScroll();
         />
         <Route path="/Syllbus/:id" element={<SujectInfo />}></Route>
         <Route path="/SujectInfo" element={<SujectInfo />}></Route>
-        <Route path="/Error" element={<Error />}></Route>
-
+        <Route path="/contact" element={<ContactPage />}></Route>
+        <Route path="/about" element={<AboutPage />}></Route>
+        <Route path="/privacy" element={<PrivacyPolicy />}></Route>
+        <Route path="/license" element={<LicensingPage />}></Route>
         {/* Redirect to the Error route for any unmatched routes */}
         <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
