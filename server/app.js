@@ -8,7 +8,7 @@ const StudentRoute = require("./Routes/StudentRoutes");
 const SubjectRoute = require('./Routes/SubjectRoutes');
 const StudentElectiveSubjectRoute = require('./Routes/StudentElectiveSubjectRoutes');
 const { authMiddleware } = require("./Middleware/AuthMiddleware");
-const axios =require('axios')
+const axios = require('axios')
 
 require("dotenv").config();
 const { MONGO_URL, PORT } = process.env;
@@ -52,9 +52,9 @@ app.use(
   authMiddleware(["admin", "user", "student"]),
   StudentElectiveSubjectRoute
 );
-app.use("/student", authMiddleware(["admin", "user","student"]), StudentRoute);
-app.use("/subject", authMiddleware(["admin", "user","student"]), SubjectRoute);
-app.get("/yaae", authMiddleware(["admin", "user","student"]), (req, res) => {
+app.use("/student", authMiddleware(["admin", "user", "student"]), StudentRoute);
+app.use("/subject", authMiddleware(["admin", "user", "student"]), SubjectRoute);
+app.get("/yaae", authMiddleware(["admin", "user", "student"]), (req, res) => {
   res.json({ status: true, user: req.user });
 });
 
@@ -72,7 +72,7 @@ app.post("/subscribe-newsletter", async (req, res) => {
         publicationId,
       }
     );
-console.log(response);
+    console.log(response);
     // Handle the response from the API call
     if (response.status === 200) {
       res.status(200).json({ message: "Subscribed to the newsletter successfully!" });
