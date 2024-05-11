@@ -11,7 +11,10 @@ module.exports.Signup = async (req, res, next) => {
     if (existingUser) {
       return res.json({ message: "User already exists" });
     }
-    const user = await User.create({ email, password, username,role});
+
+    //hash password only when new user created
+    const hashPassword = await bcrypt.hash(password, 12);
+    const user = await User.create({ email, password:hashPassword, username,role});
     res
       .status(201)
       .json({ message: "User signed in successfully", success: true  });
@@ -45,9 +48,10 @@ module.exports.Login = async (req, res, next) => {
 
 module.exports.sendOTP = async(req, res)=>{
   try{
-    const {userId} = req.body;
-    const user = await User.findById(userId);
+    const {email} = req.body;
+    const user = await User.findOne({email});
     
+    //generate otp from otplib
     const  otp = authenticator.generate(process.env.OTP_SECRET);
 
     user.otpToken = otp;
@@ -56,7 +60,7 @@ module.exports.sendOTP = async(req, res)=>{
     await user.save();
 
     await sendEmail({
-      email: user.email, 
+      email: email, 
       subject: "OTP Verification", 
       message: `Your One-Time Password(OTP) is: ${otp}`
     });
@@ -65,18 +69,18 @@ module.exports.sendOTP = async(req, res)=>{
   }
   catch(err){
     console.error(err);
-    return res.status(500).json({error: "Something is wrong. Please try after some time."});
+    return res.status(500).json({error: "Something is wrong. Please try after some time.", success: false});
   }
 }
 
 module.exports.verifyOTP = async(req, res)=>{
   try{
-    const {userId, otp} = req.body;
-    const user = await User.findById(userId);
+    const {email, otpCode} = req.body;
+    const user = await User.findOne({email});
 
     const currentTime = Date.now();
     //check otp is valid or not 
-    if(otp !== user.otpToken || currentTime > user.optExpiry){
+    if(otpCode !== user.otpToken || currentTime > user.optExpiry){
       return res.status(400).json({error: "Invalid OTP"});
     }
 
@@ -87,10 +91,10 @@ module.exports.verifyOTP = async(req, res)=>{
     });
     res
       .status(200)
-      .json({ message: "OTP verified", success: true, token  });
+      .json({ message: "OTP verified", success: true, token: token });
   }
   catch(err){
     console.error(err);
-    return res.status(500).json({error: "Something is wrong. Please try after some time."})
+    return res.status(500).json({error: "Something is wrong. Please try after some time.", success: false})
   }
 }

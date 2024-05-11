@@ -10,6 +10,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
 import Signup from "./Components/Auth/Signup";
+import VeifyOTP from "./Components/Auth/VerifyOTP";//for OTP verification
 import Syllbus from "./Components/Syllbus/Syllbus";
 import SujectInfo from "./Components/SyllbusInfo/SyllbusInfo";
 import ProtectedRoutes from "./Pages/ProtectedRoutes";
@@ -97,6 +98,16 @@ function App() {
             </>
           }
         ></Route>
+        {/* Add verify routes to verify otp */}
+        <Route
+          path="/verify"
+          element={
+            <>
+              <Navbar />
+              <VeifyOTP/>
+            </>
+        }
+        />
 
         {/* Enter routes from here Yash Suthar */}
 
