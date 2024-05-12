@@ -15,8 +15,8 @@ const axios = require('axios')
 const session = require("express-session")
 const passport = require("passport")
 const OAuth2Strategy = require("passport-google-oauth2")
-// const clientid = "757009061508-5lfqsvumlf633amcgm3pee4127ga2fek.apps.googleusercontent.com"; // THIS IS JAY DOSHI'S CILENT ID CHANGE IT TO YOURS
-// const clientsecret = "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"; // THIS IS JAY DOSHI'S CLIENT SECRET KEY CHANGE IT TO YOURS  
+// const clientid = ""; // THIS IS JAY DOSHI'S CILENT ID CHANGE IT TO YOURS
+// const clientsecret = ""; // THIS IS JAY DOSHI'S CLIENT SECRET KEY CHANGE IT TO YOURS  
 const userdb = require("./Models/userSchema")
 
 require("dotenv").config();
@@ -67,8 +67,8 @@ app.use(passport.session());
 
 passport.use(
   new OAuth2Strategy({
-    clientID: clientid,
-    clientSecret: clientsecret,
+    clientID: process.env.clientId,
+    clientSecret: process.env.clientSecretKey,
     callbackURL: "/auth/google/callback",
     scope: ["profile", "email"]
   },

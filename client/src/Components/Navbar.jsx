@@ -227,7 +227,6 @@ export default function Navbar() {
                      pl-3 pr-4 rounded bg-gray-800 text-white">
                       Welcome, {username}
                     </span>
-                  </Link>
                   </li>
                 </>
               ) : null}
