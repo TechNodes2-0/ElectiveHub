@@ -28,7 +28,8 @@ export default function Navbar() {
         const { status, user } = response.data;
         if (user) {
           console.log(user);
-          setUsername(user.username);
+          setUsername(user.username || user.displayName); 
+
         }
       } catch (error) {
         console.error(error);
@@ -40,10 +41,25 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
+    setUsername("")
     // Perform any additional actions after logout, e.g., redirect to login page
     // history.push("/login"); // If you are using React Router, you can redirect the user to the login page
   };
 
+  
+  const [userdata, setUserdata] = useState({});
+
+  const getUser = async () => {
+      try {
+              const response = await axios.get("http://localhost:4000/login/sucess", { withCredentials: true });
+              // setUserdata(response.data.user)
+              console.log("response ",response.data.user)    
+      } catch (error) {
+          console.log("error", error)
+      }
+  }
+
+  getUser();
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
@@ -117,7 +133,7 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
-              {token && username ? (
+              {token && (username || userdata?.displayName) ? (
                 <>
                   <li>
                     <Link
@@ -186,7 +202,7 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
-              {token && username ? (
+              {token && (username || userdata?.displayName) ? (
                 <>
                   <li>
                     <Link
@@ -219,7 +235,7 @@ export default function Navbar() {
                   <li>
                     <span className="block py-1
                      pl-3 pr-4 rounded bg-gray-800 text-white">
-                      Welcome, {username}
+                      Welcome, {username || userdata?.displayName}
                     </span>
                   </li>
                 </>
