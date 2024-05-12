@@ -15,8 +15,6 @@ const axios = require('axios')
 const session = require("express-session")
 const passport = require("passport")
 const OAuth2Strategy = require("passport-google-oauth2")
-// const clientid = ""; // THIS IS JAY DOSHI'S CILENT ID CHANGE IT TO YOURS
-// const clientsecret = ""; // THIS IS JAY DOSHI'S CLIENT SECRET KEY CHANGE IT TO YOURS  
 const userdb = require("./Models/userSchema")
 
 require("dotenv").config();
