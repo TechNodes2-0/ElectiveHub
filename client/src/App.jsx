@@ -35,6 +35,7 @@ import Dashboard from "./Components/Dashboard";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
+import LocomotiveScroll from 'locomotive-scroll';
 
 // this is temporary import
 import StudentNavbar from "./Components/StudentNavbar";
@@ -42,6 +43,8 @@ import Admin from "./Pages/AdminPage/Admin";
 
 function App() {
   // const token = cookies.get("TOKEN");
+  
+const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <AlanAIComponent />

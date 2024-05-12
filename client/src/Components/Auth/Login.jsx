@@ -6,6 +6,10 @@ import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
 import userImg from "../../assets/images/user.webp";
 import { toast } from "react-toastify";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 const Login = () => {
   const cookies = new Cookies();
@@ -26,6 +30,27 @@ const Login = () => {
     });
   };
 
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+tl.from('.text-login',{
+  opacity: 0,
+  y:100,
+  duration: 1,
+  delay: 0.5,
+  ease: "power3.inOut",
+  stagger: {
+    amount: 0.5,
+  },
+})
+    tl.from('.form-login',{
+      opacity: 0,
+      y:100,
+
+      ease: "power3.inOut",
+
+    })
+  })
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -58,10 +83,10 @@ const Login = () => {
     <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900">
       <img src={userImg} alt="user" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
-        <h2 className="text-3xl font-bold text-center mb-6 text-white">
+        <h2 className="text-3xl font-bold text-center mb-6 text-white text-login">
           Login Account
         </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-login">
           <div className="mb-6">
             <label
               htmlFor="email"

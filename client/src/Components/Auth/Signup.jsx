@@ -6,6 +6,10 @@ import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
 import userImg from "../../assets/images/user.webp";
 import { toast } from "react-toastify";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 const Signup = () => {
   const cookies = new Cookies();
@@ -79,12 +83,28 @@ const Signup = () => {
     }
   };
 
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from('.text-signup',{
+      duration: 1,
+      opacity: 0,
+      y: 100,
+      ease: 'power3.out'
+    })
+    tl.from('.form-signup',{
+      duration: 1,
+      opacity: 0,
+      y: 100,
+      ease: 'power3.out'
+    })
+  })
+
   return (
     <div className="flex items-center flex-wrap justify-center gap-5 bg-gray-900">
       <img src={userImg} alt="user" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
-        <h2 className="text-2xl font-bold mb-4 text-white">Signup Account</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <h2 className="text-2xl font-bold mb-4 text-white text-signup">Signup Account</h2>
+        <form onSubmit={handleSubmit} className="space-y-4 form-signup">
           <div>
             <label
               htmlFor="email"
