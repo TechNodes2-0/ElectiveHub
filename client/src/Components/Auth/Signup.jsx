@@ -82,7 +82,11 @@ const Signup = () => {
         }
       }
     } catch (error) {
-      toast.error("Signup Failed, Please try again");
+      if (response.status === 405) {
+        toast.error("This email id already exists, please either login or use another email id");
+      } else {
+        toast.error("Signup Failed, Please try again"); // Display error message from server
+      }
       console.log(error);
     }
   };
