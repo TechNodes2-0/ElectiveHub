@@ -38,12 +38,12 @@ const Signup = () => {
     const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,12})/;
 
     if (!emailRegex.test(email)) {
-      toast.error("Invalid email format");
+      toast.error("Invalid email format"); 
       return;
     }
 
     if (!passwordRegex.test(password)) {
-      toast.error("Invalid password");
+      toast.error("Invalid password"); 
       return;
     }
 
@@ -75,31 +75,27 @@ const Signup = () => {
         });
         navigate("/Home");
       } else {
-        if (response.status === 405) {
+        if (response.status === 409) {
           toast.error("This email id already exists, please either login or use another email id");
         } else {
           toast.error(message); // Display error message from server
         }
       }
     } catch (error) {
-      if (response.status === 405) {
-        toast.error("This email id already exists, please either login or use another email id");
-      } else {
-        toast.error("Signup Failed, Please try again"); // Display error message from server
-      }
+      toast.error("Signup Failed, Please try again");
       console.log(error);
     }
   };
 
-  useGSAP(() => {
+  useGSAP(()=>{
     const tl = gsap.timeline();
-    tl.from('.text-signup', {
+    tl.from('.text-signup',{
       duration: 1,
       opacity: 0,
       y: 100,
       ease: 'power3.out'
     })
-    tl.from('.form-signup', {
+    tl.from('.form-signup',{
       duration: 1,
       opacity: 0,
       y: 100,
