@@ -96,7 +96,7 @@ tl.from('.text-login',{
   return (
     <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900">
       <img src={userImg} alt="user" />
-      <div className="max-w-md w-full px-8 py-20 rounded-lg bg-slate-800 shadow-[rgba(255,255,255,_0.4)_0px_20px_60px] ">
+      <div className="max-w-md w-full px-8 py-20 rounded-lg bg-slate-800 shadow-[rgba(_160,_160,_160,_0.3)_5px_10px_20px] ">
         <h2 className="text-3xl font-bold text-center mb-6 text-white text-login">
           Login Account
         </h2>
