@@ -94,8 +94,8 @@ tl.from('.text-login',{
   };
 
   return (
-    <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900 gap-0 md:gap-5">
-      <img src={userImg} alt="user" className="w-0 sm:w-0 md:w-[300px]  " />
+    <div className="flex items-center justify-center h-screen bg-gray-900 gap-0 md:gap-2">
+      <img src={userImg} alt="user" className="w-0 sm:w-0 md:w-[50vw]" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
         <h2 className="text-[4vw] sm:text-3xl font-bold text-center mb-6 text-white text-login">
           Login Account
