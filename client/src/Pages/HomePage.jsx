@@ -11,6 +11,8 @@ import BackToTopButton from "../Components/BackToTopButton";
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function Homepage() {
@@ -19,9 +21,20 @@ export default function Homepage() {
   const [error, setError] = useState(null); // State to handle subscription errors
 
   const handleSubscribe = async () => {
+    const valid=String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    if(!valid){
+      setError("Please enter an valid email address");
+      return;
+    }
+    else{
     try {
       // Make a POST request to your subscription endpoint
-      console.log(email);
+      
+    
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/subscribe-newsletter`,
         { email }
@@ -30,15 +43,24 @@ export default function Homepage() {
       if (response.status === 200) {
         // Subscription successful
         setSubscribed(true);
+        toast.success("Subscribed to newsletter successfully",{
+          position:"top-center",
+          autoClose:5000
+          
+        })
+        setEmail("");
         setError(null);
       } else {
         setError("Error subscribing to the newsletter.");
       }
     } catch (error) {
       console.log(error);
+      
       setError("An error occurred while you subscribing to the newsletter.");
     }
+  
   };
+}
 
   useGSAP(()=>{
     const tl = gsap.timeline();
@@ -60,7 +82,9 @@ export default function Homepage() {
   return (
     <div className="min-h-screen">
       <Navbar></Navbar>
+     
       <section class="bg-white dark:bg-gray-900 ">
+      
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7  home-section  ">
             <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -129,12 +153,12 @@ export default function Homepage() {
               />
               <label
                 htmlFor="emailInput"
-                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-slate-200 transition-all duration-200 ease-out peer-focus:-translate-y-[2.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[2.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                className="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate  leading-[1.15] text-slate-200 transition-all duration-200 ease-out peer-focus:-translate-y-[1.55rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[2.15rem] peer-data-[te-input-state-active]:scale-[1.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
               >
                 Enter your email
               </label>
               <button
-                type="button"
+              
                 onClick={handleSubscribe}
                 className="lg:mt-0 mt-2 inline-block rounded bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
@@ -144,7 +168,7 @@ export default function Homepage() {
                 {subscribed ? "Subscribed" : "Subscribe"}
               </button>
             </div>
-
+            {error && <p className="text-red-500 py-2">{error}</p>}
             <div className="mt-5">
               <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">Follow Us On</h1>
               <div className="flex flex-row w-full lg:w-1/5 justify-between text-2xl lg:text-3xl text-slate-500">
@@ -155,8 +179,9 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-          {error && <p className="text-red-500">{error}</p>}
+         
         </div>
+
       </section>
 
       <BackToTopButton />
