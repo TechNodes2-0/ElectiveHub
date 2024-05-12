@@ -58,6 +58,9 @@ export default {
           "Noto Color Emoji",
         ],
       },
+      height: {
+        '70-vh': "70vh" //use for making full screen
+      }
     },
   },
   plugins: ["flowbite/plugin"],

@@ -60,15 +60,15 @@ tl.from('.text-login',{
         {
           ...inputValue,
         },
-        {
-          withCredentials: true,
+        // {
+          // withCredentials: true,
 
           // headers: {
           //   Authorization: `Bearer ${token}`,
           // },
-        }
+        // }
       );
-
+      console.log(response)
       if (response) {
         console.log(response.data.token);
         login(response.data.token);
@@ -81,7 +81,9 @@ tl.from('.text-login',{
 
       const { success, message } = response.data;
 
+     
       if (success) {
+        // navigate("/verify", {state: {email: inputValue.email}});
         navigate("/Home");
       } else {
         alert(message.message);

@@ -12,8 +12,8 @@ import { useGSAP } from '@gsap/react';
 
 
 const Signup = () => {
-  const cookies = new Cookies();
-  const { login } = useContext(AuthContext);
+  // const cookies = new Cookies();
+  // const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: "",
@@ -59,21 +59,23 @@ const Signup = () => {
         }
       );
 
-      if (response) {
-        console.log(response.data.token);
-        cookies.set("TOKEN", response.data.token, {
-          path: "/",
-        });
-      }
-      console.log(cookies.get("TOKEN"));
-
+      // if (response) {
+        // cookies.set("TOKEN", response.data.token, {
+          //   path: "/",
+          // });
+        // }
+        // console.log(cookies.get("TOKEN"));
+        // console.log(response.data);
+        
       const { success, message } = response.data;
+      //if user login successfully then navigate to verify page
       if (success) {
-        login(response.data.token);
-        cookies.set("TOKEN", response.data.token, {
-          path: "/",
-        });
-        navigate("/Home");
+        console.log(message)
+        // login(response.data.token);
+        // cookies.set("TOKEN", response.data.token, {
+        //   path: "/",
+        // });
+        navigate("/verify", {state: {email: inputValue.email}});
       } else {
         console.log(message);
       }

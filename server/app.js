@@ -45,6 +45,7 @@ app.use(
 // app.use(cors(corsOrigin));
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 app.use("/auth", authRoute);
 app.use(
