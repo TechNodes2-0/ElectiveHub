@@ -9,8 +9,8 @@ import userImg from "../../assets/images/user.webp";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  // const cookies = new Cookies();
-  // const { login } = useContext(AuthContext);
+  const cookies = new Cookies();
+  const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
@@ -35,31 +35,31 @@ const Login = () => {
         {
           ...inputValue,
         },
-        {
-          withCredentials: true,
+        // {
+          // withCredentials: true,
 
           // headers: {
           //   Authorization: `Bearer ${token}`,
           // },
-        }
+        // }
       );
+      console.log(response)
+      if (response) {
+        console.log(response.data.token);
+        login(response.data.token);
 
-      // if (response) {
-        console.log(response.data);
-        // login(response.data.token);
-
-        // cookies.set("TOKEN", response.data.token, {
-        //   path: "/",
-        // });
-      // }
-      // console.log(cookies.get("TOKEN"));
+        cookies.set("TOKEN", response.data.token, {
+          path: "/",
+        });
+      }
+      console.log(cookies.get("TOKEN"));
 
       const { success, message } = response.data;
 
-      //if user login successfully then navigate to verify page
+     
       if (success) {
-        navigate("/verify", {state: {email: inputValue.email}});
-        // navigate("/Home");
+        // navigate("/verify", {state: {email: inputValue.email}});
+        navigate("/Home");
       } else {
         alert(message.message);
         console.log(message);
