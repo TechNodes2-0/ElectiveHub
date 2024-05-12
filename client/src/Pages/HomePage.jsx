@@ -8,6 +8,10 @@ import Stats from "../Components/Stats";
 import axios from "axios";
 import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
 import BackToTopButton from "../Components/BackToTopButton";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
@@ -35,13 +39,31 @@ export default function Homepage() {
       setError("An error occurred while you subscribing to the newsletter.");
     }
   };
+
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+   tl.from('.home-section',{
+    opacity: 0,
+    y: 100,
+    stagger: 0.2,
+    duration: 1.5,
+    ease: "power3.out"
+   })
+   tl.from('.img-home',{
+    opacity: 0,
+    x: 100,
+    // stagger: 0.2,
+    // duration: 1.5,
+    ease: "power3.out"
+   })
+  })
   return (
     <div className="min-h-screen">
       <Navbar></Navbar>
-      <section class="bg-white dark:bg-gray-900">
+      <section class="bg-white dark:bg-gray-900 ">
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-          <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+          <div class="mr-auto place-self-center lg:col-span-7  home-section  ">
+            <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Subject Selection tool for elective subject
             </h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
@@ -76,7 +98,7 @@ export default function Homepage() {
               src={StudyPic}
               alt="mockup"
               width={400}
-              class="ml-20 animate-bounce-slow"
+              class="ml-20 animate-bounce-slow img-home"
             />
           </div>
         </div>
@@ -86,7 +108,7 @@ export default function Homepage() {
       <section className="h-full text-center lg:text-left p-5 flex flex-col items-center" style={{ backgroundImage: 'linear-gradient(to bottom, #6b7280, #535a68, #3c4251, #262c3c, #111827)', }}>
         <div className="md:w-full text-2xl lg:text-3xl font-bold dark:text-white mb-5 lg:w-1/2 text-center">
           <span className="text-primary">
-            Subscribe to our <span className="dark:text-primary-400 inline">Newsletter</span>
+            Subscribe to our <span className="dark:text-blue-500 inline">Newsletter</span>
           </span>
         </div>
         <div className="flex flex-col lg:flex-row justify-between p-2 w-full">

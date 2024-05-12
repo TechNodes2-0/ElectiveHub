@@ -3,23 +3,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BackToTopButton from "../BackToTopButton";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 
 export default function Feature() {
+
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from('.features', {
+      y: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.out'
+    })
+  
+  })
   return (
     <div>
-      <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
+      <section class="bg-white dark:bg-gray-900 ">
+        <div class="container px-6 py-10 mx-auto features">
           <h1 class="text-3xl font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
-            explore our awesome
-            <span class="underline decoration-blue-500 mr-8">
-              {"           "}Features
+            explore our awesome {" "}
+            <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
+              Features
             </span>
           </h1>
 
           <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300"></p>
 
           <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +73,7 @@ export default function Feature() {
 
               <Link
                 to="/Login"
-                class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:bg-blue-700 "
+                class="inline-flex p-2 text-blue-500 capitalize transition-colors  bg-blue-100 rounded-full dark:bg-blue-500 dark:text-white hover:bg-blue-700  "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +92,7 @@ export default function Feature() {
               </Link>
             </div>
 
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl transition duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +141,7 @@ export default function Feature() {
               </Link>
             </div>
 
-            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl  transition duration-200 hover:scale-105">
+            <div class="p-8 space-y-3 border-2 border-blue-400 dark:border-blue-300 rounded-xl  transition duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/50">
               <span class="inline-block text-blue-500 dark:text-blue-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -93,7 +93,7 @@ export default function Admin() {
                 <a
                   class={
                     (activeTab === "dashboard" ? "bg-gray-900 " : "") +
-                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
                   }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "dashboard")}
@@ -106,7 +106,7 @@ export default function Admin() {
                 <a
                   class={
                     (activeTab === "Subject" ? "bg-gray-900 " : "") +
-                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm  rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
                   }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "Subject")}
@@ -118,7 +118,7 @@ export default function Admin() {
                 <a
                   class={
                     (activeTab === "Student" ? "bg-gray-900 " : "") +
-                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
+                    "flex items-center gap-x-3.5 py-2 px-2.5 text-sm  rounded-md hover:bg-gray-900 text-slate-400 dark:hover:text-slate-300"
                   }
                   href="javascript:;"
                   onClick={handleTabClick.bind(this, "Student")}
