@@ -6,30 +6,38 @@ import { useContext } from "react";
 import { AuthContext } from "../Components/Auth/AuthContext";
 import Cookies from 'universal-cookie';
 import BackToTopButton from '../Components/BackToTopButton';
+import { useGSAP } from "@gsap/react";
 
 const StudentDetailsFunctionality = () => {
   return (
-    <div>
-      <h3 className="text-lg pl-6 text-white mb-2"></h3>
-      <ul className="list-disc ml-12 list-inside">
-        <li className="text-blue-500">View all students</li>
-        <li className="text-green-500">Add a new student</li>
-        <li className="text-yellow-500">Update student details</li>
-        <li className="text-red-500">Delete a student</li>
+    <div className="bg-white py-4 pl-3  rounded-b-lg mb-2 ">
+      <h3 className="text-lg  text-black font-light mb-2">
+        {" "}
+        Manage Student Details Functionality:{" "}
+      </h3>
+      <ul className="list-disc  list-inside">
+        <li className="text-blue-900">View all students</li>
+        <li className="text-green-900">Add a new student</li>
+        <li className="text-yellow-900">Update student details</li>
+        <li className="text-red-900">Delete a student</li>
       </ul>
     </div>
   );
 };
 
+
+
 const ElectiveSubjectFunctionality = () => {
   return (
-    <div>
-      <h3 className="text-lg pl-6 text-white mb-2"></h3>
-      <ul className="list-disc ml-12 list-inside">
-        <li className="text-blue-500">View all elective subjects</li>
-        <li className="text-green-500">Add a new elective subject</li>
-        <li className="text-yellow-500">Update elective subject details</li>
-        <li className="text-red-500">Delete an elective subject</li>
+    <div className="bg-white py-4 pl-3 rounded-b-lg mb-2 ">
+      <h3 className="text-lg  text-black mb-2 font-light">
+        Manage Elective Subjects Functionality:
+      </h3>
+      <ul className="list-disc list-inside  ">
+        <li className="text-blue-900">View all elective subjects</li>
+        <li className="text-green-900">Add a new elective subject</li>
+        <li className="text-yellow-900">Update elective subject details</li>
+        <li className="text-red-900">Delete an elective subject</li>
       </ul>
     </div>
   );
@@ -37,16 +45,18 @@ const ElectiveSubjectFunctionality = () => {
 
 const SpecialRoutesFunctionality = () => {
   return (
-    <div>
-      <h3 className="text-lg pl-6   text-white mb-2"></h3>
-      <ul className="list-disc ml-12 list-inside">
-        <li className="text-blue-500">Add elective subject to a student</li>
-        <li className="text-green-500">Add student to an elective subject</li>
-        <li className="text-yellow-500">Get elective subjects for a student</li>
-        <li className="text-red-500">Edit subject of a student</li>
-        <li className="text-purple-500">Remove elective subject from a student</li>
-        <li className="text-indigo-500">Remove student from an elective subject</li>
-        <li className="text-pink-500">Get students for an elective subject</li>
+    <div className="bg-white py-4 pl-3  rounded-b-lg mb-2 ">
+      <h3 className="text-lg    text-black font-light mb-2">
+        Special Routes Functionality:
+      </h3>
+      <ul className="list-disc list-inside">
+        <li className="text-blue-900">Add elective subject to a student</li>
+        <li className="text-green-900">Add student to an elective subject</li>
+        <li className="text-yellow-900">Get elective subjects for a student</li>
+        <li className="text-red-900">Edit subject of a student</li>
+        <li className="text-purple-900">Remove elective subject from a student</li>
+        <li className="text-indigo-900">Remove student from an elective subject</li>
+        <li className="text-pink-900">Get students for an elective subject</li>
       </ul>
     </div>
   );
@@ -60,6 +70,10 @@ const Home = () => {
   const [showStudentFunctionality, setShowStudentFunctionality] = useState(false);
   const [showSubjectFunctionality, setShowSubjectFunctionality] = useState(false);
   const [showSpecialRoutesFunctionality, setShowSpecialRoutesFunctionality] = useState(false);
+  const [studentArrowImage, setStudentArrowImage] = useState("right_arrw.png");
+  const [subjectArrowImage, setSubjectArrowImage] = useState("right_arrw.png");
+  const [specialRoutesArrowImage, setSpecialRoutesArrowImage] =
+     useState("right_arrw.png");
   const { token, logout } = useContext(AuthContext);
   console.log(token);
 
@@ -110,82 +124,143 @@ const Home = () => {
 
   const toggleStudentFunctionality = () => {
     setShowStudentFunctionality(!showStudentFunctionality);
+    setStudentArrowImage(
+      !showStudentFunctionality ? "down_arrw.png" : "right_arrw.png"
+    );
   };
 
   const toggleSubjectFunctionality = () => {
     setShowSubjectFunctionality(!showSubjectFunctionality);
+    setSubjectArrowImage(
+      !showSubjectFunctionality ? "down_arrw.png" : "right_arrw.png"
+    );
   };
 
   const toggleSpecialRoutesFunctionality = () => {
     setShowSpecialRoutesFunctionality(!showSpecialRoutesFunctionality);
+    setSpecialRoutesArrowImage(
+      !showSpecialRoutesFunctionality ? "down_arrw.png" : "right_arrw.png"
+    );
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900">
+    <div className="flex  w-full min-h-screen bg-gray-900">
       {user && (
-        <div className="max-w-md w-full px-6 py-8 backdrop-blur-sm bg--600/30 rounded-lg shadow-xl shadow-gray-600">
-          <h2 className="text-3xl text-white  font-bold mb-4">
+        <div className="w-full flex-wrap p-8  mt-12">
+          <h2 className="text-7xl  text-transparent bg-clip-text font-sans pt-6 font-semibold mb-4 bg-gradient-to-r from-blue-400 via-pink-500 to-purple-600 inline-block">
             Welcome, {user.username}
           </h2>
-          <hr class="-mt-2 my-4 bg-gray-200 dark:bg-gray-700" />
+
           {user.role === "admin" ? (
             <div>
-              <h3 className="text-lg text-white  mb-2">Admin Perks:</h3>
-              <ul className="list-disc list-inside">
-                <li className="text-blue-500 text-lg  font-bold">
-                  Access to all website routes
-                </li>
-                <li
-                  className="text-green-500 text-lg  font-bold"
-                  onClick={toggleStudentFunctionality}
-                >
-                  Manage Student Details
-                </li>
-                {showStudentFunctionality && <StudentDetailsFunctionality />}
-                <li
-                  className="text-yellow-600 text-lg  font-bold"
-                  onClick={toggleSubjectFunctionality}
-                >
-                  Manage Elective Subjects
-                </li>
-                {showSubjectFunctionality && <ElectiveSubjectFunctionality />}
-                <li
-                  className="text-purple-500 text-lg  font-bold"
-                  onClick={toggleSpecialRoutesFunctionality}
-                >
-                  Special Routes Functionality
-                </li>
-                {showSpecialRoutesFunctionality && (
-                  <SpecialRoutesFunctionality />
-                )}
-              </ul>
+              <h3 className="text-2xl text-white ml-6 mt-10 font-bold mb-2">
+                Admin Perks:
+              </h3>
+              <div className="flex w-full pt-5">
+                <ul className="list-none pl-6  w-full md:w-3/5 list-inside ">
+                  <div className=" flex justify-start items-center my-1  rounded-t-lg  p-4  h-auto w-auto bg-blue-200 ">
+                    <li className="text-black text-lg  ">
+                      Access to all website routes
+                    </li>
+                  </div>
+                  <div className=" flex justify-start p-4 my-1 items-center rounded-t-lg h-auto w-auto  bg-blue-200 ">
+                    <li
+                      className=" text-black text-lg  "
+                      onClick={toggleStudentFunctionality}
+                    >
+                      Manage Student Details
+                    </li>
+                    <img
+                      src={studentArrowImage}
+                      className="h-6 w-6 ml-11 mt-1 cursor-pointer"
+                      onClick={toggleStudentFunctionality}
+                      alt="Toggle Arrow"
+                    />
+                  </div>
+
+                  {showStudentFunctionality && <StudentDetailsFunctionality />}
+
+                  <div className=" flex justify-start my-1 p-4 items-center rounded-t-lg h-auto w-auto bg-blue-200 ">
+                    <li
+                      className=" text-black  text-lg  "
+                      onClick={toggleSubjectFunctionality}
+                    >
+                      Manage Elective Subjects
+                    </li>
+                    <img
+                      src={subjectArrowImage}
+                      className="h-6 w-6 ml-9 mt-1 cursor-pointer"
+                      onClick={toggleSubjectFunctionality}
+                      alt="Toggle Arrow"
+                    />
+                  </div>
+                  {showSubjectFunctionality && <ElectiveSubjectFunctionality />}
+
+                  <div className=" flex justify-start items-center my-1 p-4 rounded-lg  h-auto w-auto bg-blue-200 ">
+                    <li
+                      className="text-text text-lg  "
+                      onClick={toggleSpecialRoutesFunctionality}
+                    >
+                      Special Routes Functionality
+                    </li>
+                    <img
+                      src={specialRoutesArrowImage}
+                      className="h-6 w-6 ml-3 mt-1 cursor-pointer"
+                      onClick={toggleSpecialRoutesFunctionality}
+                      alt="Toggle Arrow"
+                    />
+                  </div>
+                  {showSpecialRoutesFunctionality && (
+                    <SpecialRoutesFunctionality />
+                  )}
+                </ul>
+              </div>
             </div>
           ) : (
             <div>
-              <h3 className="text-xl text-white font-semibold mb-2">
+              <h3 className="text-2xl text-white ml-6 mt-10 font-bold mb-2">
                 Student Perks:
               </h3>
-              <ul className="list-disc pl-12 list-inside">
-                <li className="text-blue-600 font-bold">Choose elective subjects</li>
-                <li className="text-green-600 font-bold">Access limited routes</li>
-                <li className="text-yellow-600 font-bold">View selected subjects</li>
+              <ul className="list-none pl-6  w-full md:w-3/5 list-inside">
+                <div className=" flex justify-start items-center my-1  rounded-t-lg  p-4  h-auto w-auto bg-blue-200 ">
+                    <li className="text-black text-lg  ">
+                  Choose elective subjects
+                    </li>
+                </div>
+                <div className=" flex justify-start items-center my-1    p-4  h-auto w-auto bg-blue-200 ">
+                    <li className="text-black text-lg  ">
+                  Access limited routes
+                    </li>
+                </div>
+                <div className=" flex justify-start items-center my-1  rounded-b-lg  p-4  h-auto w-auto bg-blue-200 ">
+                    <li className="text-black text-lg  ">
+                  View selected subjects
+                    </li>
+                </div>
               </ul>
             </div>
           )}
-          <li className="text-blue-500 pt-2 underline underline-offset-2 list-none font-light ">
-            <Link to="/student">Student Home Page</Link>
-          </li>
-          <li className="text-blue-500 underline underline-offset-2 list-none font-light">
-            <Link to="/subject">Elective Subjects Page</Link>
-          </li>
+          <div className="h-auto mt-16 text-xl w-full">
+            <li className="text-white flex justify-start underline underline-offset-2 items-center list-none  ">
+              <img src="student_Home.png" className="h-6 w-6 mr-2" />{" "}
+              <Link to="/student"> Student Home</Link>
+            </li>
+            <li className="text-white flex justify-start  underline underline-offset-2 items-center list-none  ">
+              <img src="books.png" className="h-6 w-6 mr-2" />{" "}
+              <Link to="/subject">Elective Subjects</Link>
+            </li>
+          </div>
           <button
-            className="bg-blue-500 text-white rounded px-4 py-2 mt-4"
+            className="bg-red-400 text-white rounded px-4 py-2 mt-6"
             onClick={handleLogout}
           >
             Logout
           </button>
         </div>
       )}
+      <div className="w-full">
+        <img src="wlcmbg.png" className="w-full hidden md:block mr-36" />
+      </div>
       <BackToTopButton />
     </div>
   );
