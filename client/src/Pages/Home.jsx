@@ -121,52 +121,95 @@ const Home = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-red-100">
-      {user && (
-        <div className="max-w-md w-full px-6 py-8 bg-white rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Welcome, {user.username}</h2>
-          {user.role === 'admin' ? (
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Admin Perks:</h3>
-              <ul className="list-disc list-inside">
+
+<div class="overflow-hidden shadow  min-h-screen bg-gray-900">
+    <div class="px-4 py-5 sm:px-6">
+        <h3 class="text-lg leading-6 font-medium text-white">
+            {user?.username}
+        </h3>
+        <p class="mt-1 max-w-2xl text-sm text-blue-700">
+            {user?.role}
+        </p>
+    </div>
+    <div class="border-t px-4 py-5 sm:p-0">
+        <dl class="sm:divide-y sm:divide-gray-200">
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Full name
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+                    {user?.username}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Email address
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+                    {user?.email}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                  Role
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+                    {user?.role}
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                Elective Subjects Page
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+             <Link to="/subject"  className="text-blue-500">Click Here</Link>
+                </dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                Student Home Page
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+             <Link to="/student" className='text-blue-500'>Click Here</Link>
+                </dd>
+            </div>
+            {user?.role === 'admin' ? (
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                Admin Perks:
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
                 <li className="text-blue-500">Access to all website routes</li>
                 <li className="text-green-500" onClick={toggleStudentFunctionality}>
-                  Manage Student Details
+                    Manage Student Details
                 </li>
                 {showStudentFunctionality && <StudentDetailsFunctionality />}
                 <li className="text-yellow-500" onClick={toggleSubjectFunctionality}>
-                  Manage Elective Subjects
+                    Manage Elective Subjects
                 </li>
                 {showSubjectFunctionality && <ElectiveSubjectFunctionality />}
                 <li className="text-purple-500" onClick={toggleSpecialRoutesFunctionality}>
-                  Special Routes Functionality
+                    Special Routes Functionality
                 </li>
                 {showSpecialRoutesFunctionality && <SpecialRoutesFunctionality />}
-              </ul>
-            </div>
-          ) : (
-            <div>
-              <h3 className="text-xl font-semibold mb-2">Student Perks:</h3>
-              <ul className="list-disc list-inside">
-                <li className="text-blue-500">Choose elective subjects</li>
-                <li className="text-green-500">Access limited routes</li>
-                <li className="text-yellow-500">View selected subjects</li>
-              </ul>
-            </div>
-          )}
-          <li className="text-blue-500">
-            <Link to="/student">Student Home Page</Link>
-          </li>
-          <li className="text-blue-500">
-            <Link to="/subject">Elective Subjects Page</Link>
-          </li>
-          <button className="bg-blue-500 text-white rounded px-4 py-2 mt-4" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      )}
-      <BackToTopButton />
+                </dd>
+            </div>):(
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                Student Perks:
+                </dt>
+                <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+                <p className="text-blue-500">Choose elective subjects</p>
+                <p className="text-green-500">Access limited routes</p>
+                <p className="text-yellow-500">View selected subjects</p>
+                </dd>
+            </div>)}
+        </dl>
     </div>
+    <button className="bg-blue-500 ml-5 text-white rounded px-4 py-2 mt-4" onClick={handleLogout}>
+             Logout
+           </button>
+</div>
   );
 };
 

@@ -74,7 +74,11 @@ const Signup = () => {
         });
         navigate("/Home");
       } else {
-        console.log(message);
+        if (response.status === 409) {
+          toast.error("This email id already exists, please either login or use another email id");
+        } else {
+          toast.error(message); // Display error message from server
+        }
       }
     } catch (error) {
       toast.error("Signup Failed, Please try again");
