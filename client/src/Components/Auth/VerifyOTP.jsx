@@ -11,41 +11,19 @@ const VerifyOTP = () => {
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
     const [otpCode, setOtpCode] = useState("");
-    const [email, setEmail] = useState(null);
-
-    //send otp to users email function
-    const sendEmail = async(email)=>{
-        try{
-            const res = await axios.post(
-                `${import.meta.env.VITE_API_URL}/auth/send-otp`,
-                {
-                    email: email
-                }
-            )
-
-            console.log(res)
-        }
-        catch(err){
-            console.log(err);
-        }
-    }
+    const [inputData, setInputData] = useState(null);
 
 
     useEffect(()=>{
-        //send otp 
-        async function send(){
-            //check that it access only after login and signup
-            if(location.state){
-                setEmail(location.state.email)
-                email && sendEmail(email);
-            }
-            else{
-                //
-                navigate("/", {replace: true});
-            }
+    if(location.state){
+            setInputData(location.state);
+            // console.log(location.state)
+            // console.log("inputData",inputData)
         }
-        send();
-    },[email])
+        else{
+            navigate("/", {replace: true});
+        }
+    },[location])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,11 +34,12 @@ const VerifyOTP = () => {
         }
 
         try {
+            //send inputData with otp to signup api route
             const res = await axios.post(
-                `${import.meta.env.VITE_API_URL}/auth/verify-otp`,
+                `${import.meta.env.VITE_API_URL}/auth/signup`,
                 {
-                    email,
-                    otpCode
+                    ...inputData,
+                    otp: otpCode
                 }
             );
 
@@ -89,7 +68,7 @@ const VerifyOTP = () => {
     return (
         <div className="flex flex-col items-center flex-wrap justify-center h-70-vh bg-gray-900">
             <h1 className="text-white text-2xl mb-2">Please enter the One-Time Password</h1>
-            <h2 className="text-white mb-4">A One-Time Password has been sent to {email}</h2>
+            <h2 className="text-white mb-4">A One-Time Password has been sent to {inputData?.email} </h2>
             <input 
                 type="number" 
                 id="otp-code" 

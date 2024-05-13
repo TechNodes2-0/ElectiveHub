@@ -45,14 +45,14 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/auth/signup`,
+        //send otp
+        `${import.meta.env.VITE_API_URL}/auth/send-otp`,
         {
-          ...inputValue,
-          role: role,
+          email
         },
-        {
-          withCredentials: true,
-        }
+        // {
+        //   withCredentials: true,
+        // }
       );
 
       // if (response) {
@@ -71,7 +71,7 @@ const Signup = () => {
         // cookies.set("TOKEN", response.data.token, {
         //   path: "/",
         // });
-        navigate("/verify", {state: {email: inputValue.email}});
+        navigate("/verify", {state: {...inputValue}});
       } else {
         console.log(message);
       }
