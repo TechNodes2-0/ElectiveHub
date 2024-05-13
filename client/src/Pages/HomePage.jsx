@@ -176,7 +176,7 @@ export default function Homepage() {
                 {subscribed ? "Subscribed" : "Subscribe"}
               </button>
             </div>
-            {error && <p className="text-red-300">{error}</p>}
+            {error && <p className="text-red-500">{error}</p>}
             <div className="mt-5 flex flex-col items-center">
               <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">
                 Follow Us On
