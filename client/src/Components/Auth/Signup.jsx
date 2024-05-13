@@ -102,7 +102,7 @@ const Signup = () => {
   return (
     <div className="flex items-center flex-wrap justify-center gap-5 bg-gray-900">
       <img src={userImg} alt="user" />
-      <div className="max-w-md w-full px-6 py-8 rounded-md">
+      <div className="max-w-md w-full px-6 py-10 rounded-lg bg-slate-800 shadow-[rgba(_160,_160,_160,_0.3)_5px_10px_20px]">
         <h2 className="text-2xl font-bold mb-4 text-white text-signup">Signup Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4 form-signup">
           <div>
