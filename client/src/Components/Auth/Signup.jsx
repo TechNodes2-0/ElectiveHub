@@ -22,6 +22,12 @@ const Signup = () => {
   const { email, password, username } = inputValue;
 
   const [role, setRole] = useState("student");
+  const togglePasswordVisibility = () => {
+    setInputValue(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword,
+    }));
+  };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +37,7 @@ const Signup = () => {
     });
   };
 
-  const togglePasswordVisibility = () => {
-    setInputValue(prevState => ({
-      ...prevState,
-      showPassword: !prevState.showPassword,
-    }));
-  };
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -162,7 +163,7 @@ const Signup = () => {
             </i>
             <div style={{ position: 'relative' }}>
             <input
-              type="password"
+              type={inputValue.showPassword ? 'text' : 'password'}
               name="password"
               value={password}
               required
