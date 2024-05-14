@@ -13,19 +13,32 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import BackToTopButton from "../Components/BackToTopButton";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
   const [error, setError] = useState(null); // State to handle subscription errors
-
+  const [placeHolder, setPlaceHolder]= useState(true) //for placeholder
   const handleSubscribe = async () => {
+    const valid=String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+    if(!valid){
+      setError("Please enter a valid email address");
+      return;
+    }
+    else{
     try {
       // Make a POST request to your subscription endpoint
-      console.log(email);
+      
+    
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/subscribe-newsletter`,
         { email }
@@ -34,15 +47,24 @@ export default function Homepage() {
       if (response.status === 200) {
         // Subscription successful
         setSubscribed(true);
+        toast.success("Subscribed to newsletter successfully",{
+          position:"top-center",
+          autoClose:5000
+          
+        })
+        setEmail("");
         setError(null);
       } else {
         setError("Error subscribing to the newsletter.");
       }
     } catch (error) {
       console.log(error);
-      setError("An error occurred while you subscribing to the newsletter.");
+      setEmail("");
+      setError("An error occurred while you were subscribing to the newsletter.");
     }
+  
   };
+}
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -64,7 +86,9 @@ export default function Homepage() {
   return (
     <div className="min-h-screen">
       <Navbar></Navbar>
+     
       <section class="bg-white dark:bg-gray-900 ">
+      
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7  home-section  ">
             <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -135,7 +159,9 @@ export default function Homepage() {
                 type="text"
                 className="peer block min-h-[auto] w-full rounded border-2 mr-2 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="emailInput"
-                placeholder="Enter your email"
+                placeholder={placeHolder?"": "Enter your email"}
+                onFocus={()=>setPlaceHolder(false)}
+                onBlur={()=>setEmail("")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -166,7 +192,7 @@ export default function Homepage() {
                 Enter your email
               </label>
               <button
-                type="button"
+              
                 onClick={handleSubscribe}
                 className="lg:mt-0 mt-2 inline-block rounded bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
@@ -191,6 +217,7 @@ export default function Homepage() {
           </div>
           {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
+
       </section>
 
       <BackToTopButton />

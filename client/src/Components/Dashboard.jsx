@@ -8,7 +8,7 @@ import { CircularPacking } from "./CircularPacking";
 import { data } from "./data";
 import BackToTopButton from "./BackToTopButton";
 
-const Dashboard = () => {
+const   Dashboard = () => {
   const { token } = useContext(AuthContext);
   const numStudents = 100;
   const [pieChartData, setPieChartData] = useState([]);
@@ -92,22 +92,23 @@ const Dashboard = () => {
 
             {/* Charts */}
             <div className="col-span-3 ">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="bg-white rounded-lg shadow-md flex items-center justify-center dark:border dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                   <PieChart data={pieChartData} width={900} height={400} />
                 </div>
               </div>
             </div>
             <div className="col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="bg-white rounded-lg shadow-md flex items-center justify-center dark:border dark:bg-gray-800 dark:border-gray-700 dark:text-white">
-                  <Barplot data={pieChartData} width={700} height={400} />
+                  {/* <Barplot data={pieChartData} width={700} height={400} /> */}
+                  <Barplot data={pieChartData} width={700} height={400} /> 
                 </div>
               </div>
             </div>
 
             <div className="col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
                 <div className="bg-white rounded-lg shadow-md flex items-center justify-center dark:border dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                   <CircularPacking data={data} width={700} height={900} />
                 </div>
