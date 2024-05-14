@@ -6,14 +6,18 @@ import StudyPic from "../assets/Study.png";
 import { Link } from "react-router-dom";
 import Stats from "../Components/Stats";
 import axios from "axios";
-import { AiFillFacebook, AiFillInstagram, AiFillLinkedin, AiFillTwitterSquare } from "react-icons/ai"
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillLinkedin,
+  AiFillTwitterSquare,
+} from "react-icons/ai";
 import BackToTopButton from "../Components/BackToTopButton";
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
@@ -62,23 +66,23 @@ export default function Homepage() {
   };
 }
 
-  useGSAP(()=>{
+  useGSAP(() => {
     const tl = gsap.timeline();
-   tl.from('.home-section',{
-    opacity: 0,
-    y: 100,
-    stagger: 0.2,
-    duration: 1.5,
-    ease: "power3.out"
-   })
-   tl.from('.img-home',{
-    opacity: 0,
-    x: 100,
-    // stagger: 0.2,
-    // duration: 1.5,
-    ease: "power3.out"
-   })
-  })
+    tl.from(".home-section", {
+      opacity: 0,
+      y: 100,
+      stagger: 0.2,
+      duration: 1.5,
+      ease: "power3.out",
+    });
+    tl.from(".img-home", {
+      opacity: 0,
+      x: 100,
+      // stagger: 0.2,
+      // duration: 1.5,
+      ease: "power3.out",
+    });
+  });
   return (
     <div className="min-h-screen">
       <Navbar></Navbar>
@@ -129,20 +133,28 @@ export default function Homepage() {
       </section>
       <Feature></Feature>
       <Stats />
-      <section className="h-full text-center lg:text-left p-5 flex flex-col items-center" style={{ backgroundImage: 'linear-gradient(to bottom, #6b7280, #535a68, #3c4251, #262c3c, #111827)', }}>
-        <div className="md:w-full text-2xl lg:text-3xl font-bold dark:text-white mb-5 lg:w-1/2 text-center">
-          <span className="text-primary">
-            Subscribe to our <span className="dark:text-blue-500 inline">Newsletter</span>
-          </span>
-        </div>
-        <div className="flex flex-col lg:flex-row justify-between p-2 w-full">
-          <div className="w-full lg:w-1/2 mb-5 lg:mb-0">
-            <p className="text-xl lg:text-2xl font-bold text-primary-400">Get the Latest from our platform</p>
-            <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium">Get information regarding new Updates Features, Statistical Analysis, and Monthly Review from our team.</p>
-          </div>
 
+      {/* ------------------------------- Newsletter section ------------------------------- */}
+      <section
+        className="h-full text-center lg:text-left p-5 flex flex-col items-center bg-[#0369A1] mt-5"
+        // style={{
+        //   backgroundImage:
+        //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
+        // }}
+      >
+        <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-5 lg:w-1/2 text-center ">
+          <span className="text-primary">
+            Subscribe to our{" "}
+            <span className="inline text-slate-800">Newsletter</span>
+          </span>
+          <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium text-lg">
+            Get information regarding new Updates Features, Statistical
+            Analysis, and Monthly Review from our team.
+          </p>
+        </div>
+        <div className="flex flex-col lg:flex-row justify-center p-2 w-full">
           <div className="w-full lg:w-1/2">
-            <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0" data-te-input-wrapper-init>
+            <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0">
               <input
                 type="text"
                 className="peer block min-h-[auto] w-full rounded border-2 mr-2 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -155,8 +167,27 @@ export default function Homepage() {
               />
               <label
                 htmlFor="emailInput"
-                className={`pointer-events-none absolute top-3 left-3 mb-0 max-w-[90%] origin-[0_0] truncate  leading-[1.15] text-slate-200 transition-all duration-200 ease-out ${placeHolder || email?"-translate-y-[1.55rem] scale-[0.8] text-primary": ""} ${!email && !placeHolder?"":"opacity-0 -translate-y-[2.15rem] scale-[0.8]"}
-                motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary`}
+                className={`
+            pointer-events-none 
+        absolute 
+        top-0 
+        left-3 
+        mb-0 
+        max-w-[90%] 
+        origin-[0_0] 
+        truncate 
+        pt-[0.37rem] 
+        leading-[2.15] 
+        text-slate-200 
+        transition-transform 
+        duration-200 
+        ease-out 
+        ${email ? "-translate-y-[2.15rem] scale-[0.8]" : ""}
+        ${email ? "text-primary" : ""}
+        motion-reduce:transition-none 
+        dark:text-neutral-200 
+        dark:peer-focus:text-primary
+    `}
               >
                 Enter your email
               </label>
@@ -171,18 +202,20 @@ export default function Homepage() {
                 {subscribed ? "Subscribed" : "Subscribe"}
               </button>
             </div>
-            {error && <p className="text-red-500 py-2">{error}</p>}
-            <div className="mt-5">
-              <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">Follow Us On</h1>
-              <div className="flex flex-row w-full lg:w-1/5 justify-between text-2xl lg:text-3xl text-slate-500">
-                <AiFillTwitterSquare />
-                <AiFillInstagram />
-                <AiFillFacebook />
-                <AiFillLinkedin />
+            {error && <p className="text-red-500">{error}</p>}
+            <div className="mt-5 flex flex-col items-center">
+              <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">
+                Follow Us On
+              </h1>
+              <div className="flex justify-center w-full lg:w-1/2 text-2xl lg:text-3xl text-white">
+                <AiFillTwitterSquare className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
+                <AiFillInstagram className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
+                <AiFillFacebook className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
+                <AiFillLinkedin className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
               </div>
             </div>
           </div>
-         
+          {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
 
       </section>
