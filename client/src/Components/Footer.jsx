@@ -35,7 +35,16 @@ export default function Footer() {
             <li>
               <Link to="/license" class="mr-4 hover:underline md:mr-6 ">
                 Licensing
+
               </Link>
+
+              </a>
+            </li>
+            <li>
+              <a href="/Contact" class="hover:underline">
+                Contact
+              </a>
+
             </li>
             <Link to="/contact" class="hover:underline">
               Contact

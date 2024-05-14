@@ -43,8 +43,11 @@ import AboutPage from "./Pages/About";
 // this is temporary import
 import StudentNavbar from "./Components/StudentNavbar";
 import Admin from "./Pages/AdminPage/Admin";
+
 import PrivacyPolicy from "./Pages/Privacy";
 import LicensingPage from "./Pages/license";
+
+import Contact from "./Components/Contact";
 
 function App() {
   // const token = cookies.get("TOKEN");
@@ -128,6 +131,7 @@ function App() {
         <Route path="/Chart" element={<Charts />}></Route>
 
         <Route path="/Dashboard" element={<Dashboard />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
         <Route
           path="/subject-video"
           element={
