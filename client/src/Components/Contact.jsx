@@ -72,7 +72,7 @@ export default function About() {
       <div className="mb-2 block">
         <Label htmlFor="comment" value="Your message" />
       </div>
-      <Textarea id="comment" placeholder="Leave a comment..." name='Message' required rows={4} />
+      <Textarea id="comment" placeholder=" Leave a comment..." name='Message' required rows={4} />
     </div>
       <Button onclick="/#" type='submit'>Send message</Button>
     </form>
