@@ -83,16 +83,16 @@ const PieChart = ({ width, height, data }) => {
           y1={centroid[1]}
           x2={inflexionPoint[0]}
           y2={inflexionPoint[1]}
-          stroke={"black"}
-          fill={"black"}
+          stroke={"PURPLE"}
+          fill={"#FFA500"}
         />
         <line
           x1={inflexionPoint[0]}
           y1={inflexionPoint[1]}
           x2={labelPosX}
           y2={inflexionPoint[1]}
-          stroke={"black"}
-          fill={"black"}
+          stroke={"PURPLE"}
+          fill={"#FFA500"}
         />
         <text
           x={labelPosX + (isRightLabel ? 2 : -2)}
@@ -100,6 +100,7 @@ const PieChart = ({ width, height, data }) => {
           textAnchor={textAnchor}
           dominantBaseline="middle"
           fontSize={14}
+          fill="#FFA500"
         >
           {label}
         </text>
