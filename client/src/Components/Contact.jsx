@@ -21,8 +21,8 @@ export default function About() {
     </div>
 </div>
 <div className='flex mt-10 h-auto justify-center bg-gray-900'>
-<form method="POST" className="flex flex-col gap-10 bg-gray-200 h-auto dark:border-gray-700 dark:bg-gray-800 p-10 mx-3 rounded-lg ttransition duration-300 hover:shadow-2xl hover:shadow-blue-500/70 hover:scale-105" style={{width:"800px" }}>
-<input type="hidden"/>
+<form action="https://api.web3forms.com/submit" method="POST" className="flex flex-col gap-10 bg-gray-200 h-auto dark:border-gray-700 dark:bg-gray-800 p-10 mx-3 rounded-lg ttransition duration-300 hover:shadow-2xl hover:shadow-blue-500/70 hover:scale-105" style={{width:"800px" }}>
+<input type="hidden" name="access_key" value="33e7186f-166c-459b-aa50-8abeb932d45c"/>
 <div className='flex flex-col gap-6 sm:flex-row justify-between'>
 <div className='w-full'>
         <div className="mb-2 block">
