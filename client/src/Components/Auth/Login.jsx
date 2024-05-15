@@ -94,17 +94,17 @@ tl.from('.text-login',{
   };
 
   return (
-    <div className="flex items-center flex-wrap justify-center h-screen bg-gray-900">
-      <img src={userImg} alt="user" />
+    <div className="flex items-center justify-center h-screen bg-gray-900 gap-0 md:gap-2">
+      <img src={userImg} alt="user" className="w-0 sm:w-0 md:w-[50vw]" />
       <div className="max-w-md w-full px-6 py-8 rounded-md">
-        <h2 className="text-3xl font-bold text-center mb-6 text-white text-login">
+        <h2 className="text-[4vw] sm:text-3xl font-bold text-center mb-6 text-white text-login">
           Login Account
         </h2>
         <form onSubmit={handleSubmit} className="form-login">
           <div className="mb-6">
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-white"
+              className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
             >
               Email
             </label>
@@ -113,25 +113,27 @@ tl.from('.text-login',{
               type="email"
               name="email"
               value={email}
+              required
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div className="mb-6">
             <label
               htmlFor="password"
-              className="block mb-2 text-sm font-medium text-white"
+              className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
             >
               Password
             </label>
             <input
               type="password"
               name="password"
+              required
               value={password}
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300 text-[15px]"
             />
           </div>
           <div className="flex justify-between items-center flex-wrap">
@@ -141,7 +143,7 @@ tl.from('.text-login',{
             >
               Submit
             </button>
-            <p className="mt-4 text-white">
+            <p className=" text-white  text-[3vw] sm:text-sm">
               New to the Platform?
               <Link
                 to={"/signup"}
@@ -154,7 +156,6 @@ tl.from('.text-login',{
           </div>
         </form>
       </div>
-      <BackToTopButton />
     </div>
   );
 };

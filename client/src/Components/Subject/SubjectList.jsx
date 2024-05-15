@@ -136,7 +136,7 @@ const ElectiveSubjectPage = () => {
                 View Students
               </Link>
               <button
-                className="bg-red-500 text-white px-3 py-2 rounded"
+                className="bg-red-500 text-white px-3 py-2 rounded mt-3"
                 onClick={() => handleDelete(subject)}
                 data-modal-toggle="popup-modal"
               >
