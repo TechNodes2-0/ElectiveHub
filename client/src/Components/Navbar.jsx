@@ -114,8 +114,8 @@ export default function Navbar() {
             >
               <span className="sr-only">Close main menu</span>
               <svg
-                fill="#000000"
-                className="w-5 h-5"
+                fill="white"
+                className="w-4 h-4"
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
