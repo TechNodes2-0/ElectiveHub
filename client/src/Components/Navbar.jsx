@@ -67,7 +67,7 @@ export default function Navbar() {
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center logo">
+          <a href="/" className="flex items-center logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
               className="h-8 mr-3"
