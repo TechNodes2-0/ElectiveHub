@@ -202,18 +202,6 @@ export default function Homepage() {
                 {subscribed ? "Subscribed" : "Subscribe"}
               </button>
             </div>
-            {error && <p className="text-red-500">{error}</p>}
-            <div className="mt-5 flex flex-col items-center">
-              <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">
-                Follow Us On
-              </h1>
-              <div className="flex justify-center w-full lg:w-1/2 text-2xl lg:text-3xl text-white">
-                <AiFillTwitterSquare className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
-                <AiFillInstagram className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
-                <AiFillFacebook className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
-                <AiFillLinkedin className="m-3 text-4xl transition-transform duration-300 transform hover:scale-125" />
-              </div>
-            </div>
           </div>
           {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
