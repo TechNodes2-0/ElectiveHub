@@ -8,10 +8,10 @@ export default function StatsCard({
   isLoss,
 }) {
   return (
-    <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-slate-800 dark:border-gray-800">
+    <div class="flex flex-col bg-white border-2 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 lg:mb-10 sm:mb-5">
       <div class="p-4 md:p-5">
         <div class="flex items-center gap-x-2">
-          <p class="text-xs uppercase tracking-wide text-gray-500">{label}</p>
+          <p class="text-xs uppercase tracking-wide text-white">{label}</p>
         </div>
 
         <div class="mt-1 flex items-center">
