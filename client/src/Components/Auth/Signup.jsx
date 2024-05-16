@@ -6,7 +6,6 @@ import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
 import userImg from "../../assets/images/user.webp";
 import { toast } from "react-toastify";
-import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -23,6 +22,12 @@ const Signup = () => {
   const { email, password, username } = inputValue;
 
   const [role, setRole] = useState("student");
+  const togglePasswordVisibility = () => {
+    setInputValue(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword,
+    }));
+  };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +36,8 @@ const Signup = () => {
       [name]: value,
     });
   };
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,7 +82,11 @@ const Signup = () => {
         });
         navigate("/Home");
       } else {
-        console.log(message);
+        if (response.status === 409) {
+          toast.error("This email id already exists, please either login or use another email id");
+        } else {
+          toast.error(message); // Display error message from server
+        }
       }
     } catch (error) {
       toast.error("Signup Failed, Please try again");
@@ -100,15 +111,15 @@ const Signup = () => {
   })
 
   return (
-    <div className="flex items-center flex-wrap justify-center gap-5 bg-gray-900">
-      <img src={userImg} alt="user" />
-      <div className="max-w-md w-full px-6 py-8 rounded-md">
-        <h2 className="text-2xl font-bold mb-4 text-white text-signup">Signup Account</h2>
+    <div className="h-screen flex  items-center  justify-center gap-0 md:gap-1 bg-gray-900">
+      <img src={userImg} alt="user" className=" w-[0px] md:w-[50vw]"/>
+      <div className="max-w-md w-full  px-6 py-1 rounded-md">
+        <h2 className=" text-[4vw] font-bold mb-4 text-white text-signup sm:text-2xl">Signup Account</h2>
         <form onSubmit={handleSubmit} className="space-y-4 form-signup">
           <div>
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-white"
+              className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
             >
               Email
             </label>
@@ -116,15 +127,16 @@ const Signup = () => {
               type="email"
               name="email"
               value={email}
+              required
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2 py-1 sm:py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div>
             <label
               htmlFor="email"
-              className="block mb-2 text-sm font-medium text-white"
+              className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
             >
               Username
             </label>
@@ -132,35 +144,51 @@ const Signup = () => {
               type="text"
               name="username"
               value={username}
+              required
               placeholder="Enter your username"
               onChange={handleOnChange}
-              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2 py-1 sm:py-3 rounded-md outline-none border border-gray-300"
             />
           </div>
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-white"
+              className="block text-[3vw] sm:text-sm font-medium text-white"
             >
               Password
             </label>
-            <i className="w-full text-sm text-gray-300">
+            <i className="w-full text-[3vw]  sm:text-sm text-gray-300">
               *(Password must be 8-12 characters long and contain 1 capital
               letter and 1 special character.)
             </i>
+            <div style={{ position: 'relative' }}>
             <input
-              type="password"
+              type={inputValue.showPassword ? 'text' : 'password'}
               name="password"
               value={password}
+              required
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="mt-2 w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="mt-2 w-full px-2 py-1 sm:py-3 rounded-md outline-none border border-gray-300"
             />
+            <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '10px',
+                  transform: 'translateY(-50%)',
+                  cursor: 'pointer',
+                }}
+                onClick={togglePasswordVisibility}
+              >
+                {inputValue.showPassword ?  <i className="material-icons">&#x1F441;</i> : <i className="material-icons">&#x1F440;</i>}
+              </div>
+              </div>
           </div>
           <div>
             <label
               htmlFor="role"
-              className="block mb-2 text-sm font-medium text-white"
+              className="block mb-2 text-[3vw] sm:text-sm md:text-sm font-medium text-white"
             >
               Role
             </label>
@@ -168,7 +196,7 @@ const Signup = () => {
               name="role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full px-2 py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2 py-1 sm:py-3 rounded-md outline-none border border-gray-300"
             >
               <option value="student">Student</option>
               <option value="admin">College Admin</option>
@@ -181,7 +209,7 @@ const Signup = () => {
             >
               Submit
             </button>
-            <p className="mt-4 text-white">
+            <p className="text-[3vw] sm:text-[1.5vw] md:text-[1.3vw] text-white">
               Already have an account?{" "}
               <Link
                 to="/login"
@@ -193,7 +221,6 @@ const Signup = () => {
           </div>
         </form>
       </div>
-      <BackToTopButton />
     </div>
   );
 };
