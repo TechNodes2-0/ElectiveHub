@@ -145,7 +145,7 @@ export default function Homepage() {
               </button>
             </div>
 
-            <div className="mt-5">
+            {/* <div className="mt-5">
               <h1 className="text-lg lg:text-xl text-blue-300 font-medium mb-2">Follow Us On</h1>
               <div className="flex flex-row w-full lg:w-1/5 justify-between text-2xl lg:text-3xl text-slate-500">
                 <AiFillTwitterSquare />
@@ -153,7 +153,7 @@ export default function Homepage() {
                 <AiFillFacebook />
                 <AiFillLinkedin />
               </div>
-            </div>
+            </div> */}
           </div>
           {error && <p className="text-red-500">{error}</p>}
         </div>
