@@ -23,48 +23,48 @@ export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
   const [error, setError] = useState(null); // State to handle subscription errors
-  const [placeHolder, setPlaceHolder]= useState(true) //for placeholder
+  const [placeHolder, setPlaceHolder] = useState(true) //for placeholder
   const handleSubscribe = async () => {
-    const valid=String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-    if(!valid){
+    const valid = String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+    if (!valid) {
       setError("Please enter a valid email address");
       return;
     }
-    else{
-    try {
-      // Make a POST request to your subscription endpoint
-      
-    
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/subscribe-newsletter`,
-        { email }
-      );
+    else {
+      try {
+        // Make a POST request to your subscription endpoint
 
-      if (response.status === 200) {
-        // Subscription successful
-        setSubscribed(true);
-        toast.success("Subscribed to newsletter successfully",{
-          position:"top-center",
-          autoClose:5000
-          
-        })
+
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/subscribe-newsletter`,
+          { email }
+        );
+
+        if (response.status === 200) {
+          // Subscription successful
+          setSubscribed(true);
+          toast.success("Subscribed to newsletter successfully", {
+            position: "top-center",
+            autoClose: 5000
+
+          })
+          setEmail("");
+          setError(null);
+        } else {
+          setError("Error subscribing to the newsletter.");
+        }
+      } catch (error) {
+        console.log(error);
         setEmail("");
-        setError(null);
-      } else {
-        setError("Error subscribing to the newsletter.");
+        setError("An error occurred while you were subscribing to the newsletter.");
       }
-    } catch (error) {
-      console.log(error);
-      setEmail("");
-      setError("An error occurred while you were subscribing to the newsletter.");
-    }
-  
-  };
-}
+
+    };
+  }
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -86,9 +86,9 @@ export default function Homepage() {
   return (
     <div className="min-h-screen">
       <Navbar></Navbar>
-     
+
       <section class="bg-white dark:bg-gray-900 ">
-      
+
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7  home-section  ">
             <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -121,12 +121,13 @@ export default function Homepage() {
               </svg>
             </Link>
           </div>
-          <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+          <div class="hidden lg:flex lg:w-[37vw]">
             <img
               src={StudyPic}
               alt="mockup"
               width={400}
-              class="ml-20 animate-bounce-slow img-home"
+              height={400}
+              className="w-full lg:ml-6 animate-bounce-slow img-home"
             />
           </div>
         </div>
@@ -137,10 +138,10 @@ export default function Homepage() {
       {/* ------------------------------- Newsletter section ------------------------------- */}
       <section
         className="h-full text-center lg:text-left p-5 flex flex-col items-center sm:mt-0 bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700"
-        // style={{
-        //   backgroundImage:
-        //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
-        // }}
+      // style={{
+      //   backgroundImage:
+      //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
+      // }}
       >
         <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-5 lg:w-1/2 text-center ">
           <span className="text-primary">
@@ -159,9 +160,9 @@ export default function Homepage() {
                 type="text"
                 className="peer block min-h-[auto] w-full rounded border-2 mr-2 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="emailInput"
-                placeholder={placeHolder?"": "Enter your email"}
-                onFocus={()=>setPlaceHolder(false)}
-                onBlur={()=>setEmail("")}
+                placeholder={placeHolder ? "" : "Enter your email"}
+                onFocus={() => setPlaceHolder(false)}
+                onBlur={() => setEmail("")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -192,7 +193,7 @@ export default function Homepage() {
                 Enter your email
               </label>
               <button
-              
+
                 onClick={handleSubscribe}
                 className="lg:mt-0 mt-2 inline-block rounded hover:bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
