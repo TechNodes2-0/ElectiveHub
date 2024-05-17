@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "framer-motion";
 import BackToTopButton from "../BackToTopButton";
+import { TiDelete } from "react-icons/ti";
 
 const ElectiveSubjectPage = () => {
   const { token } = useContext(AuthContext);
@@ -178,7 +179,7 @@ const ElectiveSubjectPage = () => {
               <span className="sr-only">Close modal</span>
             </button>
             <div className="p-6 text-center">
-              <svg
+              {/* <svg
                 className="mx-auto mb-4 text-gray-400 w-12 h-12"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +193,8 @@ const ElectiveSubjectPage = () => {
                   strokeWidth="2"
                   d="M10 11V6m0 0 6-6M10 11h6m-6 0H4m6 0v6m0-6V4"
                 />
-              </svg>
+              </svg> */}
+              <TiDelete />
               <h3 className="mb-5 text-lg font-normal text-gray-500">
                 Are you sure you want to delete this subject?
               </h3>
