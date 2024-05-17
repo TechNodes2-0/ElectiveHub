@@ -136,7 +136,7 @@ export default function Homepage() {
 
       {/* ------------------------------- Newsletter section ------------------------------- */}
       <section
-        className="h-full text-center lg:text-left p-5 flex flex-col items-center bg-[#0369A1] mt-5"
+        className="h-full text-center lg:text-left p-5 flex flex-col items-center sm:mt-0 bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700"
         // style={{
         //   backgroundImage:
         //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
@@ -145,7 +145,7 @@ export default function Homepage() {
         <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-5 lg:w-1/2 text-center ">
           <span className="text-primary">
             Subscribe to our{" "}
-            <span className="inline text-slate-800">Newsletter</span>
+            <span className="inline text-primary-600 ">Newsletter</span>
           </span>
           <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium text-lg">
             Get information regarding new Updates Features, Statistical
@@ -194,7 +194,7 @@ export default function Homepage() {
               <button
               
                 onClick={handleSubscribe}
-                className="lg:mt-0 mt-2 inline-block rounded bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                className="lg:mt-0 mt-2 inline-block rounded hover:bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
                 data-te-ripple-color="light"
                 disabled={subscribed}
@@ -203,7 +203,6 @@ export default function Homepage() {
               </button>
             </div>
           </div>
-          {/* {error && <p className="text-red-500">{error}</p>} */}
         </div>
 
       </section>
