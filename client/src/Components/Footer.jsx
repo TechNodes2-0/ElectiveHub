@@ -8,16 +8,13 @@ export default function Footer() {
     <footer class="bg-white shadow dark:bg-gray-900 ">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
-          <a
-            href="https://Elective Subject Selector and Manager.com/"
-            class="flex items-center mb-4 sm:mb-0"
-          >
+        <a href="#" className="flex items-center logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
-              class="h-8 mr-3"
-              alt="Elective Subject Selector and Manager Logo"
+              className="h-8 mr-3"
+              alt="subject Logo"
             />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               ElectiveHub
             </span>
           </a>
@@ -40,6 +37,18 @@ export default function Footer() {
             <li>
               <a href="/Contact" class="hover:underline">
                 Contact
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/TechNodes2-0"
+                className="hover:underline flex items-center mr-4 md:mr-6"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+                  className="h-6 ml-5 mr-4 md:mr-6"
+                  alt="GitHub Logo"
+                />
               </a>
             </li>
           </ul>

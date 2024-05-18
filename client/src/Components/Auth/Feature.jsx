@@ -63,7 +63,7 @@ export default function Feature() {
                 Student Management
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify :">
                 This feature allows users to create, update, and delete student
                 records. It provides a convenient way to manage student details
                 such as name, ID number, email, and phone number. The
@@ -114,7 +114,7 @@ export default function Feature() {
                 Elective Subject Management
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify">
                 This feature enables users to add, update, and delete elective
                 subjects. It provides a user-friendly interface for managing
                 subjects, including their names, descriptions, and codes.
@@ -163,7 +163,7 @@ export default function Feature() {
                 Elective Subject Selection
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify">
                 This feature consists of two pages: Student Page and Elective
                 Subject Page. On the Student Page, users can select a student
                 from a list and then choose, update, or delete the elective

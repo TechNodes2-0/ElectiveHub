@@ -94,7 +94,7 @@ export default function Homepage() {
             <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Subject Selection tool for elective subject
             </h1>
-            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p class="max-w-2xl mb-6 font-light text-justify text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               The Subject Selection Tool for Elective Subject streamlines and
               simplifies the process of choosing elective subjects, helping
               students make informed decisions based on their interests and
