@@ -23,9 +23,9 @@ export default function Feature() {
   })
   return (
     <div>
-      <section class="bg-white dark:bg-gray-900 ">
-        <div class="container px-6 py-10 mx-auto features">
-          <h1 class="text-3xl text-center font-bold font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
+      <section class="bg-white dark:bg-gray-900 min-h-screen">
+        <div class="container px-6 py-10 mx-auto features mx-auto">
+          <h1 class="text-3xl text-center font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
             explore our awesome {" "}
             <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
               Features
