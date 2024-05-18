@@ -11,8 +11,9 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-
 const Login = () => {
+  
+
   const cookies = new Cookies();
   const { login } = useContext(AuthContext);
 
@@ -31,26 +32,31 @@ const Login = () => {
     });
   };
 
+  const togglePasswordVisibility = () => {
+    setInputValue(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword,
+    }));
+  };
+  
   useGSAP(()=>{
     const tl = gsap.timeline();
-tl.from('.text-login',{
-  opacity: 0,
-  y:100,
-  duration: 1,
-  delay: 0.5,
-  ease: "power3.inOut",
-  stagger: {
-    amount: 0.5,
-  },
-})
+    tl.from('.text-login',{
+      opacity: 0,
+      y:100,
+      duration: 1,
+      delay: 0.5,
+      ease: "power3.inOut",
+      stagger: {
+        amount: 0.5,
+      },
+    });
     tl.from('.form-login',{
       opacity: 0,
       y:100,
-
       ease: "power3.inOut",
-
-    })
-  })
+    });
+  });
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,10 +68,6 @@ tl.from('.text-login',{
         },
         {
           withCredentials: true,
-
-          // headers: {
-          //   Authorization: `Bearer ${token}`,
-          // },
         }
       );
 
@@ -108,7 +110,6 @@ tl.from('.text-login',{
             >
               Email
             </label>
-
             <input
               type="email"
               name="email"
@@ -126,15 +127,29 @@ tl.from('.text-login',{
             >
               Password
             </label>
-            <input
-              type="password"
-              name="password"
-              required
-              value={password}
-              placeholder="Enter your password"
-              onChange={handleOnChange}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300 text-[15px]"
-            />
+            <div style={{ position: 'relative' }}>
+              <input
+                type={inputValue.showPassword ? 'text' : 'password'}
+                name="password"
+                required
+                value={password}
+                placeholder="Enter your password"
+                onChange={handleOnChange}
+                className="w-full px-2 py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300 text-[15px]"
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '10px',
+                  transform: 'translateY(-50%)',
+                  cursor: 'pointer',
+                }}
+                onClick={togglePasswordVisibility}
+              >
+                {inputValue.showPassword ?  <i className="material-icons">&#x1F441;</i> : <i className="material-icons">&#x1F440;</i>}
+              </div>
+            </div>
           </div>
           <div className="flex justify-between items-center flex-wrap">
             <button

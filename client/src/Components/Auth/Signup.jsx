@@ -22,6 +22,12 @@ const Signup = () => {
   const { email, password, username } = inputValue;
 
   const [role, setRole] = useState("student");
+  const togglePasswordVisibility = () => {
+    setInputValue(prevState => ({
+      ...prevState,
+      showPassword: !prevState.showPassword,
+    }));
+  };
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +36,8 @@ const Signup = () => {
       [name]: value,
     });
   };
+
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -153,8 +161,9 @@ const Signup = () => {
               *(Password must be 8-12 characters long and contain 1 capital
               letter and 1 special character.)
             </i>
+            <div style={{ position: 'relative' }}>
             <input
-              type="password"
+              type={inputValue.showPassword ? 'text' : 'password'}
               name="password"
               value={password}
               required
@@ -162,6 +171,19 @@ const Signup = () => {
               onChange={handleOnChange}
               className="mt-2 w-full px-2 py-1 sm:py-3 rounded-md outline-none border border-gray-300"
             />
+            <div
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '10px',
+                  transform: 'translateY(-50%)',
+                  cursor: 'pointer',
+                }}
+                onClick={togglePasswordVisibility}
+              >
+                {inputValue.showPassword ?  <i className="material-icons">&#x1F441;</i> : <i className="material-icons">&#x1F440;</i>}
+              </div>
+              </div>
           </div>
           <div>
             <label
