@@ -141,6 +141,7 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
       <Footer />
+  
     </>
   );
 }
