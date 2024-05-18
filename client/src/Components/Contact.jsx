@@ -81,7 +81,7 @@ export default function About() {
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class="max-w-screen-md mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About ElectiveHub</h2>
-          <p class="text-gray-500 sm:text-xl dark:text-gray-400">ElectiveHub is an Education Management System designed to simplify and enhance the management of student information and elective subject selection in educational institutions. It offers a suite of applications for students, teachers, and administrators, providing a user-friendly platform.</p>
+          <p class="text-gray-500 sm:text-xl dark:text-gray-400 text-justify">ElectiveHub is an Education Management System designed to simplify and enhance the management of student information and elective subject selection in educational institutions. It offers a suite of applications for students, teachers, and administrators, providing a user-friendly platform.</p>
       </div>
       <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           <div>
@@ -91,21 +91,21 @@ export default function About() {
     </svg>
             </div>
               <h3 class="mb-2 text-xl font-bold dark:text-white">Our Mission</h3>
-              <p class="text-gray-500 dark:text-gray-400">Our mission at ElectiveHub is to revolutionize the way educational institutions manage student information and elective subject selection. We aim to create a user-friendly platform that empowers students and administrators to navigate the complexities of education management with ease and efficiency.  </p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">Our mission at ElectiveHub is to revolutionize the way educational institutions manage student information and elective subject selection. We aim to create a user-friendly platform that empowers students and administrators to navigate the complexities of education management with ease and efficiency.  </p>
           </div>
           <div>
               <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-900 hover:shadow-lg transition duration-300 hover:bg-blue-600 dark:hover:bg-blue-800 hover:scale-110">
                   <svg class="w-5 h-5 text-white text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
               </div>
               <h3 class="mb-2 text-xl font-bold dark:text-white">Legal</h3>
-              <p class="text-gray-500 dark:text-gray-400">ElectiveHub is committed to maintaining the highest standards of legal compliance and data protection. We adhere to all relevant educational regulations and privacy laws, ensuring that our platform safeguards the confidentiality and integrity of student information.</p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">ElectiveHub is committed to maintaining the highest standards of legal compliance and data protection. We adhere to all relevant educational regulations and privacy laws, ensuring that our platform safeguards the confidentiality and integrity of student information.</p>
           </div>
           <div>
               <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-900 hover:shadow-lg transition duration-300 hover:bg-blue-600 dark:hover:bg-blue-800 hover:scale-110">
                   <svg class="w-5 h-5 text-white text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path></svg>                    
               </div>
               <h3 class="mb-2 text-xl font-bold dark:text-white">Our Story</h3>
-              <p class="text-gray-500 dark:text-gray-400">The story of ElectiveHub began with a simple observation: the process of managing elective subjects and student information in educational institutions was often cumbersome and outdated. Our founders saw an opportunity to streamline these processes through technology.</p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">The story of ElectiveHub began with a simple observation: the process of managing elective subjects and student information in educational institutions was often cumbersome and outdated. Our founders saw an opportunity to streamline these processes through technology.</p>
           </div> 
           <div>
           <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-900 hover:shadow-lg transition duration-300 hover:bg-blue-600 dark:hover:bg-blue-800 hover:scale-110">
@@ -113,7 +113,7 @@ export default function About() {
               </div>
               
               <h3 class="mb-2 text-xl font-bold dark:text-white">Enterprise</h3>
-              <p class="text-gray-500 dark:text-gray-400">ElectiveHub offers enterprise solutions tailored to meet the needs of large educational institutions. Our enterprise package includes advanced features such as customizable dashboards and integration with existing school management systems.</p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">ElectiveHub offers enterprise solutions tailored to meet the needs of large educational institutions. Our enterprise package includes advanced features such as customizable dashboards and integration with existing school management systems.</p>
           </div>
           <div>
           <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-900 hover:shadow-lg transition duration-300 hover:bg-blue-600 dark:hover:bg-blue-800 hover:scale-110">
@@ -121,14 +121,14 @@ export default function About() {
               </div>
 
               <h3 class="mb-2 text-xl font-bold dark:text-white">Finance</h3>
-              <p class="text-gray-500 dark:text-gray-400">ElectiveHub is funded through a combination of venture capital, strategic partnerships, and subscription-based services. Our financial model is designed to ensure sustainability and continuous improvement of our platform.</p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">ElectiveHub is funded through a combination of venture capital, strategic partnerships, and subscription-based services. Our financial model is designed to ensure sustainability and continuous improvement of our platform.</p>
           </div>
           <div>
               <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-blue-500 lg:h-12 lg:w-12 dark:bg-blue-900 hover:shadow-lg transition duration-300 hover:bg-blue-600 dark:hover:bg-blue-800 hover:scale-110">
                   <svg class="w-5 h-5 text-white text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
               </div>
               <h3 class="mb-2 text-xl font-bold dark:text-white">Join Us</h3>
-              <p class="text-gray-500 dark:text-gray-400">At ElectiveHub, we are always looking for passionate individuals to join our team. Whether you are a developer, educator, or marketing expert, we offer exciting opportunities to contribute to the future of education management. </p>
+              <p class="text-gray-500 dark:text-gray-400 text-justify">At ElectiveHub, we are always looking for passionate individuals to join our team. Whether you are a developer, educator, or marketing expert, we offer exciting opportunities to contribute to the future of education management. </p>
           </div>
       </div>
   </div>

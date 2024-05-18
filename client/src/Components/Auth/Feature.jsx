@@ -23,9 +23,9 @@ export default function Feature() {
   })
   return (
     <div>
-      <section class="bg-white dark:bg-gray-900 ">
-        <div class="container px-6 py-10 mx-auto features">
-          <h1 class="text-3xl font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
+      <section class="bg-white dark:bg-gray-900 min-h-screen">
+        <div class="container px-6 py-10 mx-auto features mx-auto">
+          <h1 class="text-3xl text-center font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
             explore our awesome {" "}
             <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
               Features
@@ -63,7 +63,7 @@ export default function Feature() {
                 Student Management
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify :">
                 This feature allows users to create, update, and delete student
                 records. It provides a convenient way to manage student details
                 such as name, ID number, email, and phone number. The
@@ -114,7 +114,7 @@ export default function Feature() {
                 Elective Subject Management
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify">
                 This feature enables users to add, update, and delete elective
                 subjects. It provides a user-friendly interface for managing
                 subjects, including their names, descriptions, and codes.
@@ -163,7 +163,7 @@ export default function Feature() {
                 Elective Subject Selection
               </h1>
 
-              <p class="text-gray-500 dark:text-gray-300">
+              <p class="text-gray-500 dark:text-gray-300 text-justify">
                 This feature consists of two pages: Student Page and Elective
                 Subject Page. On the Student Page, users can select a student
                 from a list and then choose, update, or delete the elective
