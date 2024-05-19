@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import { useContext } from "react";
@@ -44,6 +44,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
+    history.push("/");
     // Perform any additional actions after logout, e.g., redirect to login page
     // history.push("/login"); // If you are using React Router, you can redirect the user to the login page
   };

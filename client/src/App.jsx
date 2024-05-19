@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -35,7 +35,7 @@ import Dashboard from "./Components/Dashboard";
 import StudentVideo from "./Pages/StudentVideo";
 import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
-import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveScroll from "locomotive-scroll";
 
 // this is temporary imports
 import StudentNavbar from "./Components/StudentNavbar";
@@ -43,15 +43,36 @@ import Admin from "./Pages/AdminPage/Admin";
 import Contact from "./Components/Contact";
 
 function App() {
-  // const token = cookies.get("TOKEN");
-  
-const locomotiveScroll = new LocomotiveScroll();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  console.log(isLoggedIn, "isLoggedIn");
+
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       <AlanAIComponent />
       {/* <h1>{import.meta.env.VITE_API_URL}</h1> */}
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route
+          path="/"
+          element={
+            isLoggedIn ? (
+              <>
+                <Navbar />
+                <Home />
+              </>
+            ) : (
+              <Homepage />
+            )
+          }
+        ></Route>
 
         <Route element={<PrivateRoutes />}>
           <Route element={<AdminRoutes />}>
@@ -141,7 +162,6 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
       <Footer />
-  
     </>
   );
 }
