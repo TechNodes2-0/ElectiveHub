@@ -8,7 +8,7 @@ export default function Footer() {
     <footer class="bg-white shadow dark:bg-gray-900 ">
       <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
-        <a href="#" className="flex items-center logo">
+          <a href="#" className="flex items-center logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
               className="h-8 mr-3"
@@ -21,29 +21,69 @@ export default function Footer() {
           <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
               <a href="/Contact" class="mr-4 hover:underline md:mr-6 ">
+                <lord-icon
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    paddingTop: "4px",
+                    paddingLeft: "1px",
+                  }}
+                  src="https://cdn.lordicon.com/jnzhohhs.json"
+                  trigger="hover"
+                  colors="primary:#ffffff"></lord-icon>{" "}
                 About
               </a>
             </li>
             <li>
               <a href="/Contact" class="mr-4 hover:underline md:mr-6">
+                <lord-icon
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    paddingTop: "1px",
+                    paddingLeft: "1px",
+                  }}
+                  src="https://cdn.lordicon.com/vistbkts.json"
+                  trigger="hover"
+                  stroke="bold"
+                  colors="primary:#ffffff,secondary:#ffffff"></lord-icon>{" "}
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="/Contact" class="mr-4 hover:underline md:mr-6 ">
+              <a href="/Contact" class="mr-4 hover:underline md:mr-8 ">
+                <lord-icon
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    paddingTop: "5px",
+                    paddingLeft: "1px",
+                  }}
+                  src="https://cdn.lordicon.com/rbztokoj.json"
+                  trigger="hover"
+                  colors="primary:#ffffff,secondary:#ffffff"></lord-icon>{" "}
                 Licensing
               </a>
             </li>
             <li>
               <a href="/Contact" class="hover:underline">
+                <lord-icon
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    paddingTop: "5px",
+                    paddingLeft: "1px",
+                  }}
+                  src="https://cdn.lordicon.com/srsgifqc.json"
+                  trigger="hover"
+                  colors="primary:#ffffff"></lord-icon>{" "}
                 Contact
               </a>
             </li>
             <li>
               <a
                 href="https://github.com/TechNodes2-0"
-                className="hover:underline flex items-center mr-4 md:mr-6"
-              >
+                className="hover:underline flex items-center mr-4 md:mr-6">
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
                   className="h-6 ml-5 mr-4 md:mr-6"
