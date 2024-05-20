@@ -37,7 +37,7 @@ import Disscussion from "./Components/Disscussion/Disscussion";
 import SubDisscussion from "./Components/Disscussion/SubDisscussion";
 import LocomotiveScroll from 'locomotive-scroll';
 
-// this is temporary import
+// this is temporary imports
 import StudentNavbar from "./Components/StudentNavbar";
 import Admin from "./Pages/AdminPage/Admin";
 import Contact from "./Components/Contact";
@@ -141,6 +141,7 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="*" element={<Navigate to="/Error" />} />
       </Routes>
       <Footer />
+  
     </>
   );
 }

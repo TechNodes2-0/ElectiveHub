@@ -13,4 +13,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Hi there! Thanks for opening this issue. We appreciate your contribution to this open-source project. We aim to respond or assign your issue as soon as possible."
-        pr-message: "Welcome to Our repository.🎊 Thank you so much for taking the time to point this out."
+        pr-message: "Thank you, ${{ github.actor }}, for creating this pull request and contributing to OpenGrame! 💗\n\n The maintainers will review this Pull Request and provide feedback as soon as possible! 😇\nWe appreciate your patience and contribution, Keep up the great work! 😀"

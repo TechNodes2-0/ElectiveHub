@@ -24,6 +24,7 @@ export default {
           950: "#082f49",
         },
       },
+
       fontFamily: {
         body: [
           "Open Sans",
