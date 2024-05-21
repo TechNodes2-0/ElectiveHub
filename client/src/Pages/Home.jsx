@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import {Modal , Button} from "flowbite-react";
 import { useNavigate, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../Components/Auth/AuthContext";
@@ -69,6 +71,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const [user, setUser] = useState(null);
+  const [showmodal, setModal] = useState(null);
   const [showStudentFunctionality, setShowStudentFunctionality] =
     useState(false);
   const [showSubjectFunctionality, setShowSubjectFunctionality] =
@@ -223,7 +226,7 @@ const Home = () => {
                   )}
                 </ul>
               </div>
-            </div>
+            </div> 
           ) : (
             <div>
               <h3 className="text-2xl text-white ml-6 mt-10 font-bold mb-2">
@@ -260,7 +263,9 @@ const Home = () => {
           </div>
           <button
             className="bg-red-400 text-white rounded px-4 py-2 mt-6"
-            onClick={handleLogout}
+            onClick={() => {
+                        setModal(true);
+                      }}
           >
             Logout
           </button>
@@ -270,6 +275,30 @@ const Home = () => {
         <img src="wlcmbg.png" className="w-full hidden md:block mr-36" />
       </div>
       <BackToTopButton />
+      <Modal
+        show={showmodal}
+        onClose={() => setModal(false)}
+        popup
+        size='md'
+      >
+        <Modal.Header />
+        <Modal.Body>
+          <div className='text-center'>
+            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
+            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+              Are you sure you want to SignOut?
+            </h3>
+            <div className='flex justify-center gap-4'>
+              <Button color='failure' onClick={handleLogout}>
+                Yes, I'm sure
+              </Button>
+              <Button color='gray' onClick={() => setModal(false)}>
+                No, cancel
+              </Button>
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
