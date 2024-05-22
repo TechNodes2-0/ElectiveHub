@@ -34,8 +34,8 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       className={`
         fixed
-        bottom-8
-        right-11
+        bottom-7
+        right-8
         bg-gray-700
         text-gray-200
         rounded-2xl
@@ -48,8 +48,8 @@ const BackToTopButton = () => {
       `}
       title="Go to top"
       style={{
-        width: "64px", // Set the width to create a square
-        height: "64px", // Set the height to create a square
+        width: "60px", // Set the width to create a square
+        height: "60px", // Set the height to create a square
       }}
     >
       ▲

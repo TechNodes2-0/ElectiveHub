@@ -54,7 +54,7 @@ export default function Footer() {
           </ul>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400" style={{paddingTop:'5%'}}>
           © 2023{" "}
           <Link to="/" class="hover:underline">
             ElectiveHub™
