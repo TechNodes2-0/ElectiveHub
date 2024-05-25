@@ -7,12 +7,19 @@ function AlanAIComponent() {
   useEffect(() => {
     // Load Alan AI script asynchronously when the component mounts on the client side
     
+    //extended additional design to fix the overflow of chatwrapper by fixing to 90% of the parent 
     const additionalStyles = `
     .alanBtn-root {
       right: 46px !important;
       bottom: 150px !important;
     }
-  `;
+    #alan-text-chat-wrapper{
+      height: 95%;
+      bottom: 0px;
+      position: fixed;
+    }
+  `
+  ;
 
   const styleTag = document.createElement('style');
   styleTag.innerHTML = additionalStyles;
