@@ -17,7 +17,7 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8 ">
       {items.map((item, index) => (
         <div key={index} className="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
           <div className="mr-3 ">{item.icon}</div>

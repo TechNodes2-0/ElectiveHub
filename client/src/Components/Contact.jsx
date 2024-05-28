@@ -77,7 +77,7 @@ export default function About() {
       <Button onclick="/#" type='submit'>Send message</Button>
     </form>
 </div>
-<div className='bg-gray-600 pb-16'>
+<div className='bg-gray-900  pb-16'>
 
   <Highlight/>
 </div>

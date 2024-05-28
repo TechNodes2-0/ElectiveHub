@@ -158,7 +158,7 @@ export default function Homepage() {
             <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0">
               <input
                 type="text"
-                className="peer block min-h-[auto] w-full rounded border-2 mr-2 mb-5 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                className="peer  my-2 block min-h-[auto] w-full rounded border-2 mr-2 mb-5 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                 id="emailInput"
                 placeholder={placeHolder ? "" : "Enter your email"}
                 onFocus={() => setPlaceHolder(false)}
@@ -195,13 +195,14 @@ export default function Homepage() {
               <button
 
                 onClick={handleSubscribe}
-                className="lg:mt-0 mt-2 inline-block rounded hover:bg-slate-800 px-7 pt-1 pb-2.5 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                className="lg:my-2 inline-block rounded hover:bg-slate-800 px-4  pb-1 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
                 data-te-ripple-color="light"
                 disabled={subscribed}
               >
                 {subscribed ? "Subscribed" : "Subscribe"}
               </button>
+            
             </div>
           </div>
         </div>
