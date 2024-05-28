@@ -2,8 +2,8 @@ import { Button, Checkbox, Label, TextInput, Textarea } from 'flowbite-react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
-
-
+import {Highlight} from './Highlight'
+  
 
 export default function About() {
   return (
@@ -20,7 +20,7 @@ export default function About() {
         <p class="max-w-2xl mb-2 font-light text-white md:text-lg lg:text-xl">Have questions, or just want to say hello? We'd love to hear from you! Drop us a line using the form below, and we'll get back to you as soon as possible.</p>
     </div>
 </div>
-<div className='flex mt-10 h-auto justify-center bg-gray-900'>
+<div className='flex mt-10 py-16 h-auto justify-center bg-gray-900'>
 <form action="https://api.web3forms.com/submit" method="POST" className="flex flex-col gap-10 bg-gray-200 h-auto dark:border-gray-700 dark:bg-gray-800 p-10 mx-3 rounded-lg ttransition duration-300 hover:shadow-2xl hover:shadow-blue-500/70 hover:scale-105" style={{width:"800px" }}>
 <input type="hidden" name="access_key" value="33e7186f-166c-459b-aa50-8abeb932d45c"/>
 <div className='flex flex-col gap-6 sm:flex-row justify-between'>
@@ -77,7 +77,11 @@ export default function About() {
       <Button onclick="/#" type='submit'>Send message</Button>
     </form>
 </div>
-<section class="bg-white dark:bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700">
+<div className='bg-gray-600 pb-16'>
+
+  <Highlight/>
+</div>
+{/* <section class=" bg-white dark:bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
       <div class="max-w-screen-md mb-8 lg:mb-16">
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">About ElectiveHub</h2>
@@ -132,7 +136,7 @@ export default function About() {
           </div>
       </div>
   </div>
-</section>
+</section> */}
 </div>
   )
 }

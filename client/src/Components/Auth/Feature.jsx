@@ -25,11 +25,11 @@ export default function Feature() {
     <div>
       <section class=" bg-gray-900 lg:pb-16">
         <div class="container px-6 py-10 features mx-auto mt-0">
-          <h1 class="text-3xl text-center font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h1 class=" text-3xl text-center font-sans text-white capitalize lg:text-4xl dark:text-white">
             explore our awesome {" "}
-            <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
+            {/* <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
               Features
-            </span>
+            </span> */}
           </h1>
 
           <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300"></p>
@@ -59,7 +59,7 @@ export default function Feature() {
                 </svg>
               </span>
 
-              <h1 class="text-2xl font-sans text-gray-700 capitalize dark:text-white">
+              <h1 class="text-2xl font-sans text-gray-400 font-bold capitalize dark:text-white">
                 Student Management
               </h1>
 
@@ -110,7 +110,7 @@ export default function Feature() {
                 </svg>
               </span>
 
-              <h1 class="text-2xl font-sans text-gray-700 capitalize dark:text-white">
+              <h1 class="text-2xl font-sans text-gray-400 font-bold capitalize dark:text-white">
                 Elective Subject Management
               </h1>
 
@@ -159,7 +159,7 @@ export default function Feature() {
                 </svg>
               </span>
 
-              <h1 class="text-2xl font-sans text-gray-700 capitalize dark:text-white">
+              <h1 class="text-2xl font-sans font-bold text-gray-400 capitalize dark:text-white">
                 Elective Subject Selection
               </h1>
 
