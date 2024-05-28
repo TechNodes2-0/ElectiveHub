@@ -143,12 +143,15 @@ export default function Homepage() {
       //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
       // }}
       >
-        <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-5 lg:w-1/2 text-center ">
+        <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-4 lg:w-1/2 text-center ">
           <span className="text-primary">
             Subscribe to our{" "}
-            <span className="inline text-primary-600 ">Newsletter</span>
+            {/* <span className="inline text-primary-600 "></span> */}
+            <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
+            Newsletter
+            </span>
           </span>
-          <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium text-lg">
+          <p className="mt-10  mr-0 lg:mr-20 text-white font-medium text-lg">
             Get information regarding new Updates Features, Statistical
             Analysis, and Monthly Review from our team.
           </p>
@@ -195,7 +198,14 @@ export default function Homepage() {
               <button
 
                 onClick={handleSubscribe}
-                className="lg:mt-0 mt-2 inline-block rounded hover:bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                className="lg:mt-0  inline-block rounded hover:bg-slate-800 px-5 h-12 text-sm font-medium uppercase leading-normal
+                 hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out
+                 bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]
+                  focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
+                  focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
+                  dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] 
+                  dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] 
+                  dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
                 data-te-ripple-color="light"
                 disabled={subscribed}
