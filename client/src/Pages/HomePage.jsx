@@ -135,7 +135,6 @@ export default function Homepage() {
       <Feature/>
       <Stats />
 
-      {/* ------------------------------- Newsletter section ------------------------------- */}
       <section
         className="h-full text-center lg:text-left p-5 flex flex-col items-center sm:mt-0 bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700"
       // style={{
@@ -158,7 +157,8 @@ export default function Homepage() {
             <div className="flex flex-col lg:flex-row justify-between relative mb-3 w-full md:mr-3 md:mb-0">
               <input
                 type="text"
-                className="peer  my-2 block min-h-[auto] w-full rounded border-2 mr-2 mb-5 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                className="peer block min-h-[auto] w-full rounded border-2 mr-2 mb-0.4 bg-transparent py-[0.32rem] px-3 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none text-neutral-200 placeholder:text-neutral-200 peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+
                 id="emailInput"
                 placeholder={placeHolder ? "" : "Enter your email"}
                 onFocus={() => setPlaceHolder(false)}
