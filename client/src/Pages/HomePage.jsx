@@ -13,9 +13,9 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import BackToTopButton from "../Components/BackToTopButton";
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -23,7 +23,7 @@ export default function Homepage() {
   const [email, setEmail] = useState(""); // State to store the email input
   const [subscribed, setSubscribed] = useState(false); // State to track subscription status
   const [error, setError] = useState(null); // State to handle subscription errors
-  const [placeHolder, setPlaceHolder] = useState(true) //for placeholder
+  const [placeHolder, setPlaceHolder] = useState(true); //for placeholder
   const handleSubscribe = async () => {
     const valid = String(email)
       .toLowerCase()
@@ -33,11 +33,9 @@ export default function Homepage() {
     if (!valid) {
       setError("Please enter a valid email address");
       return;
-    }
-    else {
+    } else {
       try {
         // Make a POST request to your subscription endpoint
-
 
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/subscribe-newsletter`,
@@ -49,9 +47,8 @@ export default function Homepage() {
           setSubscribed(true);
           toast.success("Subscribed to newsletter successfully", {
             position: "top-center",
-            autoClose: 5000
-
-          })
+            autoClose: 5000,
+          });
           setEmail("");
           setError(null);
         } else {
@@ -60,11 +57,12 @@ export default function Homepage() {
       } catch (error) {
         console.log(error);
         setEmail("");
-        setError("An error occurred while you were subscribing to the newsletter.");
+        setError(
+          "An error occurred while you were subscribing to the newsletter."
+        );
       }
-
-    };
-  }
+    }
+  };
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -88,16 +86,15 @@ export default function Homepage() {
       <Navbar></Navbar>
 
       <section class="bg-white dark:bg-gray-900 ">
-
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto my-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7  home-section  ">
             <h1 class="sub-selection max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              Subject Selection tool for elective subject
+              Subject Selection Tool for Elective Subjects
             </h1>
             <p class="max-w-2xl mb-6 font-light text-justify text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              The Subject Selection Tool for Elective Subject streamlines and
-              simplifies the process of choosing elective subjects, helping
-              students make informed decisions based on their interests and
+              The Subject Selection Tool for Elective Subjects streamlines and
+              simplifies the process of choosing elective subjects, assisting
+              students in making informed decisions based on their interests and
               academic goals. It provides comprehensive information to optimize
               their educational experience and align their elective choices with
               their aspirations.
@@ -132,16 +129,16 @@ export default function Homepage() {
           </div>
         </div>
       </section>
-      <Feature/>
+      <Feature />
       <Stats />
 
       {/* ------------------------------- Newsletter section ------------------------------- */}
       <section
         className="h-full text-center lg:text-left p-5 flex flex-col items-center sm:mt-0 bg-gray-900 bg-gradient-to-b dark:from-gray-900 dark:to-gray-700"
-      // style={{
-      //   backgroundImage:
-      //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
-      // }}
+        // style={{
+        //   backgroundImage:
+        //     "linear-gradient(to bottom, #0369A1, #024472, #032647)",
+        // }}
       >
         <div className="md:w-full text-2xl lg:text-3xl font-bold text-white mb-5 lg:w-1/2 text-center ">
           <span className="text-primary">
@@ -149,8 +146,8 @@ export default function Homepage() {
             <span className="inline text-primary-600 ">Newsletter</span>
           </span>
           <p className="lg:mt-2 mt-5 mr-0 lg:mr-20 text-white font-medium text-lg">
-            Get information regarding new Updates Features, Statistical
-            Analysis, and Monthly Review from our team.
+            Get information regarding new updates, features, statistical
+            analysis, and monthly reviews from our team.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row justify-center p-2 w-full">
@@ -193,7 +190,6 @@ export default function Homepage() {
                 Enter your email
               </label>
               <button
-
                 onClick={handleSubscribe}
                 className="lg:mt-0 mt-2 inline-block rounded hover:bg-slate-800 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal hover:text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out bg-primary-600 text-gray-900 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 data-te-ripple-init
@@ -205,7 +201,6 @@ export default function Homepage() {
             </div>
           </div>
         </div>
-
       </section>
 
       <BackToTopButton />

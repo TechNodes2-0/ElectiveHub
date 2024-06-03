@@ -3,30 +3,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import BackToTopButton from "../BackToTopButton";
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Feature() {
-
-  useGSAP(()=>{
+  useGSAP(() => {
     const tl = gsap.timeline();
-    tl.from('.features', {
+    tl.from(".features", {
       y: 100,
       opacity: 0,
       duration: 1,
       stagger: 0.2,
-      ease: 'power3.out'
-    })
-  
-  })
+      ease: "power3.out",
+    });
+  });
   return (
     <div>
       <section class=" bg-gray-900 lg:pb-16">
         <div class="container px-6 py-10 features mx-auto mt-0">
           <h1 class="text-3xl text-center font-sans text-gray-800 capitalize lg:text-4xl dark:text-white">
-            explore our awesome {" "}
+            explore our awesome{" "}
             <span class="underline decoration-white text-underline dark:text-primary-400 underline-offset-[10px] r-8">
               Features
             </span>
@@ -64,8 +61,8 @@ export default function Feature() {
               </h1>
 
               <p class="text-gray-500 dark:text-gray-300 text-justify :">
-                This feature allows users to create, update, and delete student
-                records. It provides a convenient way to manage student details
+                This feature enables users to create, update, and delete student
+                records. It offers a convenient way to manage student details
                 such as name, ID number, email, and phone number. The
                 application ensures the persistence of student data in the
                 database.
@@ -116,7 +113,7 @@ export default function Feature() {
 
               <p class="text-gray-500 dark:text-gray-300 text-justify">
                 This feature enables users to add, update, and delete elective
-                subjects. It provides a user-friendly interface for managing
+                subjects. It offers a user-friendly interface for managing
                 subjects, including their names, descriptions, and codes.
               </p>
 
@@ -164,10 +161,10 @@ export default function Feature() {
               </h1>
 
               <p class="text-gray-500 dark:text-gray-300 text-justify">
-                This feature consists of two pages: Student Page and Elective
-                Subject Page. On the Student Page, users can select a student
-                from a list and then choose, update, or delete the elective
-                subjects for that student.
+                This feature consists of two pages: the Student Page and the
+                Elective Subject Page. On the Student Page, users can select a
+                student from a list and then choose, update, or delete the
+                elective subjects for that student.
               </p>
 
               <Link
