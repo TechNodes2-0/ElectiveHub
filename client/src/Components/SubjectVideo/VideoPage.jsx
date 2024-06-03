@@ -8,7 +8,7 @@ import BackToTopButton from "../BackToTopButton";
 
 const VideoPage = () => {
   const { token } = useContext(AuthContext);
-  console.log("GLobal token", token);
+  console.log("Global token", token);
   const [searchQuery, setSearchQuery] = useState("");
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -68,7 +68,7 @@ const VideoPage = () => {
         {Object.keys(VideoData).map((subjectName) => (
           <div
             key={subjectName}
-            className="border-0 border-white cursor-pointer p-4 rounded text-white mx-auto "
+            className="border-0 border-white cursor-pointer p-4 rounded text-white mx-auto mb-8"
           >
             <div className="my-2">
               <h2 className="text-lg font-bold">{subjectName}</h2>
@@ -76,71 +76,29 @@ const VideoPage = () => {
                 {VideoData[subjectName]["Subject Code"]}
               </p>
             </div>
-            <div className="bg-slate-700 border-0  rounded-xl flex flex-wrap">
+            <div className="bg-slate-700 border-0 rounded-xl flex flex-wrap">
               {VideoData[subjectName]["links"].map((link, index) => (
                 <div className="m-6" key={index}>
-                  <iframe
-                    className="transition duration-200 hover:scale-105"
-                    width="360"
-                    height="215"
-                    src={link.url}
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
+                  <div className="border border-gray-300 rounded p-2">
+                    <iframe
+                      className="transition duration-200 hover:scale-105"
+                      width="360"
+                      height="215"
+                      src={link.url}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                    {link.label && (
+                      <p className="mt-2 text-white text-center">{link.label}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         ))}
-        {/* {VideoData.map((subject) => (
-          <div
-            key={subject.subjectCode}
-            className="border-0 border-white cursor-pointer p-4 rounded text-white mx-auto "
-          >
-            <div className="my-2">
-            <h2 className="text-lg font-bold">{subject.subjectName}</h2>
-            <p className="text-gray-500">{subject.subjectCode}</p>
-
-            </div>
-            <div className="bg-slate-700 border-0  rounded-xl flex flex-wrap">
-                <div className="m-4">
-                  <iframe
-                    width="360"
-                    height="215"
-                    src="https://www.youtube.com/embed/6mbwJ2xhgzM?si=WvHchBlpuQzOCnYY"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div className="m-4">
-                  <iframe
-                    width="360"
-                    height="215"
-                    src="https://www.youtube.com/embed/qz0aGYrrlhU?si=_M1lRUWKSiY9WQyJ"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>{" "}
-                </div>
-                <div className="m-4">
-                  <iframe
-                    width="360"
-                    height="215"
-                    src="https://www.youtube.com/embed/HcOc7P5BMi4?si=jhbW-Litu5adZb0o"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>{" "}
-                </div>
-            </div>
-          </div>
-        ))} */}
       </div>
       <BackToTopButton />
     </div>
