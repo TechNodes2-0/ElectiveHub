@@ -1,7 +1,5 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Cookies from "universal-cookie";
 import {Modal , Button} from "flowbite-react";
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
@@ -12,13 +10,13 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-
 export default function Navbar() {
   const cookies = new Cookies();
   const { token, isLoggedIn, logout } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [openNav, setOpenNav] = useState(false);
   const [showmodal, setModal] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -47,30 +45,28 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
-    // Perform any additional actions after logout, e.g., redirect to login page
-    // history.push("/login"); // If you are using React Router, you can redirect the user to the login page
   };
 
-
-  useGSAP(()=>{
+  useGSAP(() => {
     const tl = gsap.timeline();
     tl.from('.logo', {
       opacity: 0,
        duration: 0.5,
         x: -100
     })
-   .from('li', {
-    opacity: 0, 
-    duration: 0.5,
-    y: -100,
-    stagger:0.2
-  })
-  })
+    .from('li', {
+      opacity: 0, 
+      duration: 0.5,
+      y: -100,
+      stagger:0.2
+    })
+  });
+
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="#" className="flex items-center logo">
+          <a href="/" className="flex items-center logo">
             <img
               src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
               className="h-8 mr-3"
@@ -128,7 +124,7 @@ export default function Navbar() {
               >
                 <polygon
                   points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
-	489.292,457.678 277.331,245.004 489.292,32.337 "
+                  489.292,457.678 277.331,245.004 489.292,32.337 "
                 />
               </svg>
             </button>
@@ -197,7 +193,7 @@ export default function Navbar() {
                   <li className="flex-grow text-start">
                     <a
                       href="/Login"
-                      className="block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent"
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${location.pathname === '/Login' ? 'text-blue-700' : ''}`}
                     >
                       Login
                     </a>
@@ -206,7 +202,7 @@ export default function Navbar() {
                   <li className="flex-grow text-start">
                     <a
                       href="/Signup"
-                      className="block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent"
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${location.pathname === '/Signup' ? 'text-blue-700' : ''}`}
                     >
                       Signup
                     </a>
