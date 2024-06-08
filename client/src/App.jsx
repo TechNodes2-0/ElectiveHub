@@ -41,6 +41,8 @@ import LocomotiveScroll from 'locomotive-scroll';
 import StudentNavbar from "./Components/StudentNavbar";
 import Admin from "./Pages/AdminPage/Admin";
 import Contact from "./Components/Contact";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Licensing from "./Pages/Licensing";
 
 function App() {
   // const token = cookies.get("TOKEN");
@@ -119,6 +121,8 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="/Subject" element={<SubjectHome />}></Route>
         <Route path="/Syllbus" element={<Syllbus />}></Route>
         <Route path="/Disscussion" element={<Disscussion />}></Route>
+        <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
+        <Route path="/licensing" element={<Licensing/>}/>
         <Route path="/SubDisscussion" element={<SubDisscussion />}></Route>
         <Route path="/Chart" element={<Charts />}></Route>
 

@@ -25,12 +25,12 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="/Contact" class="mr-4 hover:underline md:mr-6">
+              <a href="/privacypolicy" class="mr-4 hover:underline md:mr-6">
                 Privacy Policy
               </a>
             </li>
             <li>
-              <a href="/Contact" class="mr-4 hover:underline md:mr-6 ">
+              <a href="/licensing" class="mr-4 hover:underline md:mr-6 ">
                 Licensing
               </a>
             </li>
