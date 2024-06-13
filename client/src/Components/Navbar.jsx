@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Cookies from "universal-cookie";
-import {Modal , Button} from "flowbite-react";
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { Modal, Button } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 import axios from "axios";
 import { useContext } from "react";
-import { AuthContext } from "./Auth/AuthContext"; 
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import { AuthContext } from "./Auth/AuthContext";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Navbar() {
   const cookies = new Cookies();
@@ -49,17 +49,16 @@ export default function Navbar() {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-    tl.from('.logo', {
+    tl.from(".logo", {
       opacity: 0,
-       duration: 0.5,
-        x: -100
-    })
-    .from('li', {
-      opacity: 0, 
+      duration: 0.5,
+      x: -100,
+    }).from("li", {
+      opacity: 0,
       duration: 0.5,
       y: -100,
-      stagger:0.2
-    })
+      stagger: 0.2,
+    });
   });
 
   return (
@@ -190,19 +189,23 @@ export default function Navbar() {
               ) : null}
               {!isLoggedIn && (
                 <>
-                  <li className="flex-grow text-start">
+                  <li className="flex-grow flex text-start">
                     <a
                       href="/Login"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${location.pathname === '/Login' ? 'text-blue-700' : ''}`}
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${
+                        location.pathname === "/Login" ? "text-blue-700" : ""
+                      }`}
                     >
                       Login
                     </a>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                  <li className="flex-grow text-start">
+                  <li className="flex-grow flex text-start mr-2">
                     <a
                       href="/Signup"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${location.pathname === '/Signup' ? 'text-blue-700' : ''}`}
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${
+                        location.pathname === "/Signup" ? "text-blue-700" : ""
+                      }`}
                     >
                       Signup
                     </a>
@@ -280,7 +283,7 @@ export default function Navbar() {
                   <li>
                     <a
                       href="/Signup"
-                      className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className="block py-2 pl-3 pr-4 mr-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                     >
                       Signup
                     </a>
@@ -291,24 +294,19 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <Modal
-        show={showmodal}
-        onClose={() => setModal(false)}
-        popup
-        size='md'
-      >
+      <Modal show={showmodal} onClose={() => setModal(false)} popup size="md">
         <Modal.Header />
         <Modal.Body>
-          <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+          <div className="text-center">
+            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to SignOut?
             </h3>
-            <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleLogout}>
+            <div className="flex justify-center gap-4">
+              <Button color="failure" onClick={handleLogout}>
                 Yes, I'm sure
               </Button>
-              <Button color='gray' onClick={() => setModal(false)}>
+              <Button color="gray" onClick={() => setModal(false)}>
                 No, cancel
               </Button>
             </div>
