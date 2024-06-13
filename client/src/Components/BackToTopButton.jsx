@@ -1,4 +1,3 @@
-// BackToTopButton.js
 import React, { useState, useEffect } from "react";
 
 const BackToTopButton = () => {
@@ -35,7 +34,7 @@ const BackToTopButton = () => {
       className={`
         fixed
         bottom-7
-        right-8
+        left-8 // Change 'right-8' to 'left-8' to position on the left side
         bg-gray-700
         text-gray-200
         rounded-2xl
