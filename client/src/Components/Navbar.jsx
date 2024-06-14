@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Modal, Button } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import axios from "axios";
-import { useContext } from "react";
-import { AuthContext } from "./Auth/AuthContext";
-import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { AuthContext } from "./Auth/AuthContext";
 
 export default function Navbar() {
   const cookies = new Cookies();
@@ -60,6 +58,8 @@ export default function Navbar() {
       stagger: 0.2,
     });
   });
+
+  const isActiveLink = (path) => location.pathname === path ? "text-blue-700" : "";
 
   return (
     <div>
@@ -130,11 +130,11 @@ export default function Navbar() {
           )}
 
           {openNav && (
-            <ul className=" lg:hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row w-full md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="lg:hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row w-full md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
               <li className="flex-grow text-start text-white">
                 <Link
                   to="/"
-                  className="block py-2 pl-3 pr-4  rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+                  className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
                   aria-current="page"
                 >
                   Home
@@ -190,36 +190,30 @@ export default function Navbar() {
               {!isLoggedIn && (
                 <>
                   <li className="flex-grow flex text-start">
-                    <a
-                      href="/Login"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${
-                        location.pathname === "/Login" ? "text-blue-700" : ""
-                      }`}
+                    <Link
+                      to="/Login"
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${isActiveLink("/Login")}`}
                     >
                       Login
-                    </a>
+                    </Link>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
                   <li className="flex-grow flex text-start mr-2">
-                    <a
-                      href="/Signup"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${
-                        location.pathname === "/Signup" ? "text-blue-700" : ""
-                      }`}
+                    <Link
+                      to="/Signup"
+                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text
+.primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${isActiveLink("/Signup")}`}
                     >
                       Signup
-                    </a>
+                    </Link>
                   </li>
                 </>
               )}
             </ul>
           )}
 
-          <div
-            className="hidden w-full md:block md:w-auto"
-            id="navbar-dropdown"
-          >
-            <ul className=" flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <Link
                   to="/"
@@ -275,7 +269,7 @@ export default function Navbar() {
                   <li>
                     <a
                       href="/Login"
-                      className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Login")}`}
                     >
                       Login
                     </a>
@@ -283,7 +277,7 @@ export default function Navbar() {
                   <li>
                     <a
                       href="/Signup"
-                      className="block py-2 pl-3 pr-4 mr-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      className={`block py-2 pl-3 pr-4 mr-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Signup")}`}
                     >
                       Signup
                     </a>

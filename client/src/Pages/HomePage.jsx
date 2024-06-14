@@ -121,7 +121,7 @@ export default function Homepage() {
               </svg>
             </Link>
           </div>
-          <div class="hidden lg:flex lg:w-[37vw]">
+          <div class="hidden lg:flex lg:w-[37vw] ">
             <img
               src={StudyPic}
               alt="mockup"
