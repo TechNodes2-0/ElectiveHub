@@ -33,8 +33,8 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       className={`
         fixed
-        bottom-7
-        left-8 // Change 'right-8' to 'left-8' to position on the left side
+        top-7 // Change to top-7 for top positioning
+        right-8 
         bg-gray-700
         text-gray-200
         rounded-2xl
