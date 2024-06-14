@@ -48,7 +48,17 @@ function App() {
   // const token = cookies.get("TOKEN");
   
 const locomotiveScroll = new LocomotiveScroll();
-  return (
+  
+    const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 2000);
+  }
+  return(
+    !loading && (
     <>
       <AlanAIComponent />
       {/* <h1>{import.meta.env.VITE_API_URL}</h1> */}
@@ -147,6 +157,7 @@ const locomotiveScroll = new LocomotiveScroll();
       <Footer />
   
     </>
+    )
   );
 }
 

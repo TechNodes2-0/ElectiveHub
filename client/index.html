@@ -10,10 +10,253 @@
       href="https://cdn-icons-png.flaticon.com/512/5526/5526535.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+     
+.preloader-equalizer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     --tw-bg-opacity: 1;
+        background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+        height: 100vh;
+        width: 100vw;
+}
+  .preloader-equalizer ul {
+    margin: 0;
+    list-style: none;
+    width: 88px;
+    height: 63px;
+    position: relative;
+    padding: 0;
+    height: 10px;
+  }
+    .preloader-equalizer ul li{
+      position: absolute;
+      width: 2px;
+      height: 0;
+      background-color: white;
+      bottom: 0;
+    }
+  
+  .preloader-equalizer ul li {
+     &:nth-child(1) {
+      left: 0;
+      animation: cssload-sequence1 1.15s ease infinite 0;
+      -o-animation: cssload-sequence1 1.15s ease infinite 0;
+      -ms-animation: cssload-sequence1 1.15s ease infinite 0;
+      -webkit-animation: cssload-sequence1 1.15s ease infinite 0;
+      -moz-animation: cssload-sequence1 1.15s ease infinite 0;
+    }
+    &:nth-child(2) {
+      left: 15px;
+      animation: cssload-sequence2 1.15s ease infinite 0.12s;
+      -o-animation: cssload-sequence2 1.15s ease infinite 0.12s;
+      -ms-animation: cssload-sequence2 1.15s ease infinite 0.12s;
+      -webkit-animation: cssload-sequence2 1.15s ease infinite 0.12s;
+      -moz-animation: cssload-sequence2 1.15s ease infinite 0.12s;
+    }
+    &:nth-child(3) {
+      left: 29px;
+      animation: cssload-sequence1 1.15s ease-in-out infinite 0.23s;
+      -o-animation: cssload-sequence1 1.15s ease-in-out infinite 0.23s;
+      -ms-animation: cssload-sequence1 1.15s ease-in-out infinite 0.23s;
+      -webkit-animation: cssload-sequence1 1.15s ease-in-out infinite 0.23s;
+      -moz-animation: cssload-sequence1 1.15s ease-in-out infinite 0.23s;
+    }
+    &:nth-child(4) {
+      left: 44px;
+      animation: cssload-sequence2 1.15s ease-in infinite 0.35s;
+      -o-animation: cssload-sequence2 1.15s ease-in infinite 0.35s;
+      -ms-animation: cssload-sequence2 1.15s ease-in infinite 0.35s;
+      -webkit-animation: cssload-sequence2 1.15s ease-in infinite 0.35s;
+      -moz-animation: cssload-sequence2 1.15s ease-in infinite 0.35s;
+    }
+    &:nth-child(5) {
+      left: 58px;
+      animation: cssload-sequence1 1.15s ease-in-out infinite 0.46s;
+      -o-animation: cssload-sequence1 1.15s ease-in-out infinite 0.46s;
+      -ms-animation: cssload-sequence1 1.15s ease-in-out infinite 0.46s;
+      -webkit-animation: cssload-sequence1 1.15s ease-in-out infinite 0.46s;
+      -moz-animation: cssload-sequence1 1.15s ease-in-out infinite 0.46s;
+    }
+    &:nth-child(6) {
+      left: 73px;
+      animation: cssload-sequence2 1.15s ease infinite 0.58s;
+      -o-animation: cssload-sequence2 1.15s ease infinite 0.58s;
+      -ms-animation: cssload-sequence2 1.15s ease infinite 0.58s;
+      -webkit-animation: cssload-sequence2 1.15s ease infinite 0.58s;
+      -moz-animation: cssload-sequence2 1.15s ease infinite 0.58s;
+    }
+  }
+
+
+@keyframes cssload-sequence1 {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 49px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+
+@-o-keyframes cssload-sequence1 {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 49px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+
+@-ms-keyframes cssload-sequence1 {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 49px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+
+@-webkit-keyframes cssload-sequence1 {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 49px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+
+@-moz-keyframes cssload-sequence1 {
+  0% {
+    height: 10px;
+  }
+
+  50% {
+    height: 49px;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+
+@keyframes cssload-sequence2 {
+  0% {
+    height: 19px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  100% {
+    height: 19px;
+  }
+}
+
+
+@-o-keyframes cssload-sequence2 {
+  0% {
+    height: 19px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  100% {
+    height: 19px;
+  }
+}
+
+
+@-ms-keyframes cssload-sequence2 {
+  0% {
+    height: 19px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  100% {
+    height: 19px;
+  }
+}
+
+
+@-webkit-keyframes cssload-sequence2 {
+  0% {
+    height: 19px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  100% {
+    height: 19px;
+  }
+}
+
+
+@-moz-keyframes cssload-sequence2 {
+  0% {
+    height: 19px;
+  }
+
+  50% {
+    height: 63px;
+  }
+
+  100% {
+    height: 19px;
+  }
+}
+    
+    </style>
     <title>ElectiveHub</title>
   </head>
   <body className="bg-gray-900">
     <div id="root"></div>
+    <div class="preloader-equalizer" id="spinner">
+      <ul >
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
     <script src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>

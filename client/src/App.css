@@ -1,5 +1,7 @@
 /* src/styles/global.css */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* WebKit-based browsers (Chrome, Safari) */
 html ::-webkit-scrollbar {
   width: 6px;
@@ -26,5 +28,5 @@ html ::-webkit-scrollbar-thumb:hover {
 
 
 body {
-  @apply bg-gray-100 text-gray-900;
+  @apply text-gray-900 bg-gray-100;
 }
