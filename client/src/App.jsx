@@ -6,6 +6,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
+import Rateus from "./Pages/Rateus";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
@@ -95,7 +96,6 @@ const locomotiveScroll = new LocomotiveScroll();
           </Route>
           <Route path="Student" element={<StudentHome />}></Route>
         </Route>
-
         <Route
           path="/Login"
           element={
@@ -126,6 +126,15 @@ const locomotiveScroll = new LocomotiveScroll();
         />
 
         {/* This is end1 */}
+        <Route
+          path="/Rateus"
+          element={
+            <>
+              <Navbar />
+              <Rateus />
+            </>
+          }
+        ></Route>
         <Route path="/add-student" element={<StudentForm />}></Route>
         <Route path="/edit/:id" element={<EditStudent />}></Route>
         <Route path="/Subject" element={<SubjectHome />}></Route>
