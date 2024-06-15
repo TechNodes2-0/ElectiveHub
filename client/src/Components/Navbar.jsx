@@ -1,8 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Modal, Button } from "flowbite-react";
-import { HiOutlineExclamationCircle, HiOutlineHome, HiOutlineUser, HiOutlineLogin, HiOutlineLogout, HiOutlineInformationCircle, HiOutlinePhone, HiOutlineStar } from "react-icons/hi";
+import {
+  HiOutlineExclamationCircle,
+  HiOutlineHome,
+  HiOutlineUser,
+  HiOutlineLogin,
+  HiOutlineLogout,
+  HiOutlineInformationCircle,
+  HiOutlinePhone,
+  HiOutlineStar,
+} from "react-icons/hi";
 import axios from "axios";
 import { AuthContext } from "./Auth/AuthContext";
 import gsap from "gsap";
@@ -18,14 +27,11 @@ export default function Navbar() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/yaae`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/yaae`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         const { user } = response.data;
         if (user) {
@@ -98,13 +104,13 @@ export default function Navbar() {
           </button>
           {openNav && (
             <ul className="lg:hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row w-full md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
-              <li className="flex-grow text-start text-black">
+              <li className="flex-grow text-start text-black dark:text-white">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     isActive
                       ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                   }
                   aria-current="page"
                 >
@@ -114,13 +120,13 @@ export default function Navbar() {
               <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
               {token && username ? (
                 <>
-                  <li className="flex-grow text-start text-black">
+                  <li className="flex-grow text-start text-black dark:text-white">
                     <NavLink
                       to="/Admin"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -128,13 +134,13 @@ export default function Navbar() {
                     </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                  <li className="flex-grow text-start text-black">
+                  <li className="flex-grow text-start text-black dark:text-white">
                     <NavLink
                       to="/Dashboard"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -142,13 +148,13 @@ export default function Navbar() {
                     </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                  <li className="flex-grow text-start text-black">
+                  <li className="flex-grow text-start text-black dark:text-white">
                     <NavLink
                       to="/Contact"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -156,7 +162,21 @@ export default function Navbar() {
                     </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                  <li className="flex-grow text-start ">
+                  <li className="flex-grow text-start text-black dark:text-white">
+                    <NavLink
+                      to="/RateUs"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
+                      }
+                      aria-current="page"
+                    >
+                      <HiOutlineStar className="inline-block mr-2" /> Rate Us
+                    </NavLink>
+                  </li>
+                  <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+                  <li className="flex-grow text-start">
                     <NavLink
                       to="/"
                       className="block py-2 pl-3 pr-4 dark:text-red-600 text-black bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
@@ -170,129 +190,105 @@ export default function Navbar() {
               ) : null}
               {!isLoggedIn && (
                 <>
-                  <li className="flex-grow flex text-start text-black">
+                  <li className="flex-grow flex text-start text-black dark:text-white">
                     <NavLink
                       to="/Login"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                     >
                       <HiOutlineLogin className="inline-block mr-2" /> Login
                     </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
-                  <li className="flex-grow flex text-start text-black mr-2">
+                  <li className="flex-grow flex text-start text-black dark:text-white mr-2">
                     <NavLink
                       to="/Signup"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                     >
-                      <HiOutlineInformationCircle className="inline-block mr-2" /> Signup
+                      <HiOutlineLogin className="inline-block mr-2" /> Signup
                     </NavLink>
                   </li>
                 </>
               )}
             </ul>
           )}
-
-          <div
-            className="hidden w-full md:block md:w-auto"
-            id="navbar-dropdown"
-          >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
+          <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
+              <li className="flex-grow text-black dark:text-white">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
                     isActive
-                      ? "block py-2 pl-3 pr-4 text-black-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                   }
                   aria-current="page"
                 >
                   <HiOutlineHome className="inline-block mr-2" /> Home
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/About"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-                  }
-                  aria-current="page"
-                >
-                  <HiOutlineInformationCircle className="inline-block mr-2" /> About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Contact"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-                  }
-                  aria-current="page"
-                >
-                  <HiOutlinePhone className="inline-block mr-2" /> Contact Us
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/RateUs"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-                  }
-                  aria-current="page"
-                >
-                  <HiOutlineStar className="inline-block mr-2" /> Rate Us
-                </NavLink>
-              </li>
               {token && username ? (
                 <>
-                  <li>
-                    <NavLink
-                      to="/Dashboard"
-                      className={({ isActive }) =>
-                        isActive
-                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
-                      }
-                      aria-current="page"
-                    >
-                      <HiOutlineUser className="inline-block mr-2" /> Dashboard
-                    </NavLink>
-                  </li>
-                  <li>
+                  <li className="flex-grow text-black dark:text-white">
                     <NavLink
                       to="/Admin"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
                       <HiOutlineUser className="inline-block mr-2" /> Admin
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink to="/Home">
-                      <span className="block py-1 pl-3 pr-4 rounded bg-gray-800 text-white">
-                        Welcome, {username}
-                      </span>
+                  <li className="flex-grow text-black dark:text-white">
+                    <NavLink
+                      to="/Dashboard"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
+                      }
+                      aria-current="page"
+                    >
+                      <HiOutlineUser className="inline-block mr-2" /> Dashboard
                     </NavLink>
                   </li>
-                  <li>
+                  <li className="flex-grow text-black dark:text-white">
+                    <NavLink
+                      to="/Contact"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
+                      }
+                      aria-current="page"
+                    >
+                      <HiOutlinePhone className="inline-block mr-2" /> Contact Us
+                    </NavLink>
+                  </li>
+                  <li className="flex-grow text-black dark:text-white">
+                    <NavLink
+                      to="/RateUs"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
+                      }
+                      aria-current="page"
+                    >
+                      <HiOutlineStar className="inline-block mr-2" /> Rate Us
+                    </NavLink>
+                  </li>
+                  <li className="flex-grow">
                     <NavLink
                       to="/"
                       className="block py-2 pl-3 pr-4 dark:text-red-600 text-black bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
@@ -305,28 +301,28 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <li>
+                  <li className="flex-grow flex text-black dark:text-white">
                     <NavLink
                       to="/Login"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                     >
                       <HiOutlineLogin className="inline-block mr-2" /> Login
                     </NavLink>
                   </li>
-                  <li>
+                  <li className="flex-grow flex text-black dark:text-white">
                     <NavLink
                       to="/Signup"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black dark:text-white rounded md:bg-transparent md:p-0"
                       }
                     >
-                      <HiOutlineInformationCircle className="inline-block mr-2" /> Signup
+                      <HiOutlineLogin className="inline-block mr-2" /> Signup
                     </NavLink>
                   </li>
                 </>
@@ -335,13 +331,13 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <Modal show={showmodal} onClose={() => setModal(false)} popup size="md">
+      <Modal show={showmodal} size="md" popup={true} onClose={() => setModal(false)}>
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
-              Are you sure you want to SignOut?
+            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
+            <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+              Are you sure you want to logout?
             </h3>
             <div className="flex justify-center gap-4">
               <Button color="failure" onClick={handleLogout}>
