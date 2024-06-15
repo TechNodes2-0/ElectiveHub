@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { Modal, Button } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import axios from "axios";
+
+import { AuthContext } from "./Auth/AuthContext";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { AuthContext } from "./Auth/AuthContext";
@@ -75,212 +77,234 @@ export default function Navbar() {
               ElectiveHub
             </span>
           </a>
-          {!openNav ? (
-            <button
-              data-collapse-toggle="navbar-dropdown"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-dropdown"
-              aria-expanded="false"
-              onClick={() => setOpenNav(!openNav)}
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+            onClick={() => setOpenNav(!openNav)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
-          ) : (
-            <button
-              data-collapse-toggle="navbar-dropdown"
-              type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-dropdown"
-              aria-expanded="false"
-              onClick={() => setOpenNav(!openNav)}
-            >
-              <span className="sr-only">Close main menu</span>
-              <svg
-                fill="white"
-                className="w-4 h-4"
-                version="1.1"
-                id="Capa_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 490 490"
-                xml:space="preserve"
-              >
-                <polygon
-                  points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 
-                  489.292,457.678 277.331,245.004 489.292,32.337 "
-                />
-              </svg>
-            </button>
-          )}
-
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
           {openNav && (
             <ul className="lg:hidden font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row w-full md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
               <li className="flex-grow text-start text-white">
-                <Link
+                <NavLink
                   to="/"
-                  className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+//                   className="block py-2 pl-3 pr-4 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                  }
                   aria-current="page"
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
               {token && username ? (
                 <>
                   <li className="flex-grow text-start">
-                    <Link
+                    <NavLink
                       to="/Admin"
-                      className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                       aria-current="page"
                     >
                       Admin
-                    </Link>
+                    </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
 
                   <li className="flex-grow text-start">
-                    <Link
+                    <NavLink
                       to="/Dashboard"
-                      className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                       aria-current="page"
                     >
                       Dashboard
-                    </Link>
+                    </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
 
                   <li className="flex-grow text-start">
-                    <Link
+                    <NavLink
                       to="/Contact"
-                      className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-transparent md:dark:bg-transparent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                       aria-current="page"
                     >
                       Contact Us
-                    </Link>
+                    </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
                   <li className="flex-grow text-start ">
-                    <Link
+                    <NavLink
                       to="/"
                       className="block py-2 pl-3 pr-4 dark:text-red-600 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
                       aria-current="page"
                       onClick={handleLogout}
                     >
                       Logout
-                    </Link>
+                    </NavLink>
                   </li>
                 </>
               ) : null}
               {!isLoggedIn && (
                 <>
                   <li className="flex-grow flex text-start">
-                    <Link
+                    <NavLink
                       to="/Login"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-red-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${isActiveLink("/Login")}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                     >
                       Login
-                    </Link>
+                    </NavLink>
                   </li>
                   <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
                   <li className="flex-grow flex text-start mr-2">
-                    <Link
+                    <NavLink
                       to="/Signup"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 hover:dark:text-sky-600 rounded hover:bg-transparent md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text
-.primary-400 dark:hover:bg-transparent  md:dark:hover:bg-transparent ${isActiveLink("/Signup")}`}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                     >
                       Signup
-                    </Link>
+                    </NavLink>
                   </li>
                 </>
               )}
             </ul>
           )}
 
-          <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+
+          <div
+            className="hidden w-full md:block md:w-auto"
+            id="navbar-dropdown"
+          >
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <Link
+                <NavLink
                   to="/"
-                  className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-primary-600 md:dark:bg-transparent"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                  }
                   aria-current="page"
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               {token && username ? (
                 <>
                   <li>
-                    <Link
+                    <NavLink
                       to="/"
-                      className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-primary-600 md:dark:bg-transparent"
+                      className="block py-2 pl-3 pr-4 dark:text-red-600 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
                       aria-current="page"
-                      onClick={() => {
-                        setModal(true);
-                      }}
+                      onClick={() => setModal(true)}
                     >
                       Logout
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/Dashboard"
-                      className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-primary-600 md:dark:bg-transparent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                       aria-current="page"
                     >
                       Dashboard
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/Admin"
-                      className="block py-2 pl-3 pr-4 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-primary-600 md:dark:bg-transparent"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                       aria-current="page"
                     >
                       Admin
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/Home">
+                    <NavLink to="/Home">
                       <span className="block py-1 pl-3 pr-4 rounded bg-gray-800 text-white">
                         Welcome, {username}
                       </span>
-                    </Link>
+                    </NavLink>
                   </li>
                 </>
               ) : null}
               {!isLoggedIn && (
                 <>
                   <li>
-                    <a
-                      href="/Login"
-                      className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Login")}`}
+
+//                       className={`block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Login")}`}
+                    <NavLink
+                      to="/Login"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
                     >
                       Login
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a
-                      href="/Signup"
-                      className={`block py-2 pl-3 pr-4 mr-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Signup")}`}
+
+//                       className={`block py-2 pl-3 pr-4 mr-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary-700 md:p-0 dark:text-white md:dark:hover:text-primary-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActiveLink("/Signup")}`}
+                    <NavLink
+                      to="/Signup"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      }
+                    
                     >
                       Signup
-                    </a>
+                    </NavLink>
                   </li>
                 </>
               )}
