@@ -6,6 +6,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
+import Rateus from "./Pages/Rateus";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Login from "./Components/Auth/Login";
@@ -64,7 +65,15 @@ const locomotiveScroll = new LocomotiveScroll();
       {/* <h1>{import.meta.env.VITE_API_URL}</h1> */}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-
+        <Route
+          path="/Rateus"
+          element={
+            <>
+              <Navbar />
+              <Rateus />
+            </>
+          }
+        ></Route>
         <Route element={<PrivateRoutes />}>
           <Route element={<AdminRoutes />}>
             <Route
