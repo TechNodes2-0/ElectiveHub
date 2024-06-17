@@ -5,15 +5,13 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
-import userImg from "../../assets/images/user.webp";
+import userImg from "../../assets/images/login1.png";
 import { toast } from "react-toastify";
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 const Login = () => {
-  
-
   const cookies = new Cookies();
   const { login } = useContext(AuthContext);
 
@@ -96,14 +94,25 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-900 gap-0 md:gap-2">
-      <img src={userImg} alt="user" className="w-0 sm:w-0 md:w-[50vw]" />
-      <div className="max-w-md w-full px-6 py-8 rounded-md">
+    <div className="h-screen flex  items-center  justify-center gap-0 md:gap-1 bg-gray-900">
+      <div class="hidden lg:flex lg:w-[30vw]">
+            <img
+              src={userImg}
+              alt="user"
+              width={300}
+              height={300}
+              className="w-full lg:ml-6 animate-bounce-slow img-home"
+            />
+      </div>
+      <br></br>
+      <div class="flex flex-col bg-white border-1.5 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300  lg:mb-10 sm:mb-5 ml-12">
+
+      <div className="max-w-md w-full  px-6 py-1 rounded-md">
         <h2 className="text-[4vw] sm:text-3xl font-bold text-center mb-6 text-white text-login">
-          Login Account
+          Welcome Back !!
         </h2>
-        <form onSubmit={handleSubmit} className="form-login">
-          <div className="mb-6">
+        <form onSubmit={handleSubmit} className="space-y-4 form-login">
+          <div >
             <label
               htmlFor="email"
               className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
@@ -117,16 +126,17 @@ const Login = () => {
               required
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5 text-white"
             />
           </div>
-          <div className="mb-6">
+          <div >
             <label
               htmlFor="password"
               className="block mb-2 text-[3vw] sm:text-sm font-medium text-white"
             >
               Password
             </label>
+           
             <div style={{ position: 'relative' }}>
               <input
                 type={inputValue.showPassword ? 'text' : 'password'}
@@ -135,7 +145,7 @@ const Login = () => {
                 value={password}
                 placeholder="Enter your password"
                 onChange={handleOnChange}
-                className="w-full px-2 py-2 sm:py-2 md:py-3 rounded-md outline-none border border-gray-300 text-[15px]"
+                className="w-full px-2 py-2 sm:py-2 md:py-3 rounded-md outline-none border border-blue-400 text-[15px] dark:border-blue-300 bg-transparent border-1.5 text-white"
               />
               <div
                 style={{
@@ -150,26 +160,37 @@ const Login = () => {
                 {inputValue.showPassword ?  <i className="material-icons">&#x1F441;</i> : <i className="material-icons">&#x1F440;</i>}
               </div>
             </div>
+            <i className="w-full text-[3vw]  sm:text-sm text-gray-900">
+              *(Password must be 8-12 characters long and contain 1 00)
+            </i>
           </div>
           <div className="flex justify-between items-center flex-wrap">
-            <button
-              type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-2"
-            >
-              Submit
-            </button>
-            <p className=" text-white  text-[3vw] sm:text-sm">
-              New to the Platform?
-              <Link
-                to={"/signup"}
-                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-              >
-                {" "}
-                Signup
-              </Link>
-            </p>
+            <div class="flex flex-col bg-white border-2 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 lg:mb-10 sm:mb-5">
+              <button
+                  type="submit"
+                  className="text-white bg-blue-700  font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center "
+
+                >
+                Login
+              </button>
+            </div>
+            <div className="w-180 ">
+
+            {/* <div className="w-full "> */}
+              <p className=" text-white  text-[3vw] sm:text-sm">
+                New to the Platform?
+                <Link
+                  to={"/signup"}
+                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                >
+                  {" "}
+                  Signup
+                </Link>
+              </p>
+            </div>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );
