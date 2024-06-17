@@ -4,7 +4,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 import { AuthContext } from "./AuthContext";
 import BackToTopButton from "../BackToTopButton";
-import userImg from "../../assets/images/login.png";
+import userImg from "../../assets/images/login1.png";
 import { toast } from "react-toastify";
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -93,8 +93,6 @@ const Signup = () => {
       console.log(error);
     }
   };
-  // const [role, setRole] = useState('');
-
   const customStyles = {
     student: {
       backgroundColor: 'rgb(17 24 39)',
@@ -129,18 +127,19 @@ const Signup = () => {
       <div class="hidden lg:flex lg:w-[30vw]">
             <img
               src={userImg}
-              alt="mockup"
+              alt="user"
               width={300}
               height={300}
               className="w-full lg:ml-6 animate-bounce-slow img-home"
             />
       </div>
-      <div class="flex flex-col bg-white border-2 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300  lg:mb-10 sm:mb-5 ml-12">
+      <br></br>
+      <div class="flex flex-col bg-white border-1.5 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300  lg:mb-10 sm:mb-5 ml-12">
 
       <div className="max-w-md w-full  px-6 py-1 rounded-md">
         {/* <h2 className=" text-[4vw] font-bold mb-4 text-white text-signup sm:text-2xl">Create Account</h2> */}
         <h2 className="text-[4vw] sm:text-3xl font-bold text-center mb-6 text-white text-signup">
-        Create Account
+        Create Your Account
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4 form-signup">
           <div>
@@ -157,7 +156,7 @@ const Signup = () => {
               required
               placeholder="Enter your email"
               onChange={handleOnChange}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5 text-white"
             />
           </div>
           <div>
@@ -174,7 +173,7 @@ const Signup = () => {
               required
               placeholder="Enter your username"
               onChange={handleOnChange}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5 text-white"
             />
           </div>
           <div>
@@ -196,7 +195,7 @@ const Signup = () => {
               required
               placeholder="Enter your password"
               onChange={handleOnChange}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5 text-white"
             />
             <div
                 style={{
@@ -215,7 +214,7 @@ const Signup = () => {
           <div>
             <label
               htmlFor="role"
-              className="block mb-2 text-[3vw] sm:text-sm md:text-sm font-medium text-white" 
+              className="block mb-2 text-[3vw] sm:text-sm md:text-sm font-medium text-white"
             >
               Role
             </label>
@@ -223,8 +222,9 @@ const Signup = () => {
               name="role"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5"
+              className="w-full px-2  py-2 sm:py-2 md:py-3 rounded-md outline-none border  border-blue-400 dark:border-blue-300 bg-transparent border-1.5 text-white"
               style={{ color: 'white', backgroundColor: 'transparent' }}
+
             >
               <option value="student" style={role === 'student' ? customStyles.student : customStyles.default}>Student</option>
               <option value="admin" style={role === 'student' ? customStyles.student : customStyles.default}>College Admin</option>
@@ -232,14 +232,15 @@ const Signup = () => {
             </select>
           </div>
           <div className="flex justify-between items-center flex-wrap">
-          <div class="flex flex-col bg-white border-2 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 lg:mb-10 sm:mb-5">
-          {/* <div class="p-4 md:p-5"> */}
-            <button
-              type="submit"
-              className="text-white  font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center "
-            >
-              Submit
-            </button></div>
+            <div class="flex flex-col bg-white border-2 shadow-sm rounded-xl dark:bg-gray-900 border-blue-400 dark:border-blue-300 transition duration-300 hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 lg:mb-10 sm:mb-5">
+
+              <button
+                type="submit"
+                className="text-white bg-blue-700 font-medium rounded-lg text-sm w-full sm:w-auto px-4 py-2 text-center "
+                >
+                Signup
+              </button>
+            </div>
             <div className="w-70 ">
               <p className="text-[3vw] sm:text-[1.5vw] md:text-[1.3vw] text-white">
                 Already have an account?{" "}
@@ -253,7 +254,8 @@ const Signup = () => {
             </div>
           </div>
         </form>
-      </div></div>
+      </div>
+      </div>
     </div>
   );
 };
