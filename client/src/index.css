@@ -3,6 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+/* src/index.css or any other CSS file */
+.preloader-equalizer ul li {
+  &:nth-child(1) {
+    left: 0;
+    animation: cssload-sequence1 1.15s ease infinite 0;
+  }
+  
+}
+
 
 @keyframes bounce-slow {
   0%,

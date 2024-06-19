@@ -20,6 +20,7 @@
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^5.0.0-beta.12",
+    "postcss-nested": "^6.0.1",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
     "react-cookie": "^4.1.1",
@@ -40,11 +41,11 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.19",
     "daisyui": "^3.2.1",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.5",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "^3.4.4",
     "vite": "^4.2.0"
   }
 }
