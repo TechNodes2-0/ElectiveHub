@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {Modal , Button} from "flowbite-react";
+import { Modal, Button } from "flowbite-react";
 import { useNavigate, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../Components/Auth/AuthContext";
@@ -226,46 +226,30 @@ const Home = () => {
                   )}
                 </ul>
               </div>
-            </div> 
+            </div>
           ) : (
             <div>
               <h3 className="text-2xl text-white ml-6 mt-10 font-bold mb-2">
                 Student Perks:
               </h3>
               <ul className="list-none pl-6  w-full md:w-3/5 list-inside">
-                <div className=" flex justify-start items-center my-1  rounded-t-lg  p-4  h-auto w-auto bg-blue-200 ">
-                  <li className="text-black text-lg  ">
-                    Choose elective subjects
-                  </li>
-                </div>
-                <div className=" flex justify-start items-center my-1    p-4  h-auto w-auto bg-blue-200 ">
-                  <li className="text-black text-lg  ">
-                    Access limited routes
-                  </li>
-                </div>
-                <div className=" flex justify-start items-center my-1  rounded-b-lg  p-4  h-auto w-auto bg-blue-200 ">
-                  <li className="text-black text-lg  ">
-                    View selected subjects
-                  </li>
+                <div className=" flex justify-start items-center my-1  rounded-t-lg  p-4  h-auto w-auto bg-blue-200 hover:bg-blue-400">
+                  <Link
+                    to="/subject"
+                    className="text-black hover:text-white text-lg"
+                  >
+                    Choose Elective Subjects
+                  </Link>
                 </div>
               </ul>
             </div>
           )}
-          <div className="h-auto mt-16 text-xl w-full">
-            <li className="text-white flex justify-start underline underline-offset-2 items-center list-none  ">
-              <img src="student_Home.png" className="h-6 w-6 mr-2" />{" "}
-              <Link to="/student"> Student Home</Link>
-            </li>
-            <li className="text-white flex justify-start  underline underline-offset-2 items-center list-none  ">
-              <img src="books.png" className="h-6 w-6 mr-2" />{" "}
-              <Link to="/subject">Elective Subjects</Link>
-            </li>
-          </div>
+
           <button
             className="bg-red-400 text-white rounded px-4 py-2 mt-6"
             onClick={() => {
-                        setModal(true);
-                      }}
+              setModal(true);
+            }}
           >
             Logout
           </button>
@@ -275,24 +259,19 @@ const Home = () => {
         <img src="wlcmbg.png" className="w-full hidden md:block mr-36" />
       </div>
       <BackToTopButton />
-      <Modal
-        show={showmodal}
-        onClose={() => setModal(false)}
-        popup
-        size='md'
-      >
+      <Modal show={showmodal} onClose={() => setModal(false)} popup size="md">
         <Modal.Header />
         <Modal.Body>
-          <div className='text-center'>
-            <HiOutlineExclamationCircle className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto' />
-            <h3 className='mb-5 text-lg text-gray-500 dark:text-gray-400'>
+          <div className="text-center">
+            <HiOutlineExclamationCircle className="h-14 w-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to SignOut?
             </h3>
-            <div className='flex justify-center gap-4'>
-              <Button color='failure' onClick={handleLogout}>
+            <div className="flex justify-center gap-4">
+              <Button color="failure" onClick={handleLogout}>
                 Yes, I'm sure
               </Button>
-              <Button color='gray' onClick={() => setModal(false)}>
+              <Button color="gray" onClick={() => setModal(false)}>
                 No, cancel
               </Button>
             </div>
