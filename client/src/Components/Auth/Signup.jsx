@@ -209,7 +209,7 @@ const Signup = () => {
             >
               Submit
             </button>
-            <p className="text-[3vw] sm:text-[1.5vw] md:text-[1.3vw] text-white">
+            <p className="text-white  text-[3vw] sm:text-sm">
               Already have an account?{" "}
               <Link
                 to="/login"
