@@ -1,4 +1,3 @@
-// BackToTopButton.js
 import React, { useState, useEffect } from "react";
 
 const BackToTopButton = () => {
@@ -34,8 +33,8 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       className={`
         fixed
-        bottom-7
-        right-8
+        top-7 // Change to top-7 for top positioning
+        right-8 
         bg-gray-700
         text-gray-200
         rounded-2xl
