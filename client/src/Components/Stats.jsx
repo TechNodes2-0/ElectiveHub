@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import StatsCard from "./StatsCard";
+import CountUp from "react-countup";
 
 const CardData = [
   {
