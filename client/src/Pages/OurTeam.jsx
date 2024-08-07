@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar';
 import yash from '../assets/yash.png';
 import nishit from '../assets/nishit.png';
 import vinayak from '../assets/vinayak.png';
-import jayesh from '../assets/jayesh.png';
+import jayesh from '../assets/Jayesh.png';
 
 const teamData = [
   {
