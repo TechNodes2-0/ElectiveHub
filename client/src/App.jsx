@@ -43,6 +43,9 @@ import Admin from "./Pages/AdminPage/Admin";
 import Contact from "./Components/Contact";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Licensing from "./Pages/Licensing";
+import TermsOfUse from "./Pages/TermsOfUse";
+import AboutUs from "./Pages/AboutUs";
+import OurTeam from "./Pages/OurTeam";
 
 function App() {
   // const token = cookies.get("TOKEN");
@@ -133,6 +136,9 @@ const locomotiveScroll = new LocomotiveScroll();
         <Route path="/Disscussion" element={<Disscussion />}></Route>
         <Route path="/privacypolicy" element={<PrivacyPolicy/>}/>
         <Route path="/licensing" element={<Licensing/>}/>
+        <Route path="/TermsOfUse" element={<TermsOfUse/>}/>
+        <Route path="/AboutUs" element={<AboutUs/>}/>
+        <Route path="/OurTeam" element={<OurTeam/>}/>
         <Route path="/SubDisscussion" element={<SubDisscussion />}></Route>
         <Route path="/Chart" element={<Charts />}></Route>
 
