@@ -61,7 +61,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700  fixed top-0 left-0 right-0">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center logo">
             <img
