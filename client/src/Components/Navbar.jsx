@@ -106,7 +106,7 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     isActive
                       ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                   }
                   aria-current="page"
                 >
@@ -122,7 +122,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -137,7 +137,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -152,7 +152,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -180,7 +180,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                     >
                       Login
@@ -193,7 +193,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                     >
                       Signup
@@ -215,7 +215,7 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     isActive
                       ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                      : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                      : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                   }
                   aria-current="page"
                 >
@@ -227,7 +227,7 @@ export default function Navbar() {
                   <li>
                     <NavLink
                       to="/"
-                      className="block py-2 pl-3 pr-4 dark:text-red-600 text-white bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
+                      className="block py-2 pl-3 pr-4 dark:text-red-600 text-black bg-primary-700 rounded md:bg-transparent md:text-primary-700 md:p-0 md:dark:text-primary-400 dark:bg-transparent md:dark:bg-transparent"
                       aria-current="page"
                       onClick={() => setModal(true)}
                     >
@@ -240,7 +240,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -253,7 +253,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                       aria-current="page"
                     >
@@ -277,7 +277,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                     >
                       Login
@@ -289,7 +289,7 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 pl-3 pr-4 text-blue-700 rounded md:bg-transparent md:p-0"
-                          : "block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                          : "block py-2 pl-3 pr-4 text-black rounded md:bg-transparent md:p-0"
                       }
                     
                     >
