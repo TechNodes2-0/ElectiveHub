@@ -59,9 +59,7 @@ const StudentList = ({ token, user }) => {
           },
         }
 
-        // headers: {
-        //   Authorization: `Bearer ${token}`,
-        // },
+        
       );
       toast.success("Student deleted successfully!");
       fetchStudents();
@@ -80,18 +78,18 @@ const StudentList = ({ token, user }) => {
   return (
     <>
       <div className="flex flex-col items-center bg-gray-900 h-screen">
-        <div className="py-10">
+        <div className="py-10 w-full">
           <h2 className="text-2xl font-bold mb-4 text-white text-center">
             Student List
           </h2>
-          <div className="mb-4 ml-3">
-            <div className="relative ">
+          <div className="mb-4 ml-3 w-full">
+            <div className="relative mx-auto">
               <input
                 type="text"
                 placeholder="Search Students..."
                 value={searchQuery}
                 onChange={handleSearch}
-                className="border border-gray-300 px-3 py-2 pl-8 rounded"
+                className="border w-full  border-gray-300 px-3 py-2 pl-8 rounded"
               />
               <span className="absolute top-3 left-2">
                 <img
@@ -103,50 +101,52 @@ const StudentList = ({ token, user }) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4 px-2">
-          {filteredStudents.map((student) => (
-            <motion.div
-              key={student.idNumber}
-              className="bg-gray-800 border-blue-500 border-2 border-solid rounded-lg hover:scale-105 shadow p-4 flex flex-col justify-between text-white"
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div>
-                <h3 className="text-lg font-medium">{student.name}</h3>
-                <p className="text-gray-500">ID: {student.idNumber}</p>
-                <p className="text-gray-500">Email: {student.email}</p>
-                <p className="text-gray-500">Phone: {student.phoneNumber}</p>
-              </div>
-              <div className="mt-4">
-                {/* Add buttons for editing and deleting a student */}
-                <Link
-                  to={{
-                    pathname: `/edit/${student.idNumber}`,
-                    state: { studentData: student, id: student.idNumber },
-                  }}
-                  className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
-                >
-                  Edit
-                </Link>
-                <Link
-                  to={`/add-subject-to-student/${student.idNumber}`}
-                  className="bg-green-500 text-white px-4 py-2 rounded mr-2"
-                >
-                  View Subjects
-                </Link>
-                <button
-                  onClick={() => handleDelete(student)}
-                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                >
-                  Delete
-                </button>
-              </div>
-            </motion.div>
-          ))}
+        <div className="container mx-auto px-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
+    {filteredStudents.map((student) => (
+      <motion.div
+        key={student.idNumber}
+        className="bg-gray-800 border-blue-500 border-2 border-solid rounded-lg hover:scale-105 shadow p-4 flex flex-col justify-between text-white overflow-hidden"
+        layout
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="overflow-hidden">
+          <h3 className="text-lg font-medium truncate">{student.name}</h3>
+          <p className="text-gray-500 truncate">ID: {student.idNumber}</p>
+          <p className="text-gray-500 truncate">Email: {student.email}</p>
+          <p className="text-gray-500 truncate">Phone: {student.phoneNumber}</p>
         </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link
+            to={{
+              pathname: `/edit/${student.idNumber}`,
+              state: { studentData: student, id: student.idNumber },
+            }}
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Edit
+          </Link>
+          <Link
+            to={`/add-subject-to-student/${student.idNumber}`}
+            className="bg-green-500 text-white px-4 py-2 rounded"
+          >
+            View Subjects
+          </Link>
+          <button
+            onClick={() => handleDelete(student)}
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          >
+            Delete
+          </button>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
 
         {showModal && (
           <div

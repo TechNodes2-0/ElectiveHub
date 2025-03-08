@@ -50,11 +50,11 @@ export default function AdminRoute() {
       </div>
     ); // Show a loading state while checking user role
   } else {
-    if ((user && user.role === "admin") || "student") {
+    if ((user && user.role === "admin") ) {
       return <Outlet />;
     } else {
       return (
-        <div>
+        <div className="h-screen text-white text-2xl bg-gray-900 flex  items-center justify-center">
           You are not authorized to access this page
           <BackToTopButton />
         </div>

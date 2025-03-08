@@ -13,14 +13,15 @@ const FeedbackRoute = require("./Routes/FeedbackRoutes");
 
 require("dotenv").config();
 const { MONGO_URL, PORT } = process.env;
-
+console.log(MONGO_URL);
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("MongoDB is  connected successfully"))
+  .then(() => console.log("MongoDB is connected successfully"))
   .catch((err) => console.error(err));
+
 const allowedOrigins = [
   "http://127.0.0.1:5173",
   "http://localhost:5173",
@@ -28,22 +29,24 @@ const allowedOrigins = [
   "https://electivehub.onrender.com",
   // Add more URLs as needed
 ];
+
 app.use(cookieParser());
 
+// Set up CORS with allowed origins and credentials
 app.use(
   cors({
-    origin: allowedOrigins,
-
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
-
-//   const corsOrigin ={
-//     origin:'http://127.0.0.1:5173', //or whatever port your frontend is using
-//     credentials:true,
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOrigin));
 
 app.use(express.json());
 
@@ -55,18 +58,19 @@ app.use(
 );
 app.use("/student", authMiddleware(["admin", "user", "student"]), StudentRoute);
 app.use("/subject", authMiddleware(["admin", "user", "student"]), SubjectRoute);
+
 app.get("/yaae", authMiddleware(["admin", "user", "student"]), (req, res) => {
   res.json({ status: true, user: req.user });
 });
+
 app.use("/feedback", FeedbackRoute);
 
 app.post("/subscribe-newsletter", async (req, res) => {
   try {
     const { email } = req.body;
     const publicationId = "64f31498352b1c82180c69aa"; // Your publication ID
-    console.log(email);
-    console.log(publicationId);
-    // Make the API call to subscribe to the newsletter
+    console.log(email, publicationId);
+
     const response = await axios.post(
       "https://electivehub.hashnode.dev/api/newsletter/subscribe",
       {
@@ -75,7 +79,7 @@ app.post("/subscribe-newsletter", async (req, res) => {
       }
     );
     console.log(response);
-    // Handle the response from the API call
+
     if (response.status === 200) {
       res
         .status(200)
@@ -84,14 +88,15 @@ app.post("/subscribe-newsletter", async (req, res) => {
       res.status(500).json({ error: "Error subscribing to the newsletter" });
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).json({ error: "Error subscribing to the newsletter" });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
 app.get("/", (req, res) => {
   res.send("dsjdnjsd");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
